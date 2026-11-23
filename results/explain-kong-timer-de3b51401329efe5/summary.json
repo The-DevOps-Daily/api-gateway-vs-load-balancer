@@ -1,0 +1,286 @@
+{
+  "stamp": "de3b51401329efe5",
+  "meta": {
+    "stamp": "de3b51401329efe5",
+    "images": {
+      "gwbench-backend:local": "sha256:a7efa528ff644c4099daa3aac283eac8a7dc8dfe85a0570b5916afa5218d2cff",
+      "nginx:1.30.7-alpine": "sha256:caf4e1e032a20f9c3c5e28fc7f25ffd768ad8677b4975c54193075997b3a97e3",
+      "kong:3.9.5": "sha256:e9b87ddd0e6087792586e2cbba5ce91eadcbdd3d3673249aa4606f7207408c0d",
+      "tykio/tyk-gateway:v5.16.0": "sha256:7af43f37fcae9bccf050c934e51a2ba710c48b5916290da13ef36fcdee3c60c1",
+      "redis:8.8.4-alpine": "sha256:1273af45b299d2b8b60d0e400d90aa6c2c5b1794f01d6a7ca60ff3ba6e65efb5"
+    },
+    "args": {
+      "rates": "1000,2000",
+      "rounds": 3,
+      "max_rounds": 6,
+      "quiet": 0.15,
+      "max_foreign": 0.3,
+      "max_wait": 3600,
+      "duration": 30,
+      "warmup": 10,
+      "systems": "kong,kong-inline",
+      "steps": "auth,ratelimit",
+      "seed": 66,
+      "name": "explain-kong-timer"
+    },
+    "host": {
+      "nproc": 4,
+      "kernel": "6.8.0-147-generic",
+      "cpu": "DO-Premium-Intel"
+    },
+    "started": "2026-11-23T21:02:24Z"
+  },
+  "rows": [
+    {
+      "system": "kong",
+      "step": "auth",
+      "rate": 1000,
+      "n": 3,
+      "p50_ms": 0.593317,
+      "p99_ms": 2.53411,
+      "p99_ms_range": [
+        2.495342,
+        3.482705
+      ],
+      "cpu_ms_per_1k": 309.7314,
+      "cpu_ms_per_1k_range": [
+        306.48886666666664,
+        340.19896666666665
+      ],
+      "cpu_by_container": {
+        "kong": 309.7314
+      },
+      "anon_mem_mb": 170.36328125,
+      "foreign_cpu_max": 0.106,
+      "backend_new_conns_max": 3
+    },
+    {
+      "system": "kong",
+      "step": "ratelimit",
+      "rate": 1000,
+      "n": 3,
+      "p50_ms": 1.074023,
+      "p99_ms": 19.282946,
+      "p99_ms_range": [
+        9.262818,
+        28.753981
+      ],
+      "cpu_ms_per_1k": 739.0893,
+      "cpu_ms_per_1k_range": [
+        712.4559666666667,
+        741.2520666666667
+      ],
+      "cpu_by_container": {
+        "kong": 739.0893
+      },
+      "anon_mem_mb": 171.21484375,
+      "foreign_cpu_max": 0.118,
+      "backend_new_conns_max": 1
+    },
+    {
+      "system": "kong-inline",
+      "step": "auth",
+      "rate": 1000,
+      "n": 3,
+      "p50_ms": 0.589714,
+      "p99_ms": 2.655305,
+      "p99_ms_range": [
+        2.132028,
+        4.18516
+      ],
+      "cpu_ms_per_1k": 308.1544666666667,
+      "cpu_ms_per_1k_range": [
+        286.5181666666667,
+        339.44353333333333
+      ],
+      "cpu_by_container": {
+        "kong-inline": 308.1544666666667
+      },
+      "anon_mem_mb": 168.78515625,
+      "foreign_cpu_max": 0.12,
+      "backend_new_conns_max": 40
+    },
+    {
+      "system": "kong-inline",
+      "step": "ratelimit",
+      "rate": 1000,
+      "n": 3,
+      "p50_ms": 0.593732,
+      "p99_ms": 3.661038,
+      "p99_ms_range": [
+        2.752722,
+        18.604206
+      ],
+      "cpu_ms_per_1k": 326.1067333333333,
+      "cpu_ms_per_1k_range": [
+        317.37260000000003,
+        375.7407333333333
+      ],
+      "cpu_by_container": {
+        "kong-inline": 326.1067333333333
+      },
+      "anon_mem_mb": 169.19921875,
+      "foreign_cpu_max": -0.077,
+      "backend_new_conns_max": 52
+    },
+    {
+      "system": "kong",
+      "step": "auth",
+      "rate": 2000,
+      "n": 3,
+      "p50_ms": 0.543338,
+      "p99_ms": 3.071147,
+      "p99_ms_range": [
+        3.069971,
+        11.272626
+      ],
+      "cpu_ms_per_1k": 209.96938333333335,
+      "cpu_ms_per_1k_range": [
+        209.52641666666668,
+        233.85524999999998
+      ],
+      "cpu_by_container": {
+        "kong": 209.96938333333335
+      },
+      "anon_mem_mb": 171.08984375,
+      "foreign_cpu_max": 0.023,
+      "backend_new_conns_max": 1
+    },
+    {
+      "system": "kong",
+      "step": "ratelimit",
+      "rate": 2000,
+      "n": 3,
+      "p50_ms": 1.583353,
+      "p99_ms": 46.785091,
+      "p99_ms_range": [
+        43.920126,
+        66.545794
+      ],
+      "cpu_ms_per_1k": 480.18672358306515,
+      "cpu_ms_per_1k_range": [
+        479.0281333333333,
+        481.74581894962625
+      ],
+      "cpu_by_container": {
+        "kong": 480.18672358306515
+      },
+      "anon_mem_mb": 171.4296875,
+      "foreign_cpu_max": 0.081,
+      "backend_new_conns_max": 2
+    },
+    {
+      "system": "kong-inline",
+      "step": "auth",
+      "rate": 2000,
+      "n": 3,
+      "p50_ms": 0.58758,
+      "p99_ms": 4.255503,
+      "p99_ms_range": [
+        3.132931,
+        13.332393
+      ],
+      "cpu_ms_per_1k": 215.95133333333334,
+      "cpu_ms_per_1k_range": [
+        201.08280000000002,
+        237.30991666666665
+      ],
+      "cpu_by_container": {
+        "kong-inline": 215.95133333333334
+      },
+      "anon_mem_mb": 170.01953125,
+      "foreign_cpu_max": 0.039,
+      "backend_new_conns_max": 21
+    },
+    {
+      "system": "kong-inline",
+      "step": "ratelimit",
+      "rate": 2000,
+      "n": 3,
+      "p50_ms": 0.64107,
+      "p99_ms": 38.856282,
+      "p99_ms_range": [
+        15.619155,
+        43.058716
+      ],
+      "cpu_ms_per_1k": 275.0102833333333,
+      "cpu_ms_per_1k_range": [
+        243.2298204970083,
+        288.4003166666667
+      ],
+      "cpu_by_container": {
+        "kong-inline": 275.0102833333333
+      },
+      "anon_mem_mb": 170.31640625,
+      "foreign_cpu_max": 0.013,
+      "backend_new_conns_max": 10
+    }
+  ],
+  "feature_deltas": [
+    {
+      "system": "kong",
+      "rate": 1000,
+      "feature": "ratelimit",
+      "runs": [
+        3,
+        3
+      ],
+      "cpu_ms_per_1k": 429.3579,
+      "cpu_range": [
+        372.257,
+        434.76320000000004
+      ],
+      "p50_ms": 0.48070599999999997,
+      "p99_ms": 16.748835999999997
+    },
+    {
+      "system": "kong",
+      "rate": 2000,
+      "feature": "ratelimit",
+      "runs": [
+        3,
+        3
+      ],
+      "cpu_ms_per_1k": 270.2173402497318,
+      "cpu_range": [
+        245.17288333333332,
+        272.21940228295955
+      ],
+      "p50_ms": 1.040015,
+      "p99_ms": 43.713944
+    },
+    {
+      "system": "kong-inline",
+      "rate": 1000,
+      "feature": "ratelimit",
+      "runs": [
+        3,
+        3
+      ],
+      "cpu_ms_per_1k": 17.952266666666617,
+      "cpu_range": [
+        -22.0709333333333,
+        89.22256666666664
+      ],
+      "p50_ms": 0.004018000000000077,
+      "p99_ms": 1.0057330000000002
+    },
+    {
+      "system": "kong-inline",
+      "rate": 2000,
+      "feature": "ratelimit",
+      "runs": [
+        3,
+        3
+      ],
+      "cpu_ms_per_1k": 59.05894999999995,
+      "cpu_range": [
+        5.919903830341639,
+        87.31751666666668
+      ],
+      "p50_ms": 0.05349000000000004,
+      "p99_ms": 34.600779
+    }
+  ],
+  "failed": []
+}

@@ -1,0 +1,114 @@
+r1  1/32    tyk plain      2000/s    2000 done p50 0.602 p99 36.109 ms cpu/1k tyk 275ms, redis 1ms foreign 0.01 (waited 0s) ok
+r1  2/32   kong transform  1000/s    1000 done p50 1.179 p99 62.668 ms cpu/1k kong 828ms foreign 0.03 (waited 390s) ok
+r1  3/32    tyk auth       2000/s    2000 done p50 18.699 p99 74.590 ms cpu/1k tyk 440ms, redis 2ms foreign 0.10 (waited 0s) ok
+r1  4/32    tyk ratelimit  2000/s    1944 done p50 20.447 p99 91.231 ms cpu/1k tyk 471ms, redis 2ms foreign 0.12 (waited 0s) FAIL could not sustain 2000/s: sent 58309 of 60000
+r1  5/32  nginx transform  1000/s    1000 done p50 0.463 p99 2.081 ms cpu/1k nginx 168ms foreign 0.04 (waited 0s) ok
+r1  6/32    tyk plain      1000/s    1000 done p50 0.562 p99 7.752 ms cpu/1k tyk 337ms, redis 3ms foreign -0.08 (waited 0s) ok
+r1  7/32   kong plain      1000/s    1000 done p50 0.410 p99 1.210 ms cpu/1k kong 206ms foreign -0.04 (waited 0s) ok
+r1  8/32 direct plain      2000/s    2000 done p50 0.190 p99 0.508 ms cpu/1k backend 81ms foreign -0.07 (waited 0s) ok
+r1  9/32 direct plain      1000/s    1000 done p50 0.213 p99 0.474 ms cpu/1k backend 125ms foreign -0.04 (waited 0s) ok
+r1 10/32    tyk tls        1000/s    1000 done p50 0.577 p99 7.278 ms cpu/1k tyk 359ms, redis 3ms foreign 0.08 (waited 0s) ok
+r1 11/32    tyk ratelimit  1000/s    1000 done p50 0.682 p99 33.535 ms cpu/1k tyk 464ms, redis 3ms foreign 0.12 (waited 0s) ok
+r1 12/32   kong ratelimit  2000/s    2000 done p50 1.153 p99 44.368 ms cpu/1k kong 488ms foreign -0.04 (waited 0s) ok
+r1 13/32  nginx auth       1000/s    1000 done p50 0.402 p99 1.266 ms cpu/1k nginx 145ms foreign 0.02 (waited 0s) ok
+r1 14/32   kong ratelimit  1000/s    1000 done p50 1.067 p99 57.038 ms cpu/1k kong 754ms foreign 0.03 (waited 0s) ok
+r1 15/32   kong transform  2000/s    2000 done p50 2.003 p99 52.793 ms cpu/1k kong 496ms foreign 0.13 (waited 0s) ok
+r1 16/32  nginx transform  2000/s    1854 done p50 0.431 p99 89.073 ms cpu/1k nginx 193ms foreign 0.16 (waited 0s) FAIL could not sustain 2000/s: sent 55613 of 60000
+r1 17/32  nginx plain      1000/s    1000 done p50 0.482 p99 2.451 ms cpu/1k nginx 183ms foreign -0.01 (waited 0s) ok
+r1 18/32    tyk transform  2000/s    2000 done p50 22.166 p99 80.665 ms cpu/1k tyk 481ms, redis 2ms foreign 0.07 (waited 0s) ok
+r1 19/32   kong auth       1000/s    1000 done p50 0.680 p99 2.562 ms cpu/1k kong 345ms foreign 0.00 (waited 0s) ok
+r1 20/32    tyk auth       1000/s    1000 done p50 0.822 p99 42.915 ms cpu/1k tyk 518ms, redis 4ms foreign 0.06 (waited 0s) ok
+r1 21/32  nginx tls        2000/s    2000 done p50 0.394 p99 2.762 ms cpu/1k nginx 118ms foreign 0.01 (waited 0s) ok
+r1 22/32   kong tls        2000/s    2000 done p50 0.582 p99 4.344 ms cpu/1k kong 211ms foreign 0.04 (waited 0s) ok
+r1 23/32  nginx plain      2000/s    2000 done p50 0.357 p99 1.467 ms cpu/1k nginx 93ms foreign 0.05 (waited 0s) ok
+r1 24/32   kong auth       2000/s    2000 done p50 0.608 p99 3.443 ms cpu/1k kong 238ms foreign 0.01 (waited 0s) ok
+r1 25/32  nginx ratelimit  1000/s    1000 done p50 0.392 p99 0.988 ms cpu/1k nginx 143ms foreign -0.07 (waited 0s) ok
+r1 26/32    tyk transform  1000/s    1000 done p50 0.805 p99 40.693 ms cpu/1k tyk 543ms, redis 3ms foreign -0.03 (waited 0s) ok
+r1 27/32   kong tls        1000/s    1000 done p50 0.738 p99 7.844 ms cpu/1k kong 365ms foreign 0.11 (waited 0s) ok
+r1 28/32    tyk tls        2000/s    2000 done p50 0.783 p99 47.368 ms cpu/1k tyk 343ms, redis 2ms foreign 0.04 (waited 5s) ok
+r1 29/32  nginx auth       2000/s    2000 done p50 0.421 p99 9.913 ms cpu/1k nginx 129ms foreign 0.05 (waited 0s) ok
+r1 30/32   kong plain      2000/s    2000 done p50 0.451 p99 1.943 ms cpu/1k kong 158ms foreign 0.01 (waited 0s) ok
+r1 31/32  nginx ratelimit  2000/s    2000 done p50 0.439 p99 2.413 ms cpu/1k nginx 127ms foreign -0.07 (waited 0s) ok
+r1 32/32  nginx tls        1000/s    1000 done p50 0.521 p99 61.554 ms cpu/1k nginx 202ms foreign 0.09 (waited 0s) ok
+r2  1/32  nginx auth       2000/s    2000 done p50 0.412 p99 44.114 ms cpu/1k nginx 149ms foreign 0.02 (waited 5s) ok
+r2  2/32  nginx ratelimit  1000/s    1000 done p50 0.495 p99 13.382 ms cpu/1k nginx 213ms foreign 0.07 (waited 0s) ok
+r2  3/32    tyk tls        1000/s    1000 done p50 0.638 p99 3.610 ms cpu/1k tyk 371ms, redis 3ms foreign 0.13 (waited 0s) ok
+r2  4/32   kong transform  1000/s    1000 done p50 1.269 p99 34.687 ms cpu/1k kong 842ms foreign 0.11 (waited 0s) ok
+r2  5/32   kong auth       1000/s    1000 done p50 0.586 p99 20.762 ms cpu/1k kong 312ms foreign -0.11 (waited 0s) ok
+r2  6/32   kong auth       2000/s    2000 done p50 0.592 p99 8.435 ms cpu/1k kong 233ms foreign -0.04 (waited 0s) ok
+r2  7/32  nginx plain      2000/s    2000 done p50 0.427 p99 3.449 ms cpu/1k nginx 119ms foreign 0.10 (waited 0s) ok
+r2  8/32  nginx tls        2000/s    2000 done p50 0.474 p99 9.262 ms cpu/1k nginx 151ms foreign 0.07 (waited 0s) ok
+r2  9/32    tyk plain      2000/s    2000 done p50 0.639 p99 43.637 ms cpu/1k tyk 290ms, redis 1ms foreign 0.00 (waited 0s) ok
+r2 10/32 direct plain      1000/s    1000 done p50 0.244 p99 1.543 ms cpu/1k backend 133ms foreign 1.47 (waited 0s) FAIL contended: other processes used 1.47 cores during the run
+r2 11/32    tyk transform  2000/s    1993 done p50 17.232 p99 70.243 ms cpu/1k tyk 440ms, redis 1ms foreign 0.49 (waited 185s) FAIL contended: other processes used 0.49 cores during the run
+r2 12/32   kong ratelimit  1000/s    1000 done p50 1.176 p99 14.990 ms cpu/1k kong 809ms foreign 0.26 (waited 155s) ok
+r2 13/32    tyk ratelimit  2000/s    1978 done p50 20.004 p99 76.408 ms cpu/1k tyk 460ms, redis 2ms foreign 0.21 (waited 5s) FAIL could not sustain 2000/s: sent 59332 of 60000
+r2 14/32  nginx tls        1000/s    1000 done p50 0.484 p99 4.302 ms cpu/1k nginx 177ms foreign 0.44 (waited 30s) FAIL contended: other processes used 0.44 cores during the run
+r2 15/32 direct plain      2000/s    2000 done p50 0.229 p99 0.944 ms cpu/1k backend 91ms foreign 0.08 (waited 5s) ok
+r2 16/32   kong plain      1000/s    1000 done p50 0.531 p99 3.367 ms cpu/1k kong 236ms foreign 0.85 (waited 0s) FAIL contended: other processes used 0.85 cores during the run
+r2 17/32  nginx transform  2000/s    2000 done p50 0.387 p99 3.026 ms cpu/1k nginx 117ms foreign 0.15 (waited 20s) ok
+r2 18/32    tyk tls        2000/s    2000 done p50 0.609 p99 33.769 ms cpu/1k tyk 278ms, redis 1ms foreign 0.02 (waited 110s) ok
+r2 19/32    tyk auth       1000/s    1000 done p50 0.812 p99 56.137 ms cpu/1k tyk 496ms, redis 3ms foreign 0.92 (waited 0s) FAIL contended: other processes used 0.92 cores during the run
+r2 20/32  nginx plain      1000/s    1000 done p50 0.529 p99 4.491 ms cpu/1k nginx 229ms foreign 0.19 (waited 50s) ok
+r2 21/32    tyk transform  1000/s    1000 done p50 1.516 p99 106.000 ms cpu/1k tyk 692ms, redis 3ms foreign 1.43 (waited 0s) FAIL contended: other processes used 1.43 cores during the run
+r2 22/32    tyk auth       2000/s    2000 done p50 5.677 p99 64.658 ms cpu/1k tyk 412ms, redis 1ms foreign 0.73 (waited 115s) FAIL contended: other processes used 0.73 cores during the run
+r2 23/32  nginx ratelimit  2000/s    2000 done p50 0.379 p99 2.601 ms cpu/1k nginx 112ms foreign 0.16 (waited 10s) ok
+r2 24/32   kong tls        2000/s    2000 done p50 0.559 p99 2.870 ms cpu/1k kong 199ms foreign -0.04 (waited 10s) ok
+r2 25/32    tyk ratelimit  1000/s    1000 done p50 0.772 p99 50.245 ms cpu/1k tyk 503ms, redis 3ms foreign 0.12 (waited 0s) ok
+r2 26/32  nginx transform  1000/s    1000 done p50 0.410 p99 1.674 ms cpu/1k nginx 148ms foreign 0.09 (waited 10s) ok
+r2 27/32   kong transform  2000/s    2000 done p50 1.657 p99 48.987 ms cpu/1k kong 495ms foreign 0.05 (waited 0s) ok
+r2 28/32  nginx auth       1000/s    1000 done p50 0.487 p99 3.384 ms cpu/1k nginx 181ms foreign 0.02 (waited 0s) ok
+r2 29/32   kong ratelimit  2000/s    2000 done p50 3.533 p99 56.851 ms cpu/1k kong 489ms foreign 0.96 (waited 0s) FAIL contended: other processes used 0.96 cores during the run
+r2 30/32   kong tls        1000/s    1000 done p50 0.698 p99 11.790 ms cpu/1k kong 367ms foreign 0.07 (waited 5s) ok
+r2 31/32    tyk plain      1000/s    1000 done p50 0.608 p99 2.621 ms cpu/1k tyk 359ms, redis 3ms foreign 0.12 (waited 0s) ok
+r2 32/32   kong plain      2000/s    2000 done p50 0.491 p99 2.208 ms cpu/1k kong 166ms foreign -0.00 (waited 0s) ok
+r3  1/32  nginx tls        1000/s    1000 done p50 0.444 p99 1.599 ms cpu/1k nginx 158ms foreign -0.06 (waited 0s) ok
+r3  2/32  nginx plain      2000/s    2000 done p50 0.371 p99 2.070 ms cpu/1k nginx 102ms foreign 0.03 (waited 0s) ok
+r3  3/32 direct plain      2000/s    2000 done p50 0.246 p99 0.863 ms cpu/1k backend 95ms foreign -0.01 (waited 0s) ok
+r3  4/32  nginx ratelimit  1000/s    1000 done p50 0.493 p99 7.410 ms cpu/1k nginx 211ms foreign 0.13 (waited 0s) ok
+r3  5/32    tyk plain      1000/s    1000 done p50 0.510 p99 2.414 ms cpu/1k tyk 323ms, redis 3ms foreign -0.08 (waited 0s) ok
+r3  6/32    tyk ratelimit  1000/s    1000 done p50 0.731 p99 23.870 ms cpu/1k tyk 486ms, redis 3ms foreign 0.03 (waited 0s) ok
+r3  7/32   kong plain      1000/s    1000 done p50 0.434 p99 1.257 ms cpu/1k kong 217ms foreign -0.02 (waited 0s) ok
+r3  8/32  nginx plain      1000/s    1000 done p50 0.365 p99 1.183 ms cpu/1k nginx 146ms foreign 0.04 (waited 0s) ok
+r3  9/32   kong auth       2000/s    2000 done p50 0.562 p99 22.948 ms cpu/1k kong 216ms foreign 0.02 (waited 0s) ok
+r3 10/32    tyk ratelimit  2000/s    1981 done p50 15.479 p99 71.180 ms cpu/1k tyk 434ms, redis 1ms foreign 0.04 (waited 0s) ok
+r3 11/32  nginx auth       2000/s    2000 done p50 0.446 p99 3.369 ms cpu/1k nginx 131ms foreign 0.04 (waited 0s) ok
+r3 12/32    tyk transform  1000/s    1000 done p50 0.850 p99 79.985 ms cpu/1k tyk 551ms, redis 3ms foreign -0.01 (waited 0s) ok
+r3 13/32   kong auth       1000/s    1000 done p50 0.620 p99 2.833 ms cpu/1k kong 325ms foreign 0.07 (waited 0s) ok
+r3 14/32   kong transform  2000/s    2000 done p50 1.780 p99 53.024 ms cpu/1k kong 495ms foreign 0.03 (waited 0s) ok
+r3 15/32   kong tls        1000/s    1000 done p50 0.715 p99 6.165 ms cpu/1k kong 366ms foreign 0.17 (waited 0s) ok
+r3 16/32    tyk tls        2000/s    2000 done p50 0.687 p99 45.972 ms cpu/1k tyk 326ms, redis 2ms foreign -0.02 (waited 0s) ok
+r3 17/32   kong ratelimit  1000/s    1000 done p50 1.115 p99 21.439 ms cpu/1k kong 798ms foreign 0.07 (waited 5s) ok
+r3 18/32   kong transform  1000/s    1000 done p50 1.245 p99 47.656 ms cpu/1k kong 863ms foreign 0.01 (waited 0s) ok
+r3 19/32  nginx ratelimit  2000/s    2000 done p50 0.416 p99 2.930 ms cpu/1k nginx 126ms foreign 0.07 (waited 0s) ok
+r3 20/32    tyk auth       1000/s    1000 done p50 0.749 p99 11.472 ms cpu/1k tyk 489ms, redis 3ms foreign 0.03 (waited 0s) ok
+r3 21/32 direct plain      1000/s    1000 done p50 0.254 p99 2.232 ms cpu/1k backend 156ms foreign 0.03 (waited 0s) ok
+r3 22/32  nginx tls        2000/s    2000 done p50 0.361 p99 30.797 ms cpu/1k nginx 123ms foreign 0.01 (waited 0s) ok
+r3 23/32    tyk transform  2000/s    2000 done p50 9.524 p99 65.346 ms cpu/1k tyk 424ms, redis 1ms foreign -0.00 (waited 0s) ok
+r3 24/32    tyk tls        1000/s    1000 done p50 0.640 p99 3.781 ms cpu/1k tyk 368ms, redis 3ms foreign 0.92 (waited 0s) FAIL contended: other processes used 0.92 cores during the run
+r3 25/32  nginx transform  2000/s    2000 done p50 0.419 p99 8.230 ms cpu/1k nginx 126ms foreign 0.49 (waited 215s) FAIL contended: other processes used 0.49 cores during the run
+r3 26/32   kong tls        2000/s    2000 done p50 0.542 p99 3.393 ms cpu/1k kong 197ms foreign -0.01 (waited 40s) ok
+r3 27/32  nginx transform  1000/s    1000 done p50 0.465 p99 3.488 ms cpu/1k nginx 179ms foreign 0.03 (waited 5s) ok
+r3 28/32   kong plain      2000/s    2000 done p50 0.581 p99 9.077 ms cpu/1k kong 191ms foreign 0.30 (waited 0s) FAIL contended: other processes used 0.30 cores during the run
+r3 29/32   kong ratelimit  2000/s    2000 done p50 1.954 p99 51.187 ms cpu/1k kong 492ms foreign 0.22 (waited 65s) ok
+r3 30/32    tyk auth       2000/s    2000 done p50 1.116 p99 63.830 ms cpu/1k tyk 398ms, redis 1ms foreign 0.06 (waited 115s) ok
+r3 31/32    tyk plain      2000/s    1997 done p50 0.614 p99 41.802 ms cpu/1k tyk 278ms, redis 1ms foreign 0.04 (waited 95s) ok
+r3 32/32  nginx auth       1000/s    1000 done p50 0.430 p99 1.537 ms cpu/1k nginx 158ms foreign -0.04 (waited 0s) ok
+r4  1/12   kong plain      1000/s    1000 done p50 0.471 p99 1.562 ms cpu/1k kong 229ms foreign 0.04 (waited 0s) ok
+r4  2/12    tyk auth       1000/s    1000 done p50 0.684 p99 48.311 ms cpu/1k tyk 454ms, redis 3ms foreign 0.03 (waited 0s) ok
+r4  3/12  nginx transform  2000/s    2000 done p50 0.356 p99 1.577 ms cpu/1k nginx 108ms foreign -0.01 (waited 0s) ok
+r4  4/12    tyk transform  2000/s    2000 done p50 22.128 p99 87.667 ms cpu/1k tyk 480ms, redis 2ms foreign 0.07 (waited 0s) ok
+r4  5/12   kong plain      2000/s    2000 done p50 0.450 p99 2.050 ms cpu/1k kong 157ms foreign 0.01 (waited 0s) ok
+r4  6/12    tyk auth       2000/s    2000 done p50 7.427 p99 70.282 ms cpu/1k tyk 415ms, redis 2ms foreign 0.04 (waited 0s) ok
+r4  7/12    tyk transform  1000/s    1000 done p50 0.781 p99 74.414 ms cpu/1k tyk 531ms, redis 3ms foreign 0.02 (waited 0s) ok
+r4  8/12    tyk ratelimit  2000/s    2000 done p50 19.238 p99 71.660 ms cpu/1k tyk 440ms, redis 1ms foreign 0.04 (waited 0s) ok
+r4  9/12    tyk tls        1000/s    1000 done p50 0.599 p99 5.723 ms cpu/1k tyk 360ms, redis 3ms foreign 0.02 (waited 0s) ok
+r4 10/12 direct plain      1000/s    1000 done p50 0.257 p99 2.246 ms cpu/1k backend 158ms foreign 0.04 (waited 0s) ok
+r4 11/12  nginx tls        1000/s    1000 done p50 0.435 p99 2.770 ms cpu/1k nginx 159ms foreign 0.01 (waited 0s) ok
+r4 12/12   kong ratelimit  2000/s    1997 done p50 1.702 p99 47.380 ms cpu/1k kong 486ms foreign 1.13 (waited 0s) FAIL contended: other processes used 1.13 cores during the run
+r5  1/3  nginx transform  2000/s    2000 done p50 0.439 p99 13.828 ms cpu/1k nginx 130ms foreign 1.12 (waited 145s) FAIL contended: other processes used 1.12 cores during the run
+r5  2/3   kong ratelimit  2000/s    2000 done p50 1.409 p99 38.318 ms cpu/1k kong 485ms foreign 0.64 (waited 5s) FAIL contended: other processes used 0.64 cores during the run
+r5  3/3    tyk ratelimit  2000/s    2000 done p50 11.536 p99 72.786 ms cpu/1k tyk 419ms, redis 1ms foreign 0.61 (waited 65s) FAIL contended: other processes used 0.61 cores during the run
+r6  1/3   kong ratelimit  2000/s    2000 done p50 1.683 p99 47.321 ms cpu/1k kong 493ms foreign 0.03 (waited 95s) ok
+r6  2/3    tyk ratelimit  2000/s    2000 done p50 17.688 p99 69.432 ms cpu/1k tyk 442ms, redis 1ms foreign 1.22 (waited 90s) FAIL contended: other processes used 1.22 cores during the run
+r6  3/3  nginx transform  2000/s    2000 done p50 0.496 p99 7.928 ms cpu/1k nginx 158ms foreign 0.11 (waited 90s) ok

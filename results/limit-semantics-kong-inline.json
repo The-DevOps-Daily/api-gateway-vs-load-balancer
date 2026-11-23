@@ -1,0 +1,88 @@
+{
+  "kong": {
+    "burst_of_50": [
+      {
+        "passed": 20,
+        "refused": 30,
+        "other": 0,
+        "backend_served": 20
+      },
+      {
+        "passed": 11,
+        "refused": 39,
+        "other": 0,
+        "backend_served": 11
+      },
+      {
+        "passed": 10,
+        "refused": 40,
+        "other": 0,
+        "backend_served": 10
+      },
+      {
+        "passed": 10,
+        "refused": 40,
+        "other": 0,
+        "backend_served": 10
+      },
+      {
+        "passed": 10,
+        "refused": 40,
+        "other": 0,
+        "backend_served": 10
+      }
+    ],
+    "steady_25_per_s_for_20s": {
+      "sent": 500,
+      "status_codes": {
+        "200": 210,
+        "429": 290
+      },
+      "passed_per_s": 10.5,
+      "backend_served": 210
+    }
+  },
+  "kong-inline": {
+    "burst_of_50": [
+      {
+        "passed": 10,
+        "refused": 40,
+        "other": 0,
+        "backend_served": 10
+      },
+      {
+        "passed": 10,
+        "refused": 40,
+        "other": 0,
+        "backend_served": 10
+      },
+      {
+        "passed": 10,
+        "refused": 40,
+        "other": 0,
+        "backend_served": 10
+      },
+      {
+        "passed": 10,
+        "refused": 40,
+        "other": 0,
+        "backend_served": 10
+      },
+      {
+        "passed": 10,
+        "refused": 40,
+        "other": 0,
+        "backend_served": 10
+      }
+    ],
+    "steady_25_per_s_for_20s": {
+      "sent": 500,
+      "status_codes": {
+        "200": 203,
+        "429": 297
+      },
+      "passed_per_s": 10.15,
+      "backend_served": 203
+    }
+  }
+}

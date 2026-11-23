@@ -1,0 +1,3 @@
+r1  1/32    tyk plain      2000/s    2000 done p50 0.639 p99 32.431 ms cpu/1k tyk 294ms, redis 1ms foreign -0.02 (waited 0s) ok
+r1  2/32   kong transform  1000/s    1000 done p50 1.101 p99 58.652 ms cpu/1k kong 803ms foreign 0.08 (waited 0s) ok
+r1  3/32    tyk auth       2000/s    2000 done p50 19.102 p99 78.493 ms cpu/1k tyk 441ms, redis 2ms foreign 0.08 (waited 0s) FAIL 3 error log lines, first: 2026/11/23 18:38:53 http: TLS handshake error from 127.0.0.1:57179: EOF

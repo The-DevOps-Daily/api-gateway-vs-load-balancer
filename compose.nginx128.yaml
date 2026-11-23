@@ -1,0 +1,12 @@
+# Only for scripts/break-keepalive-1.28.sh: the same broken config on nginx
+# 1.28, the stable line before upstream keepalive became the default (1.29.7).
+services:
+  nginx128-broken:
+    profiles: [break128]
+    ulimits: { nofile: 65536 }
+    image: nginx:1.28.3-alpine
+    network_mode: host
+    cpuset: "1"
+    volumes:
+      - ./nginx/nginx-broken-keepalive.conf:/etc/nginx/nginx.conf:ro
+      - ./certs:/certs:ro

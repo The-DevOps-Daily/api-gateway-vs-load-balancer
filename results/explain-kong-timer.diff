@@ -1,0 +1,5 @@
+208c208
+<   if conf.sync_rate ~= SYNC_RATE_REALTIME and conf.policy == "redis" then
+---
+>   if conf.policy == "local" or (conf.sync_rate ~= SYNC_RATE_REALTIME and conf.policy == "redis") then
+d05cb3512eccb829f4995c3f1d3485f4fc9043f8320a16008af5ab41d1e779ff  kong/patched/handler.lua

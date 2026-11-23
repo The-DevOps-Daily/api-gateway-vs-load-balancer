@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 # The break: nginx with the proxy_set_header inheritance mistake (see
-# nginx/nginx-broken-keepalive.conf). Every response is still correct and
-# verify.py would pass, but the backend sees a new connection per request.
-# The bench records backend_new_conns, which is how this was caught.
+# nginx/nginx-broken-keepalive.conf), on nginx 1.30.7 next to the correct
+# config. The bench records backend_new_conns for every run. On 1.30 the
+# broken config keeps its upstream connections; break-keepalive-1.28.sh shows
+# the same file on 1.28, where it does not.
 set -euo pipefail
 cd "$(dirname "$0")/.."
 docker compose --profile break up -d nginx-broken 2>&1 | tail -1

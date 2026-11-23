@@ -3,8 +3,7 @@
 
 Refuses a file with mixed or missing stamps. Failed runs are listed and left
 out; the table shows how many passed runs each cell rests on. Feature costs
-are the median of paired differences (step minus the step before it), not a
-difference of medians.
+are differences between cell medians, with the widest range the runs allow.
 
 usage: summarize.py results/<name>-<stamp>
 """
@@ -54,30 +53,27 @@ for (system, step, rate), rs in sorted(cells.items(), key=lambda kv: (kv[0][2], 
         "backend_new_conns_max": max(r["backend_new_conns"] for r in rs),
     })
 
-# Per-feature cost: step minus the previous step, same system and rate, pairing
-# the k-th passed run of one with the k-th passed run of the other. Failed runs
-# are refilled in later rounds, so a passed pair is not always from one round.
-by_round = {}
-for key, rs in cells.items():
-    for k, r in enumerate(sorted(rs, key=lambda r: r["round"]), 1):
-        by_round[key + (k,)] = r
+# Per-feature cost: the difference between the medians of two cells (a step and
+# the one below it, same system and rate). Runs are not paired: failed runs are
+# refilled in later rounds, so a step's runs need not share rounds with the
+# step below. The range is the widest the difference could be from the runs:
+# (min of the step - max of the one below) to (max - min).
 deltas = []
 for system in sorted({r["system"] for r in ok}):
     for rate in sorted({r["rate"] for r in ok}):
         for i in range(1, len(STEPS)):
-            prev, cur = STEPS[i - 1], STEPS[i]
-            dc, d50, d99 = [], [], []
-            for rnd in range(1, 1 + max(len(v) for v in cells.values())):
-                a = by_round.get((system, prev, rate, rnd))
-                b = by_round.get((system, cur, rate, rnd))
-                if a and b:
-                    dc.append(total_cpu(b) - total_cpu(a))
-                    d50.append(b["latency_ms"]["p50"] - a["latency_ms"]["p50"])
-                    d99.append(b["latency_ms"]["p99"] - a["latency_ms"]["p99"])
-            if dc:
-                deltas.append({"system": system, "rate": rate, "feature": cur, "pairs": len(dc),
-                               "cpu_ms_per_1k": st.median(dc), "cpu_range": [min(dc), max(dc)],
-                               "p50_ms": st.median(d50), "p99_ms": st.median(d99)})
+            a = cells.get((system, STEPS[i - 1], rate))
+            b = cells.get((system, STEPS[i], rate))
+            if not a or not b:
+                continue
+            ca, cb = [total_cpu(r) for r in a], [total_cpu(r) for r in b]
+            deltas.append({
+                "system": system, "rate": rate, "feature": STEPS[i], "runs": [len(a), len(b)],
+                "cpu_ms_per_1k": st.median(cb) - st.median(ca),
+                "cpu_range": [min(cb) - max(ca), max(cb) - min(ca)],
+                "p50_ms": st.median(r["latency_ms"]["p50"] for r in b) - st.median(r["latency_ms"]["p50"] for r in a),
+                "p99_ms": st.median(r["latency_ms"]["p99"] for r in b) - st.median(r["latency_ms"]["p99"] for r in a),
+            })
 
 out = {"stamp": meta["stamp"], "meta": meta, "rows": rows, "feature_deltas": deltas,
        "failed": [{k: r[k] for k in ("round", "system", "step", "rate", "fail_reasons")} for r in failed]}
@@ -92,10 +88,10 @@ for r in rows:
               f"{r['p99_ms']:.2f} ({r['p99_ms_range'][0]:.2f} to {r['p99_ms_range'][1]:.2f}) | "
               f"{r['cpu_ms_per_1k']:.0f} ({r['cpu_ms_per_1k_range'][0]:.0f} to {r['cpu_ms_per_1k_range'][1]:.0f}) | "
               f"{r['anon_mem_mb']:.0f} | {r['foreign_cpu_max']:.2f} |")
-md += ["", "## What each feature added (median of paired differences)", "",
-       "| rate | system | feature | pairs | CPU ms per 1k (range) | p50 ms | p99 ms |", "|---:|---|---|---:|---|---:|---:|"]
+md += ["", "## What each feature added (difference of cell medians)", "",
+       "| rate | system | feature | runs | CPU ms per 1k (range) | p50 ms | p99 ms |", "|---:|---|---|---|---|---:|---:|"]
 for x in deltas:
-    md.append(f"| {x['rate']} | {x['system']} | +{x['feature']} | {x['pairs']} | {x['cpu_ms_per_1k']:+.0f} "
+    md.append(f"| {x['rate']} | {x['system']} | +{x['feature']} | {x['runs'][0]}+{x['runs'][1]} | {x['cpu_ms_per_1k']:+.0f} "
               f"({x['cpu_range'][0]:+.0f} to {x['cpu_range'][1]:+.0f}) | {x['p50_ms']:+.3f} | {x['p99_ms']:+.2f} |")
 if failed:
     md += ["", "## Failed runs (left out)", ""]

@@ -46,10 +46,11 @@ STAMPED = [
     "scripts/targets.py", "scripts/bench.py", "scripts/verify.py", "scripts/01-tyk-key.sh",
     "compose.explain.yaml", "scripts/explain-kong-timer.sh", "scripts/break-keepalive.sh",
     "compose.tyk2.yaml", "scripts/tyk-two-cores.sh",
+    "compose.nginx128.yaml", "scripts/break-keepalive-1.28.sh",
     "scripts/limit_semantics.py",
 ] + sorted("tyk/apps/" + f for f in os.listdir(os.path.join(ROOT, "tyk/apps")))
 IMAGES = ["gwbench-backend:local", "nginx:1.30.7-alpine", "kong:3.9.5",
-          "tykio/tyk-gateway:v5.16.0", "redis:8.8.4-alpine"]
+          "tykio/tyk-gateway:v5.16.0", "redis:8.8.4-alpine", "nginx:1.28.3-alpine"]
 
 
 def sh(*cmd):
@@ -70,7 +71,7 @@ def stamp():
 
 def container_ids():
     out = {}
-    for svc in ["backend", "nginx", "kong", "redis", "tyk", "nginx-broken", "kong-inline"]:
+    for svc in ["backend", "nginx", "kong", "redis", "tyk", "nginx-broken", "kong-inline", "nginx128-broken"]:
         out[svc] = sh("docker", "ps", "-q", "--no-trunc", "-f", f"name=^gwbench-{svc}-1$")
     return out
 
@@ -291,6 +292,8 @@ def main():
     st, images = stamp()
     out_dir = os.path.join(ROOT, "results", f"{args.name}-{st}")
     raw_dir = os.path.join(ROOT, "results", "raw", f"{args.name}-{st}")
+    if os.path.exists(os.path.join(out_dir, "runs.jsonl")):
+        sys.exit(f"{out_dir} already has runs; use a new --name instead of appending")
     os.makedirs(out_dir, exist_ok=True)
     os.makedirs(raw_dir, exist_ok=True)
     lock = open(os.path.join(out_dir, ".lock"), "w")

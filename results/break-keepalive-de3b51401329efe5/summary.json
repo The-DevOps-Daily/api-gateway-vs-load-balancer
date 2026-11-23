@@ -1,0 +1,286 @@
+{
+  "stamp": "de3b51401329efe5",
+  "meta": {
+    "stamp": "de3b51401329efe5",
+    "images": {
+      "gwbench-backend:local": "sha256:a7efa528ff644c4099daa3aac283eac8a7dc8dfe85a0570b5916afa5218d2cff",
+      "nginx:1.30.7-alpine": "sha256:caf4e1e032a20f9c3c5e28fc7f25ffd768ad8677b4975c54193075997b3a97e3",
+      "kong:3.9.5": "sha256:e9b87ddd0e6087792586e2cbba5ce91eadcbdd3d3673249aa4606f7207408c0d",
+      "tykio/tyk-gateway:v5.16.0": "sha256:7af43f37fcae9bccf050c934e51a2ba710c48b5916290da13ef36fcdee3c60c1",
+      "redis:8.8.4-alpine": "sha256:1273af45b299d2b8b60d0e400d90aa6c2c5b1794f01d6a7ca60ff3ba6e65efb5"
+    },
+    "args": {
+      "rates": "1000,2000",
+      "rounds": 3,
+      "max_rounds": 6,
+      "quiet": 0.15,
+      "max_foreign": 0.3,
+      "max_wait": 3600,
+      "duration": 30,
+      "warmup": 10,
+      "systems": "nginx,nginx-broken",
+      "steps": "tls,auth",
+      "seed": 66,
+      "name": "break-keepalive"
+    },
+    "host": {
+      "nproc": 4,
+      "kernel": "6.8.0-147-generic",
+      "cpu": "DO-Premium-Intel"
+    },
+    "started": "2026-11-23T21:22:41Z"
+  },
+  "rows": [
+    {
+      "system": "nginx",
+      "step": "tls",
+      "rate": 1000,
+      "n": 3,
+      "p50_ms": 0.397158,
+      "p99_ms": 1.210061,
+      "p99_ms_range": [
+        1.07646,
+        2.120885
+      ],
+      "cpu_ms_per_1k": 145.64206666666666,
+      "cpu_ms_per_1k_range": [
+        137.06783333333334,
+        165.32493333333335
+      ],
+      "cpu_by_container": {
+        "nginx": 145.64206666666666
+      },
+      "anon_mem_mb": 5.71484375,
+      "foreign_cpu_max": 0.109,
+      "backend_new_conns_max": 32
+    },
+    {
+      "system": "nginx",
+      "step": "auth",
+      "rate": 1000,
+      "n": 3,
+      "p50_ms": 0.448078,
+      "p99_ms": 1.651009,
+      "p99_ms_range": [
+        1.507285,
+        3.812124
+      ],
+      "cpu_ms_per_1k": 164.45600000000002,
+      "cpu_ms_per_1k_range": [
+        157.44096666666667,
+        168.69136666666665
+      ],
+      "cpu_by_container": {
+        "nginx": 164.45600000000002
+      },
+      "anon_mem_mb": 5.78515625,
+      "foreign_cpu_max": 0.113,
+      "backend_new_conns_max": 32
+    },
+    {
+      "system": "nginx-broken",
+      "step": "tls",
+      "rate": 1000,
+      "n": 3,
+      "p50_ms": 0.420303,
+      "p99_ms": 3.752562,
+      "p99_ms_range": [
+        1.141939,
+        63.09233
+      ],
+      "cpu_ms_per_1k": 162.21140000000003,
+      "cpu_ms_per_1k_range": [
+        137.99623333333332,
+        250.1189
+      ],
+      "cpu_by_container": {
+        "nginx-broken": 162.21140000000003
+      },
+      "anon_mem_mb": 5.69921875,
+      "foreign_cpu_max": 0.048,
+      "backend_new_conns_max": 48
+    },
+    {
+      "system": "nginx-broken",
+      "step": "auth",
+      "rate": 1000,
+      "n": 3,
+      "p50_ms": 0.399133,
+      "p99_ms": 1.098723,
+      "p99_ms_range": [
+        1.070059,
+        1.958137
+      ],
+      "cpu_ms_per_1k": 145.11819999999997,
+      "cpu_ms_per_1k_range": [
+        141.41406666666668,
+        152.79306666666665
+      ],
+      "cpu_by_container": {
+        "nginx-broken": 145.11819999999997
+      },
+      "anon_mem_mb": 5.75390625,
+      "foreign_cpu_max": 0.055,
+      "backend_new_conns_max": 31
+    },
+    {
+      "system": "nginx",
+      "step": "tls",
+      "rate": 2000,
+      "n": 3,
+      "p50_ms": 0.430607,
+      "p99_ms": 3.78168,
+      "p99_ms_range": [
+        1.443154,
+        4.670778
+      ],
+      "cpu_ms_per_1k": 129.15633333333332,
+      "cpu_ms_per_1k_range": [
+        106.78774999999999,
+        135.6789
+      ],
+      "cpu_by_container": {
+        "nginx": 129.15633333333332
+      },
+      "anon_mem_mb": 5.7890625,
+      "foreign_cpu_max": 0.065,
+      "backend_new_conns_max": 63
+    },
+    {
+      "system": "nginx",
+      "step": "auth",
+      "rate": 2000,
+      "n": 3,
+      "p50_ms": 0.354099,
+      "p99_ms": 3.131363,
+      "p99_ms_range": [
+        2.140383,
+        30.535244
+      ],
+      "cpu_ms_per_1k": 110.09796666666666,
+      "cpu_ms_per_1k_range": [
+        109.68521666666668,
+        140.02726712111865
+      ],
+      "cpu_by_container": {
+        "nginx": 110.09796666666666
+      },
+      "anon_mem_mb": 5.69921875,
+      "foreign_cpu_max": 0.042,
+      "backend_new_conns_max": 73
+    },
+    {
+      "system": "nginx-broken",
+      "step": "tls",
+      "rate": 2000,
+      "n": 3,
+      "p50_ms": 0.391622,
+      "p99_ms": 3.09801,
+      "p99_ms_range": [
+        2.397919,
+        4.121635
+      ],
+      "cpu_ms_per_1k": 124.57018333333333,
+      "cpu_ms_per_1k_range": [
+        108.27405,
+        125.58423333333333
+      ],
+      "cpu_by_container": {
+        "nginx-broken": 124.57018333333333
+      },
+      "anon_mem_mb": 5.671875,
+      "foreign_cpu_max": 0.074,
+      "backend_new_conns_max": 80
+    },
+    {
+      "system": "nginx-broken",
+      "step": "auth",
+      "rate": 2000,
+      "n": 3,
+      "p50_ms": 0.359491,
+      "p99_ms": 1.834161,
+      "p99_ms_range": [
+        1.824159,
+        42.238512
+      ],
+      "cpu_ms_per_1k": 107.04306666666666,
+      "cpu_ms_per_1k_range": [
+        105.57733333333334,
+        200.74732912215202
+      ],
+      "cpu_by_container": {
+        "nginx-broken": 107.04306666666666
+      },
+      "anon_mem_mb": 5.6796875,
+      "foreign_cpu_max": 0.037,
+      "backend_new_conns_max": 66
+    }
+  ],
+  "feature_deltas": [
+    {
+      "system": "nginx",
+      "rate": 1000,
+      "feature": "auth",
+      "runs": [
+        3,
+        3
+      ],
+      "cpu_ms_per_1k": 18.813933333333352,
+      "cpu_range": [
+        -7.88396666666668,
+        31.623533333333313
+      ],
+      "p50_ms": 0.050919999999999965,
+      "p99_ms": 0.4409479999999999
+    },
+    {
+      "system": "nginx",
+      "rate": 2000,
+      "feature": "auth",
+      "runs": [
+        3,
+        3
+      ],
+      "cpu_ms_per_1k": -19.058366666666657,
+      "cpu_range": [
+        -25.993683333333323,
+        33.239517121118666
+      ],
+      "p50_ms": -0.07650800000000002,
+      "p99_ms": -0.6503170000000003
+    },
+    {
+      "system": "nginx-broken",
+      "rate": 1000,
+      "feature": "auth",
+      "runs": [
+        3,
+        3
+      ],
+      "cpu_ms_per_1k": -17.093200000000053,
+      "cpu_range": [
+        -108.70483333333331,
+        14.796833333333325
+      ],
+      "p50_ms": -0.021169999999999967,
+      "p99_ms": -2.6538390000000005
+    },
+    {
+      "system": "nginx-broken",
+      "rate": 2000,
+      "feature": "auth",
+      "runs": [
+        3,
+        3
+      ],
+      "cpu_ms_per_1k": -17.52711666666667,
+      "cpu_range": [
+        -20.006899999999987,
+        92.47327912215202
+      ],
+      "p50_ms": -0.03213100000000002,
+      "p99_ms": -1.263849
+    }
+  ],
+  "failed": []
+}

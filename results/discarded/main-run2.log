@@ -1,0 +1,6 @@
+r1  1/32    tyk plain      2000/s    2000 done p50 0.603 p99 24.141 ms cpu/1k tyk 275ms, redis 1ms foreign -0.02 (waited 1075s) ok
+r1  2/32   kong transform  1000/s    1000 done p50 1.100 p99 62.457 ms cpu/1k kong 801ms foreign 0.01 (waited 0s) ok
+r1  3/32    tyk auth       2000/s    1999 done p50 1.089 p99 65.636 ms cpu/1k tyk 390ms, redis 1ms foreign -0.01 (waited 0s) ok
+r1  4/32    tyk ratelimit  2000/s    2000 done p50 1.158 p99 58.174 ms cpu/1k tyk 398ms, redis 1ms foreign 0.07 (waited 0s) FAIL 9 error log lines, first: 2026/11/23 18:34:21 http: TLS handshake error from 127.0.0.1:54235: read tcp 127.0.0.1:28443->127.0.0.1:54235: read: connection reset by peer
+r1  5/32  nginx transform  1000/s    1000 done p50 0.393 p99 1.331 ms cpu/1k nginx 142ms foreign -0.04 (waited 0s) ok
+r1  6/32    tyk plain      1000/s    1000 done p50 0.610 p99 7.278 ms cpu/1k tyk 370ms, redis 3ms foreign 0.05 (waited 0s) ok

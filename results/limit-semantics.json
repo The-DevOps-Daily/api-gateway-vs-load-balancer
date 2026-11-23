@@ -1,0 +1,131 @@
+{
+  "nginx": {
+    "burst_of_50": [
+      {
+        "passed": 2,
+        "refused": 48,
+        "other": 0,
+        "backend_served": 2
+      },
+      {
+        "passed": 2,
+        "refused": 48,
+        "other": 0,
+        "backend_served": 2
+      },
+      {
+        "passed": 1,
+        "refused": 49,
+        "other": 0,
+        "backend_served": 1
+      },
+      {
+        "passed": 1,
+        "refused": 49,
+        "other": 0,
+        "backend_served": 1
+      },
+      {
+        "passed": 1,
+        "refused": 49,
+        "other": 0,
+        "backend_served": 1
+      }
+    ],
+    "steady_25_per_s_for_20s": {
+      "sent": 500,
+      "status_codes": {
+        "200": 167,
+        "429": 333
+      },
+      "passed_per_s": 8.35,
+      "backend_served": 167
+    }
+  },
+  "kong": {
+    "burst_of_50": [
+      {
+        "passed": 10,
+        "refused": 40,
+        "other": 0,
+        "backend_served": 10
+      },
+      {
+        "passed": 12,
+        "refused": 38,
+        "other": 0,
+        "backend_served": 12
+      },
+      {
+        "passed": 13,
+        "refused": 37,
+        "other": 0,
+        "backend_served": 13
+      },
+      {
+        "passed": 13,
+        "refused": 37,
+        "other": 0,
+        "backend_served": 13
+      },
+      {
+        "passed": 11,
+        "refused": 39,
+        "other": 0,
+        "backend_served": 11
+      }
+    ],
+    "steady_25_per_s_for_20s": {
+      "sent": 500,
+      "status_codes": {
+        "200": 207,
+        "429": 293
+      },
+      "passed_per_s": 10.35,
+      "backend_served": 207
+    }
+  },
+  "tyk": {
+    "burst_of_50": [
+      {
+        "passed": 10,
+        "refused": 40,
+        "other": 0,
+        "backend_served": 10
+      },
+      {
+        "passed": 10,
+        "refused": 40,
+        "other": 0,
+        "backend_served": 10
+      },
+      {
+        "passed": 10,
+        "refused": 40,
+        "other": 0,
+        "backend_served": 10
+      },
+      {
+        "passed": 10,
+        "refused": 40,
+        "other": 0,
+        "backend_served": 10
+      },
+      {
+        "passed": 10,
+        "refused": 40,
+        "other": 0,
+        "backend_served": 10
+      }
+    ],
+    "steady_25_per_s_for_20s": {
+      "sent": 500,
+      "status_codes": {
+        "200": 200,
+        "429": 300
+      },
+      "passed_per_s": 10.0,
+      "backend_served": 200
+    }
+  }
+}

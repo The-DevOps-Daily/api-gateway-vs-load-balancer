@@ -29,3 +29,5 @@ fi
 tools/vegeta -version | head -1
 
 docker compose build backend
+docker compose pull -q
+docker pull -q nginx:1.28.3-alpine   # only for scripts/break-keepalive-1.28.sh

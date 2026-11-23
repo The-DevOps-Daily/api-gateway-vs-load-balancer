@@ -89,7 +89,7 @@ def main():
             limited = codes.count(429)
             served = (backend("/__count") or {}).get("rlcheck", 0)
             check(ok + limited == 50, f"{name}/rlcheck: only 200 or 429 in a 50-request burst ({sorted(set(codes))})")
-            check(ok <= 25 and limited >= 25, f"{name}/rlcheck: limit of 10/s refuses most of the burst ({ok} passed, {limited} refused)")
+            check(1 <= ok <= 25 and limited >= 25, f"{name}/rlcheck: limit of 10/s refuses most of the burst ({ok} passed, {limited} refused)")
             check(served == ok, f"{name}/rlcheck: backend served exactly the {ok} passed requests (saw {served})")
 
     print()

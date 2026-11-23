@@ -1,0 +1,1340 @@
+{
+  "stamp": "b57582404be80918",
+  "meta": {
+    "stamp": "b57582404be80918",
+    "images": {
+      "gwbench-backend:local": "sha256:a7efa528ff644c4099daa3aac283eac8a7dc8dfe85a0570b5916afa5218d2cff",
+      "nginx:1.30.7-alpine": "sha256:caf4e1e032a20f9c3c5e28fc7f25ffd768ad8677b4975c54193075997b3a97e3",
+      "kong:3.9.5": "sha256:e9b87ddd0e6087792586e2cbba5ce91eadcbdd3d3673249aa4606f7207408c0d",
+      "tykio/tyk-gateway:v5.16.0": "sha256:7af43f37fcae9bccf050c934e51a2ba710c48b5916290da13ef36fcdee3c60c1",
+      "redis:8.8.4-alpine": "sha256:1273af45b299d2b8b60d0e400d90aa6c2c5b1794f01d6a7ca60ff3ba6e65efb5"
+    },
+    "args": {
+      "rates": "1000,2000",
+      "rounds": 3,
+      "max_rounds": 6,
+      "quiet": 0.15,
+      "max_foreign": 0.3,
+      "max_wait": 3600,
+      "duration": 30,
+      "warmup": 10,
+      "systems": "direct,nginx,kong,tyk",
+      "steps": "",
+      "seed": 66,
+      "name": "main"
+    },
+    "host": {
+      "nproc": 4,
+      "kernel": "6.8.0-147-generic",
+      "cpu": "DO-Premium-Intel"
+    },
+    "started": "2026-11-23T18:40:27Z"
+  },
+  "rows": [
+    {
+      "system": "direct",
+      "step": "plain",
+      "rate": 1000,
+      "n": 3,
+      "p50_ms": 0.25433,
+      "p99_ms": 2.232433,
+      "p99_ms_range": [
+        0.474272,
+        2.246054
+      ],
+      "cpu_ms_per_1k": 155.9697,
+      "cpu_ms_per_1k_range": [
+        124.63813333333334,
+        157.54840000000002
+      ],
+      "cpu_by_container": {
+        "backend": 155.9697
+      },
+      "anon_mem_mb": 6.8671875,
+      "foreign_cpu_max": 0.04,
+      "backend_new_conns_max": 23
+    },
+    {
+      "system": "kong",
+      "step": "plain",
+      "rate": 1000,
+      "n": 3,
+      "p50_ms": 0.434092,
+      "p99_ms": 1.256654,
+      "p99_ms_range": [
+        1.209775,
+        1.562464
+      ],
+      "cpu_ms_per_1k": 216.66283333333334,
+      "cpu_ms_per_1k_range": [
+        205.60596666666666,
+        229.4988666666667
+      ],
+      "cpu_by_container": {
+        "kong": 216.66283333333334
+      },
+      "anon_mem_mb": 171.953125,
+      "foreign_cpu_max": 0.038,
+      "backend_new_conns_max": 6
+    },
+    {
+      "system": "kong",
+      "step": "tls",
+      "rate": 1000,
+      "n": 3,
+      "p50_ms": 0.715096,
+      "p99_ms": 7.843504,
+      "p99_ms_range": [
+        6.165292,
+        11.789899
+      ],
+      "cpu_ms_per_1k": 366.17333333333335,
+      "cpu_ms_per_1k_range": [
+        365.23363333333333,
+        367.0086333333333
+      ],
+      "cpu_by_container": {
+        "kong": 366.17333333333335
+      },
+      "anon_mem_mb": 172.453125,
+      "foreign_cpu_max": 0.17,
+      "backend_new_conns_max": 39
+    },
+    {
+      "system": "kong",
+      "step": "auth",
+      "rate": 1000,
+      "n": 3,
+      "p50_ms": 0.619909,
+      "p99_ms": 2.832714,
+      "p99_ms_range": [
+        2.561885,
+        20.762303
+      ],
+      "cpu_ms_per_1k": 325.3046666666667,
+      "cpu_ms_per_1k_range": [
+        312.44246666666663,
+        344.94893333333334
+      ],
+      "cpu_by_container": {
+        "kong": 325.3046666666667
+      },
+      "anon_mem_mb": 171.71484375,
+      "foreign_cpu_max": 0.073,
+      "backend_new_conns_max": 9
+    },
+    {
+      "system": "kong",
+      "step": "ratelimit",
+      "rate": 1000,
+      "n": 3,
+      "p50_ms": 1.115068,
+      "p99_ms": 21.438588,
+      "p99_ms_range": [
+        14.990255,
+        57.037997
+      ],
+      "cpu_ms_per_1k": 798.0345666666667,
+      "cpu_ms_per_1k_range": [
+        753.8275,
+        808.7271666666667
+      ],
+      "cpu_by_container": {
+        "kong": 798.0345666666667
+      },
+      "anon_mem_mb": 172.25390625,
+      "foreign_cpu_max": 0.255,
+      "backend_new_conns_max": 40
+    },
+    {
+      "system": "kong",
+      "step": "transform",
+      "rate": 1000,
+      "n": 3,
+      "p50_ms": 1.245212,
+      "p99_ms": 47.655883,
+      "p99_ms_range": [
+        34.686955,
+        62.667896
+      ],
+      "cpu_ms_per_1k": 842.4427666666667,
+      "cpu_ms_per_1k_range": [
+        828.1510666666667,
+        862.8646
+      ],
+      "cpu_by_container": {
+        "kong": 842.4427666666667
+      },
+      "anon_mem_mb": 172.3671875,
+      "foreign_cpu_max": 0.114,
+      "backend_new_conns_max": 18
+    },
+    {
+      "system": "nginx",
+      "step": "plain",
+      "rate": 1000,
+      "n": 3,
+      "p50_ms": 0.482338,
+      "p99_ms": 2.451126,
+      "p99_ms_range": [
+        1.183442,
+        4.491027
+      ],
+      "cpu_ms_per_1k": 182.7216666666667,
+      "cpu_ms_per_1k_range": [
+        146.3021,
+        229.1533666666667
+      ],
+      "cpu_by_container": {
+        "nginx": 182.7216666666667
+      },
+      "anon_mem_mb": 5.75390625,
+      "foreign_cpu_max": 0.191,
+      "backend_new_conns_max": 32
+    },
+    {
+      "system": "nginx",
+      "step": "tls",
+      "rate": 1000,
+      "n": 3,
+      "p50_ms": 0.444464,
+      "p99_ms": 2.770476,
+      "p99_ms_range": [
+        1.598961,
+        61.554262
+      ],
+      "cpu_ms_per_1k": 158.50373333333332,
+      "cpu_ms_per_1k_range": [
+        157.56383333333332,
+        202.18786666666665
+      ],
+      "cpu_by_container": {
+        "nginx": 158.50373333333332
+      },
+      "anon_mem_mb": 5.7578125,
+      "foreign_cpu_max": 0.086,
+      "backend_new_conns_max": 30
+    },
+    {
+      "system": "nginx",
+      "step": "auth",
+      "rate": 1000,
+      "n": 3,
+      "p50_ms": 0.430472,
+      "p99_ms": 1.537353,
+      "p99_ms_range": [
+        1.2655,
+        3.384206
+      ],
+      "cpu_ms_per_1k": 157.54483333333334,
+      "cpu_ms_per_1k_range": [
+        144.99756666666664,
+        181.44386666666668
+      ],
+      "cpu_by_container": {
+        "nginx": 157.54483333333334
+      },
+      "anon_mem_mb": 5.80078125,
+      "foreign_cpu_max": 0.021,
+      "backend_new_conns_max": 32
+    },
+    {
+      "system": "nginx",
+      "step": "ratelimit",
+      "rate": 1000,
+      "n": 3,
+      "p50_ms": 0.492753,
+      "p99_ms": 7.409947,
+      "p99_ms_range": [
+        0.988291,
+        13.382267
+      ],
+      "cpu_ms_per_1k": 211.15116666666665,
+      "cpu_ms_per_1k_range": [
+        142.50576666666666,
+        212.83023333333333
+      ],
+      "cpu_by_container": {
+        "nginx": 211.15116666666665
+      },
+      "anon_mem_mb": 5.77734375,
+      "foreign_cpu_max": 0.126,
+      "backend_new_conns_max": 48
+    },
+    {
+      "system": "nginx",
+      "step": "transform",
+      "rate": 1000,
+      "n": 3,
+      "p50_ms": 0.463467,
+      "p99_ms": 2.081342,
+      "p99_ms_range": [
+        1.673957,
+        3.487701
+      ],
+      "cpu_ms_per_1k": 167.85103333333333,
+      "cpu_ms_per_1k_range": [
+        147.8939,
+        179.431
+      ],
+      "cpu_by_container": {
+        "nginx": 167.85103333333333
+      },
+      "anon_mem_mb": 5.8046875,
+      "foreign_cpu_max": 0.086,
+      "backend_new_conns_max": 33
+    },
+    {
+      "system": "tyk",
+      "step": "plain",
+      "rate": 1000,
+      "n": 3,
+      "p50_ms": 0.56199,
+      "p99_ms": 2.620981,
+      "p99_ms_range": [
+        2.413758,
+        7.752077
+      ],
+      "cpu_ms_per_1k": 340.03063333333336,
+      "cpu_ms_per_1k_range": [
+        325.89279999999997,
+        362.1548
+      ],
+      "cpu_by_container": {
+        "tyk": 337.3593333333334,
+        "redis": 2.6713
+      },
+      "anon_mem_mb": 79.3125,
+      "foreign_cpu_max": 0.117,
+      "backend_new_conns_max": 50
+    },
+    {
+      "system": "tyk",
+      "step": "tls",
+      "rate": 1000,
+      "n": 3,
+      "p50_ms": 0.599195,
+      "p99_ms": 5.723075,
+      "p99_ms_range": [
+        3.610422,
+        7.277715
+      ],
+      "cpu_ms_per_1k": 362.80366666666674,
+      "cpu_ms_per_1k_range": [
+        361.63553333333334,
+        374.12969999999996
+      ],
+      "cpu_by_container": {
+        "tyk": 360.08086666666674,
+        "redis": 2.743466666666667
+      },
+      "anon_mem_mb": 85.5078125,
+      "foreign_cpu_max": 0.126,
+      "backend_new_conns_max": 1
+    },
+    {
+      "system": "tyk",
+      "step": "auth",
+      "rate": 1000,
+      "n": 3,
+      "p50_ms": 0.748877,
+      "p99_ms": 42.915389,
+      "p99_ms_range": [
+        11.47244,
+        48.310714
+      ],
+      "cpu_ms_per_1k": 491.80139999999994,
+      "cpu_ms_per_1k_range": [
+        457.05323333333337,
+        521.3049666666666
+      ],
+      "cpu_by_container": {
+        "tyk": 488.9765333333333,
+        "redis": 2.8248666666666664
+      },
+      "anon_mem_mb": 88.25390625,
+      "foreign_cpu_max": 0.055,
+      "backend_new_conns_max": 64
+    },
+    {
+      "system": "tyk",
+      "step": "ratelimit",
+      "rate": 1000,
+      "n": 3,
+      "p50_ms": 0.730863,
+      "p99_ms": 33.53498,
+      "p99_ms_range": [
+        23.869791,
+        50.24531
+      ],
+      "cpu_ms_per_1k": 488.7555666666667,
+      "cpu_ms_per_1k_range": [
+        466.70613333333336,
+        506.1846333333333
+      ],
+      "cpu_by_container": {
+        "tyk": 486.0800333333334,
+        "redis": 2.6755333333333335
+      },
+      "anon_mem_mb": 91.8203125,
+      "foreign_cpu_max": 0.124,
+      "backend_new_conns_max": 71
+    },
+    {
+      "system": "tyk",
+      "step": "transform",
+      "rate": 1000,
+      "n": 3,
+      "p50_ms": 0.804733,
+      "p99_ms": 74.413958,
+      "p99_ms_range": [
+        40.692896,
+        79.985069
+      ],
+      "cpu_ms_per_1k": 545.2814,
+      "cpu_ms_per_1k_range": [
+        533.8885,
+        553.8712333333333
+      ],
+      "cpu_by_container": {
+        "tyk": 542.5083,
+        "redis": 2.7731
+      },
+      "anon_mem_mb": 101.359375,
+      "foreign_cpu_max": 0.019,
+      "backend_new_conns_max": 4
+    },
+    {
+      "system": "direct",
+      "step": "plain",
+      "rate": 2000,
+      "n": 3,
+      "p50_ms": 0.229406,
+      "p99_ms": 0.863303,
+      "p99_ms_range": [
+        0.507652,
+        0.944054
+      ],
+      "cpu_ms_per_1k": 91.33898333333333,
+      "cpu_ms_per_1k_range": [
+        80.64448333333334,
+        95.06351666666666
+      ],
+      "cpu_by_container": {
+        "backend": 91.33898333333333
+      },
+      "anon_mem_mb": 6.40234375,
+      "foreign_cpu_max": 0.078,
+      "backend_new_conns_max": 18
+    },
+    {
+      "system": "kong",
+      "step": "plain",
+      "rate": 2000,
+      "n": 3,
+      "p50_ms": 0.451427,
+      "p99_ms": 2.049909,
+      "p99_ms_range": [
+        1.942789,
+        2.208228
+      ],
+      "cpu_ms_per_1k": 158.2549,
+      "cpu_ms_per_1k_range": [
+        156.58298333333332,
+        165.57805
+      ],
+      "cpu_by_container": {
+        "kong": 158.2549
+      },
+      "anon_mem_mb": 172.0390625,
+      "foreign_cpu_max": 0.012,
+      "backend_new_conns_max": 12
+    },
+    {
+      "system": "kong",
+      "step": "tls",
+      "rate": 2000,
+      "n": 3,
+      "p50_ms": 0.559263,
+      "p99_ms": 3.392597,
+      "p99_ms_range": [
+        2.869932,
+        4.34423
+      ],
+      "cpu_ms_per_1k": 198.5745595759929,
+      "cpu_ms_per_1k_range": [
+        196.74956666666668,
+        210.7116285271421
+      ],
+      "cpu_by_container": {
+        "kong": 198.5745595759929
+      },
+      "anon_mem_mb": 172.23828125,
+      "foreign_cpu_max": 0.04,
+      "backend_new_conns_max": 18
+    },
+    {
+      "system": "kong",
+      "step": "auth",
+      "rate": 2000,
+      "n": 3,
+      "p50_ms": 0.591568,
+      "p99_ms": 8.434902,
+      "p99_ms_range": [
+        3.44322,
+        22.948486
+      ],
+      "cpu_ms_per_1k": 233.0236166666667,
+      "cpu_ms_per_1k_range": [
+        215.84403333333333,
+        237.96034999999998
+      ],
+      "cpu_by_container": {
+        "kong": 233.0236166666667
+      },
+      "anon_mem_mb": 172.3359375,
+      "foreign_cpu_max": 0.021,
+      "backend_new_conns_max": 2
+    },
+    {
+      "system": "kong",
+      "step": "ratelimit",
+      "rate": 2000,
+      "n": 3,
+      "p50_ms": 1.683395,
+      "p99_ms": 47.320508,
+      "p99_ms_range": [
+        44.368156,
+        51.186855
+      ],
+      "cpu_ms_per_1k": 492.2503166666666,
+      "cpu_ms_per_1k_range": [
+        487.74585,
+        492.9504833333333
+      ],
+      "cpu_by_container": {
+        "kong": 492.2503166666666
+      },
+      "anon_mem_mb": 172.1484375,
+      "foreign_cpu_max": 0.217,
+      "backend_new_conns_max": 1
+    },
+    {
+      "system": "kong",
+      "step": "transform",
+      "rate": 2000,
+      "n": 3,
+      "p50_ms": 1.78039,
+      "p99_ms": 52.792811,
+      "p99_ms_range": [
+        48.9873,
+        53.024092
+      ],
+      "cpu_ms_per_1k": 495.3070333333333,
+      "cpu_ms_per_1k_range": [
+        494.74406240104,
+        495.6988616476941
+      ],
+      "cpu_by_container": {
+        "kong": 495.3070333333333
+      },
+      "anon_mem_mb": 172.25,
+      "foreign_cpu_max": 0.132,
+      "backend_new_conns_max": 5
+    },
+    {
+      "system": "nginx",
+      "step": "plain",
+      "rate": 2000,
+      "n": 3,
+      "p50_ms": 0.37098,
+      "p99_ms": 2.069992,
+      "p99_ms_range": [
+        1.466752,
+        3.449235
+      ],
+      "cpu_ms_per_1k": 102.11076851280853,
+      "cpu_ms_per_1k_range": [
+        93.08191666666667,
+        118.81723028717144
+      ],
+      "cpu_by_container": {
+        "nginx": 102.11076851280853
+      },
+      "anon_mem_mb": 5.734375,
+      "foreign_cpu_max": 0.102,
+      "backend_new_conns_max": 67
+    },
+    {
+      "system": "nginx",
+      "step": "tls",
+      "rate": 2000,
+      "n": 3,
+      "p50_ms": 0.39363,
+      "p99_ms": 9.261572,
+      "p99_ms_range": [
+        2.762092,
+        30.796739
+      ],
+      "cpu_ms_per_1k": 123.25141666666667,
+      "cpu_ms_per_1k_range": [
+        118.06491883062769,
+        151.2847547459124
+      ],
+      "cpu_by_container": {
+        "nginx": 123.25141666666667
+      },
+      "anon_mem_mb": 5.69140625,
+      "foreign_cpu_max": 0.068,
+      "backend_new_conns_max": 93
+    },
+    {
+      "system": "nginx",
+      "step": "auth",
+      "rate": 2000,
+      "n": 3,
+      "p50_ms": 0.420596,
+      "p99_ms": 9.912804,
+      "p99_ms_range": [
+        3.368716,
+        44.113777
+      ],
+      "cpu_ms_per_1k": 131.10076666666666,
+      "cpu_ms_per_1k_range": [
+        128.74609999999998,
+        149.12081666666666
+      ],
+      "cpu_by_container": {
+        "nginx": 131.10076666666666
+      },
+      "anon_mem_mb": 5.73828125,
+      "foreign_cpu_max": 0.048,
+      "backend_new_conns_max": 60
+    },
+    {
+      "system": "nginx",
+      "step": "ratelimit",
+      "rate": 2000,
+      "n": 3,
+      "p50_ms": 0.41644,
+      "p99_ms": 2.601419,
+      "p99_ms_range": [
+        2.412952,
+        2.929738
+      ],
+      "cpu_ms_per_1k": 125.51345044834828,
+      "cpu_ms_per_1k_range": [
+        111.87755,
+        126.78751312521875
+      ],
+      "cpu_by_container": {
+        "nginx": 125.51345044834828
+      },
+      "anon_mem_mb": 5.6875,
+      "foreign_cpu_max": 0.156,
+      "backend_new_conns_max": 51
+    },
+    {
+      "system": "nginx",
+      "step": "transform",
+      "rate": 2000,
+      "n": 3,
+      "p50_ms": 0.387048,
+      "p99_ms": 3.025941,
+      "p99_ms_range": [
+        1.576713,
+        7.92784
+      ],
+      "cpu_ms_per_1k": 116.85816430273837,
+      "cpu_ms_per_1k_range": [
+        107.79872997883297,
+        158.13073333333335
+      ],
+      "cpu_by_container": {
+        "nginx": 116.85816430273837
+      },
+      "anon_mem_mb": 5.76171875,
+      "foreign_cpu_max": 0.146,
+      "backend_new_conns_max": 63
+    },
+    {
+      "system": "tyk",
+      "step": "plain",
+      "rate": 2000,
+      "n": 3,
+      "p50_ms": 0.614119,
+      "p99_ms": 41.802128,
+      "p99_ms_range": [
+        36.108722,
+        43.636778
+      ],
+      "cpu_ms_per_1k": 279.27547409188037,
+      "cpu_ms_per_1k_range": [
+        276.2558166666666,
+        291.88191666666665
+      ],
+      "cpu_by_container": {
+        "tyk": 277.894280849359,
+        "redis": 1.3811932425213673
+      },
+      "anon_mem_mb": 90.4140625,
+      "foreign_cpu_max": 0.038,
+      "backend_new_conns_max": 1
+    },
+    {
+      "system": "tyk",
+      "step": "tls",
+      "rate": 2000,
+      "n": 3,
+      "p50_ms": 0.686779,
+      "p99_ms": 45.972153,
+      "p99_ms_range": [
+        33.76902,
+        47.36804
+      ],
+      "cpu_ms_per_1k": 327.7378833333333,
+      "cpu_ms_per_1k_range": [
+        279.70311666666663,
+        345.29036666666667
+      ],
+      "cpu_by_container": {
+        "tyk": 326.06215,
+        "redis": 1.6757333333333333
+      },
+      "anon_mem_mb": 94.3046875,
+      "foreign_cpu_max": 0.043,
+      "backend_new_conns_max": 1
+    },
+    {
+      "system": "tyk",
+      "step": "auth",
+      "rate": 2000,
+      "n": 3,
+      "p50_ms": 7.427069,
+      "p99_ms": 70.282427,
+      "p99_ms_range": [
+        63.829608,
+        74.589832
+      ],
+      "cpu_ms_per_1k": 416.22531666666674,
+      "cpu_ms_per_1k_range": [
+        399.1010501750291,
+        441.3123666666666
+      ],
+      "cpu_by_container": {
+        "tyk": 414.7010333333334,
+        "redis": 1.5242833333333332
+      },
+      "anon_mem_mb": 117.171875,
+      "foreign_cpu_max": 0.095,
+      "backend_new_conns_max": 6
+    },
+    {
+      "system": "tyk",
+      "step": "ratelimit",
+      "rate": 2000,
+      "n": 2,
+      "p50_ms": 17.3587055,
+      "p99_ms": 71.419966,
+      "p99_ms_range": [
+        71.179579,
+        71.660353
+      ],
+      "cpu_ms_per_1k": 438.58438790998656,
+      "cpu_ms_per_1k_range": [
+        435.2613091533065,
+        441.9074666666666
+      ],
+      "cpu_by_container": {
+        "tyk": 437.13107969385237,
+        "redis": 1.4533082161342241
+      },
+      "anon_mem_mb": 117.03125,
+      "foreign_cpu_max": 0.045,
+      "backend_new_conns_max": 1
+    },
+    {
+      "system": "tyk",
+      "step": "transform",
+      "rate": 2000,
+      "n": 3,
+      "p50_ms": 22.128335,
+      "p99_ms": 80.665125,
+      "p99_ms_range": [
+        65.345785,
+        87.666917
+      ],
+      "cpu_ms_per_1k": 481.5797666666667,
+      "cpu_ms_per_1k_range": [
+        425.06661777696286,
+        482.89910000000003
+      ],
+      "cpu_by_container": {
+        "tyk": 479.8432833333334,
+        "redis": 1.6282999999999999
+      },
+      "anon_mem_mb": 113.82421875,
+      "foreign_cpu_max": 0.066,
+      "backend_new_conns_max": 1
+    }
+  ],
+  "feature_deltas": [
+    {
+      "system": "kong",
+      "rate": 1000,
+      "feature": "tls",
+      "runs": [
+        3,
+        3
+      ],
+      "cpu_ms_per_1k": 149.5105,
+      "cpu_range": [
+        135.73476666666664,
+        161.40266666666665
+      ],
+      "p50_ms": 0.281004,
+      "p99_ms": 6.58685
+    },
+    {
+      "system": "kong",
+      "rate": 1000,
+      "feature": "auth",
+      "runs": [
+        3,
+        3
+      ],
+      "cpu_ms_per_1k": -40.86866666666663,
+      "cpu_range": [
+        -54.566166666666675,
+        -20.284699999999987
+      ],
+      "p50_ms": -0.09518699999999991,
+      "p99_ms": -5.01079
+    },
+    {
+      "system": "kong",
+      "rate": 1000,
+      "feature": "ratelimit",
+      "runs": [
+        3,
+        3
+      ],
+      "cpu_ms_per_1k": 472.7299,
+      "cpu_range": [
+        408.87856666666664,
+        496.28470000000004
+      ],
+      "p50_ms": 0.4951589999999999,
+      "p99_ms": 18.605874
+    },
+    {
+      "system": "kong",
+      "rate": 1000,
+      "feature": "transform",
+      "runs": [
+        3,
+        3
+      ],
+      "cpu_ms_per_1k": 44.408199999999965,
+      "cpu_range": [
+        19.423900000000003,
+        109.03710000000001
+      ],
+      "p50_ms": 0.13014400000000004,
+      "p99_ms": 26.217295000000004
+    },
+    {
+      "system": "kong",
+      "rate": 2000,
+      "feature": "tls",
+      "runs": [
+        3,
+        3
+      ],
+      "cpu_ms_per_1k": 40.319659575992915,
+      "cpu_range": [
+        31.17151666666669,
+        54.12864519380878
+      ],
+      "p50_ms": 0.10783599999999993,
+      "p99_ms": 1.3426879999999999
+    },
+    {
+      "system": "kong",
+      "rate": 2000,
+      "feature": "auth",
+      "runs": [
+        3,
+        3
+      ],
+      "cpu_ms_per_1k": 34.44905709067379,
+      "cpu_range": [
+        5.132404806191232,
+        41.210783333333296
+      ],
+      "p50_ms": 0.03230500000000003,
+      "p99_ms": 5.042304999999999
+    },
+    {
+      "system": "kong",
+      "rate": 2000,
+      "feature": "ratelimit",
+      "runs": [
+        3,
+        3
+      ],
+      "cpu_ms_per_1k": 259.22669999999994,
+      "cpu_range": [
+        249.78550000000004,
+        277.10645
+      ],
+      "p50_ms": 1.0918269999999999,
+      "p99_ms": 38.885605999999996
+    },
+    {
+      "system": "kong",
+      "rate": 2000,
+      "feature": "transform",
+      "runs": [
+        3,
+        3
+      ],
+      "cpu_ms_per_1k": 3.0567166666667163,
+      "cpu_range": [
+        1.7935790677067303,
+        7.9530116476940975
+      ],
+      "p50_ms": 0.09699499999999994,
+      "p99_ms": 5.472303000000004
+    },
+    {
+      "system": "nginx",
+      "rate": 1000,
+      "feature": "tls",
+      "runs": [
+        3,
+        3
+      ],
+      "cpu_ms_per_1k": -24.217933333333377,
+      "cpu_range": [
+        -71.58953333333338,
+        55.885766666666655
+      ],
+      "p50_ms": -0.03787399999999996,
+      "p99_ms": 0.31935
+    },
+    {
+      "system": "nginx",
+      "rate": 1000,
+      "feature": "auth",
+      "runs": [
+        3,
+        3
+      ],
+      "cpu_ms_per_1k": -0.9588999999999714,
+      "cpu_range": [
+        -57.19030000000001,
+        23.88003333333336
+      ],
+      "p50_ms": -0.013992000000000004,
+      "p99_ms": -1.233123
+    },
+    {
+      "system": "nginx",
+      "rate": 1000,
+      "feature": "ratelimit",
+      "runs": [
+        3,
+        3
+      ],
+      "cpu_ms_per_1k": 53.60633333333331,
+      "cpu_range": [
+        -38.93810000000002,
+        67.83266666666668
+      ],
+      "p50_ms": 0.062280999999999975,
+      "p99_ms": 5.872593999999999
+    },
+    {
+      "system": "nginx",
+      "rate": 1000,
+      "feature": "transform",
+      "runs": [
+        3,
+        3
+      ],
+      "cpu_ms_per_1k": -43.30013333333332,
+      "cpu_range": [
+        -64.93633333333332,
+        36.92523333333335
+      ],
+      "p50_ms": -0.02928599999999998,
+      "p99_ms": -5.328605
+    },
+    {
+      "system": "nginx",
+      "rate": 2000,
+      "feature": "tls",
+      "runs": [
+        3,
+        3
+      ],
+      "cpu_ms_per_1k": 21.140648153858137,
+      "cpu_range": [
+        -0.752311456543751,
+        58.20283807924574
+      ],
+      "p50_ms": 0.022650000000000003,
+      "p99_ms": 7.191579999999999
+    },
+    {
+      "system": "nginx",
+      "rate": 2000,
+      "feature": "auth",
+      "runs": [
+        3,
+        3
+      ],
+      "cpu_ms_per_1k": 7.849349999999987,
+      "cpu_range": [
+        -22.538654745912424,
+        31.055897836038966
+      ],
+      "p50_ms": 0.026966000000000045,
+      "p99_ms": 0.6512320000000003
+    },
+    {
+      "system": "nginx",
+      "rate": 2000,
+      "feature": "ratelimit",
+      "runs": [
+        3,
+        3
+      ],
+      "cpu_ms_per_1k": -5.587316218318378,
+      "cpu_range": [
+        -37.243266666666656,
+        -1.9585868747812327
+      ],
+      "p50_ms": -0.0041560000000000485,
+      "p99_ms": -7.311385
+    },
+    {
+      "system": "nginx",
+      "rate": 2000,
+      "feature": "transform",
+      "runs": [
+        3,
+        3
+      ],
+      "cpu_ms_per_1k": -8.655286145609907,
+      "cpu_range": [
+        -18.988783146385785,
+        46.253183333333354
+      ],
+      "p50_ms": -0.029391999999999974,
+      "p99_ms": 0.42452200000000007
+    },
+    {
+      "system": "tyk",
+      "rate": 1000,
+      "feature": "tls",
+      "runs": [
+        3,
+        3
+      ],
+      "cpu_ms_per_1k": 22.773033333333387,
+      "cpu_range": [
+        -0.519266666666681,
+        48.23689999999999
+      ],
+      "p50_ms": 0.037205000000000044,
+      "p99_ms": 3.1020939999999997
+    },
+    {
+      "system": "tyk",
+      "rate": 1000,
+      "feature": "auth",
+      "runs": [
+        3,
+        3
+      ],
+      "cpu_ms_per_1k": 128.9977333333332,
+      "cpu_range": [
+        82.92353333333341,
+        159.66943333333325
+      ],
+      "p50_ms": 0.14968199999999998,
+      "p99_ms": 37.192313999999996
+    },
+    {
+      "system": "tyk",
+      "rate": 1000,
+      "feature": "ratelimit",
+      "runs": [
+        3,
+        3
+      ],
+      "cpu_ms_per_1k": -3.045833333333235,
+      "cpu_range": [
+        -54.59883333333323,
+        49.13139999999993
+      ],
+      "p50_ms": -0.018013999999999974,
+      "p99_ms": -9.380409
+    },
+    {
+      "system": "tyk",
+      "rate": 1000,
+      "feature": "transform",
+      "runs": [
+        3,
+        3
+      ],
+      "cpu_ms_per_1k": 56.52583333333325,
+      "cpu_range": [
+        27.703866666666727,
+        87.16509999999994
+      ],
+      "p50_ms": 0.07386999999999999,
+      "p99_ms": 40.878978
+    },
+    {
+      "system": "tyk",
+      "rate": 2000,
+      "feature": "tls",
+      "runs": [
+        3,
+        3
+      ],
+      "cpu_ms_per_1k": 48.46240924145292,
+      "cpu_range": [
+        -12.178800000000024,
+        69.03455000000008
+      ],
+      "p50_ms": 0.07266000000000006,
+      "p99_ms": 4.170024999999995
+    },
+    {
+      "system": "tyk",
+      "rate": 2000,
+      "feature": "auth",
+      "runs": [
+        3,
+        3
+      ],
+      "cpu_ms_per_1k": 88.48743333333346,
+      "cpu_range": [
+        53.810683508362445,
+        161.60924999999997
+      ],
+      "p50_ms": 6.74029,
+      "p99_ms": 24.310274
+    },
+    {
+      "system": "tyk",
+      "rate": 2000,
+      "feature": "ratelimit",
+      "runs": [
+        3,
+        2
+      ],
+      "cpu_ms_per_1k": 22.359071243319818,
+      "cpu_range": [
+        -6.051057513360092,
+        42.80641649163749
+      ],
+      "p50_ms": 9.9316365,
+      "p99_ms": 1.1375390000000039
+    },
+    {
+      "system": "tyk",
+      "rate": 2000,
+      "feature": "transform",
+      "runs": [
+        2,
+        3
+      ],
+      "cpu_ms_per_1k": 42.99537875668017,
+      "cpu_range": [
+        -16.84084888970375,
+        47.63779084669352
+      ],
+      "p50_ms": 4.769629500000001,
+      "p99_ms": 9.245159000000001
+    }
+  ],
+  "failed": [
+    {
+      "round": 1,
+      "system": "tyk",
+      "step": "ratelimit",
+      "rate": 2000,
+      "fail_reasons": [
+        "could not sustain 2000/s: sent 58309 of 60000"
+      ]
+    },
+    {
+      "round": 1,
+      "system": "nginx",
+      "step": "transform",
+      "rate": 2000,
+      "fail_reasons": [
+        "could not sustain 2000/s: sent 55613 of 60000"
+      ]
+    },
+    {
+      "round": 2,
+      "system": "direct",
+      "step": "plain",
+      "rate": 1000,
+      "fail_reasons": [
+        "contended: other processes used 1.47 cores during the run"
+      ]
+    },
+    {
+      "round": 2,
+      "system": "tyk",
+      "step": "transform",
+      "rate": 2000,
+      "fail_reasons": [
+        "contended: other processes used 0.49 cores during the run"
+      ]
+    },
+    {
+      "round": 2,
+      "system": "tyk",
+      "step": "ratelimit",
+      "rate": 2000,
+      "fail_reasons": [
+        "could not sustain 2000/s: sent 59332 of 60000"
+      ]
+    },
+    {
+      "round": 2,
+      "system": "nginx",
+      "step": "tls",
+      "rate": 1000,
+      "fail_reasons": [
+        "contended: other processes used 0.44 cores during the run"
+      ]
+    },
+    {
+      "round": 2,
+      "system": "kong",
+      "step": "plain",
+      "rate": 1000,
+      "fail_reasons": [
+        "contended: other processes used 0.85 cores during the run"
+      ]
+    },
+    {
+      "round": 2,
+      "system": "tyk",
+      "step": "auth",
+      "rate": 1000,
+      "fail_reasons": [
+        "contended: other processes used 0.92 cores during the run"
+      ]
+    },
+    {
+      "round": 2,
+      "system": "tyk",
+      "step": "transform",
+      "rate": 1000,
+      "fail_reasons": [
+        "contended: other processes used 1.43 cores during the run"
+      ]
+    },
+    {
+      "round": 2,
+      "system": "tyk",
+      "step": "auth",
+      "rate": 2000,
+      "fail_reasons": [
+        "contended: other processes used 0.73 cores during the run"
+      ]
+    },
+    {
+      "round": 2,
+      "system": "kong",
+      "step": "ratelimit",
+      "rate": 2000,
+      "fail_reasons": [
+        "contended: other processes used 0.96 cores during the run"
+      ]
+    },
+    {
+      "round": 3,
+      "system": "tyk",
+      "step": "tls",
+      "rate": 1000,
+      "fail_reasons": [
+        "contended: other processes used 0.92 cores during the run"
+      ]
+    },
+    {
+      "round": 3,
+      "system": "nginx",
+      "step": "transform",
+      "rate": 2000,
+      "fail_reasons": [
+        "contended: other processes used 0.49 cores during the run"
+      ]
+    },
+    {
+      "round": 3,
+      "system": "kong",
+      "step": "plain",
+      "rate": 2000,
+      "fail_reasons": [
+        "contended: other processes used 0.30 cores during the run"
+      ]
+    },
+    {
+      "round": 4,
+      "system": "kong",
+      "step": "ratelimit",
+      "rate": 2000,
+      "fail_reasons": [
+        "contended: other processes used 1.13 cores during the run"
+      ]
+    },
+    {
+      "round": 5,
+      "system": "nginx",
+      "step": "transform",
+      "rate": 2000,
+      "fail_reasons": [
+        "contended: other processes used 1.12 cores during the run"
+      ]
+    },
+    {
+      "round": 5,
+      "system": "kong",
+      "step": "ratelimit",
+      "rate": 2000,
+      "fail_reasons": [
+        "contended: other processes used 0.64 cores during the run"
+      ]
+    },
+    {
+      "round": 5,
+      "system": "tyk",
+      "step": "ratelimit",
+      "rate": 2000,
+      "fail_reasons": [
+        "contended: other processes used 0.61 cores during the run"
+      ]
+    },
+    {
+      "round": 6,
+      "system": "tyk",
+      "step": "ratelimit",
+      "rate": 2000,
+      "fail_reasons": [
+        "contended: other processes used 1.22 cores during the run"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "stamp": "eeca50983dd4a08c",
+  "images": {
+    "gwbench-backend:local": "sha256:a7efa528ff644c4099daa3aac283eac8a7dc8dfe85a0570b5916afa5218d2cff",
+    "nginx:1.30.7-alpine": "sha256:caf4e1e032a20f9c3c5e28fc7f25ffd768ad8677b4975c54193075997b3a97e3",
+    "kong:3.9.5": "sha256:e9b87ddd0e6087792586e2cbba5ce91eadcbdd3d3673249aa4606f7207408c0d",
+    "tykio/tyk-gateway:v5.16.0": "sha256:7af43f37fcae9bccf050c934e51a2ba710c48b5916290da13ef36fcdee3c60c1",
+    "redis:8.8.4-alpine": "sha256:1273af45b299d2b8b60d0e400d90aa6c2c5b1794f01d6a7ca60ff3ba6e65efb5"
+  },
+  "args": {
+    "rates": "1000,2000",
+    "rounds": 3,
+    "max_rounds": 6,
+    "quiet": 0.15,
+    "max_foreign": 0.3,
+    "max_wait": 3600,
+    "duration": 30,
+    "warmup": 10,
+    "systems": "direct,nginx,kong,tyk",
+    "steps": "",
+    "seed": 66,
+    "name": "main"
+  },
+  "host": {
+    "nproc": 4,
+    "kernel": "6.8.0-147-generic",
+    "cpu": "DO-Premium-Intel"
+  },
+  "started": "2026-11-23T18:36:56Z"
+}

@@ -38,7 +38,8 @@ SYSTEMS = {
         "rlcheck": "https://127.0.0.1:18443/rlcheck",
     },
     "tyk": {
-        # Tyk keeps keys and rate-limit state in Redis, so Redis is part of its cost.
+        # Tyk keeps keys in Redis (rate-limit counters stay in memory by default),
+        # so Redis is counted as part of its cost.
         "containers": ["tyk", "redis"],
         "steps": {
             "plain": "http://127.0.0.1:28080/plain",
@@ -56,6 +57,14 @@ BREAK_SYSTEMS = {
     # scripts/break-keepalive.sh (compose profile "break")
     "nginx-broken": {
         "containers": ["nginx-broken"],
+        "steps": {
+            "tls": "https://127.0.0.1:8453/plain",
+            "auth": "https://127.0.0.1:8453/auth",
+        },
+    },
+    # scripts/break-keepalive-1.28.sh (compose.nginx128.yaml)
+    "nginx128-broken": {
+        "containers": ["nginx128-broken"],
         "steps": {
             "tls": "https://127.0.0.1:8453/plain",
             "auth": "https://127.0.0.1:8453/auth",
