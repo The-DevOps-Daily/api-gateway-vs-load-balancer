@@ -1,0 +1,12 @@
+         tyk transform  2000 r1 lag p99   22.79 max   58.56 ms | p99  36.95 -> corrected  55.10 ms
+         tyk transform  1000 r1 lag p99    0.63 max   35.87 ms | p99   6.83 -> corrected   7.13 ms
+         tyk plain      2000 r1 lag p99    0.08 max    1.16 ms | p99   2.32 -> corrected   2.34 ms
+         tyk plain      1000 r1 lag p99    0.32 max    5.79 ms | p99   5.47 -> corrected   5.86 ms
+         tyk plain      1000 r2 lag p99    0.07 max    2.58 ms | p99   2.72 -> corrected   2.79 ms
+         tyk transform  1000 r2 lag p99    0.46 max    2.29 ms | p99   4.89 -> corrected   4.95 ms
+         tyk transform  2000 r2 lag p99    0.09 max   58.89 ms | p99  22.04 -> corrected  27.66 ms
+         tyk plain      2000 r2 lag p99    0.04 max   11.78 ms | p99   2.69 -> corrected   2.75 ms
+         tyk plain      2000 r3 lag p99    1.06 max    2.17 ms | p99   2.13 -> corrected   2.68 ms
+         tyk plain      1000 r3 lag p99    0.45 max    3.18 ms | p99   2.72 -> corrected   2.92 ms
+         tyk transform  2000 r3 lag p99   31.78 max   64.33 ms | p99  43.99 -> corrected  65.20 ms
+         tyk transform  1000 r3 lag p99    0.56 max   25.55 ms | p99   6.41 -> corrected   6.60 ms

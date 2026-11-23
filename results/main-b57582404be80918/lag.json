@@ -1,0 +1,1878 @@
+{
+  "runs": [
+    {
+      "round": 1,
+      "system": "tyk",
+      "step": "plain",
+      "rate": 2000,
+      "lag_ms": {
+        "p50": 0.0,
+        "p99": 59.31776,
+        "max": 87.003648
+      },
+      "corrected_ms": {
+        "p50": 0.60382,
+        "p99": 89.244244
+      },
+      "measured_p99_ms": 36.108722
+    },
+    {
+      "round": 1,
+      "system": "kong",
+      "step": "transform",
+      "rate": 1000,
+      "lag_ms": {
+        "p50": 0.0,
+        "p99": 2.35136,
+        "max": 42.675712
+      },
+      "corrected_ms": {
+        "p50": 1.227897,
+        "p99": 65.060583
+      },
+      "measured_p99_ms": 62.667896
+    },
+    {
+      "round": 1,
+      "system": "tyk",
+      "step": "auth",
+      "rate": 2000,
+      "lag_ms": {
+        "p50": 0.0,
+        "p99": 430.753536,
+        "max": 479.737344
+      },
+      "corrected_ms": {
+        "p50": 22.973779,
+        "p99": 463.359508
+      },
+      "measured_p99_ms": 74.589832
+    },
+    {
+      "round": 1,
+      "system": "nginx",
+      "step": "transform",
+      "rate": 1000,
+      "lag_ms": {
+        "p50": 0.00896,
+        "p99": 0.616448,
+        "max": 4.164864
+      },
+      "corrected_ms": {
+        "p50": 0.548865,
+        "p99": 2.45313
+      },
+      "measured_p99_ms": 2.081342
+    },
+    {
+      "round": 1,
+      "system": "tyk",
+      "step": "plain",
+      "rate": 1000,
+      "lag_ms": {
+        "p50": 0.0,
+        "p99": 0.533248,
+        "max": 14.04288
+      },
+      "corrected_ms": {
+        "p50": 0.645244,
+        "p99": 7.803076
+      },
+      "measured_p99_ms": 7.752077
+    },
+    {
+      "round": 1,
+      "system": "kong",
+      "step": "plain",
+      "rate": 1000,
+      "lag_ms": {
+        "p50": 0.044032,
+        "p99": 0.657408,
+        "max": 1.200128
+      },
+      "corrected_ms": {
+        "p50": 0.522342,
+        "p99": 1.459229
+      },
+      "measured_p99_ms": 1.209775
+    },
+    {
+      "round": 1,
+      "system": "direct",
+      "step": "plain",
+      "rate": 2000,
+      "lag_ms": {
+        "p50": 0.0,
+        "p99": 0.036096,
+        "max": 0.179968
+      },
+      "corrected_ms": {
+        "p50": 0.1908,
+        "p99": 0.507834
+      },
+      "measured_p99_ms": 0.507652
+    },
+    {
+      "round": 1,
+      "system": "direct",
+      "step": "plain",
+      "rate": 1000,
+      "lag_ms": {
+        "p50": 0.0,
+        "p99": 0.5056,
+        "max": 6.081024
+      },
+      "corrected_ms": {
+        "p50": 0.266651,
+        "p99": 0.802254
+      },
+      "measured_p99_ms": 0.474272
+    },
+    {
+      "round": 1,
+      "system": "tyk",
+      "step": "tls",
+      "rate": 1000,
+      "lag_ms": {
+        "p50": 0.038144,
+        "p99": 0.601856,
+        "max": 16.767744
+      },
+      "corrected_ms": {
+        "p50": 0.726267,
+        "p99": 7.539394
+      },
+      "measured_p99_ms": 7.277715
+    },
+    {
+      "round": 1,
+      "system": "tyk",
+      "step": "ratelimit",
+      "rate": 1000,
+      "lag_ms": {
+        "p50": 0.0,
+        "p99": 0.506624,
+        "max": 33.864704
+      },
+      "corrected_ms": {
+        "p50": 0.800115,
+        "p99": 36.924486
+      },
+      "measured_p99_ms": 33.53498
+    },
+    {
+      "round": 1,
+      "system": "kong",
+      "step": "ratelimit",
+      "rate": 2000,
+      "lag_ms": {
+        "p50": 0.0,
+        "p99": 32.829184,
+        "max": 59.915008
+      },
+      "corrected_ms": {
+        "p50": 1.152982,
+        "p99": 64.981667
+      },
+      "measured_p99_ms": 44.368156
+    },
+    {
+      "round": 1,
+      "system": "nginx",
+      "step": "auth",
+      "rate": 1000,
+      "lag_ms": {
+        "p50": 0.018176,
+        "p99": 0.614912,
+        "max": 1.498368
+      },
+      "corrected_ms": {
+        "p50": 0.47685,
+        "p99": 1.435172
+      },
+      "measured_p99_ms": 1.2655
+    },
+    {
+      "round": 1,
+      "system": "kong",
+      "step": "ratelimit",
+      "rate": 1000,
+      "lag_ms": {
+        "p50": 0.0,
+        "p99": 67.149312,
+        "max": 159.895552
+      },
+      "corrected_ms": {
+        "p50": 1.186455,
+        "p99": 131.905303
+      },
+      "measured_p99_ms": 57.037997
+    },
+    {
+      "round": 1,
+      "system": "kong",
+      "step": "transform",
+      "rate": 2000,
+      "lag_ms": {
+        "p50": 0.0,
+        "p99": 92.851712,
+        "max": 137.99808
+      },
+      "corrected_ms": {
+        "p50": 2.004793,
+        "p99": 124.872276
+      },
+      "measured_p99_ms": 52.792811
+    },
+    {
+      "round": 1,
+      "system": "nginx",
+      "step": "plain",
+      "rate": 1000,
+      "lag_ms": {
+        "p50": 0.0,
+        "p99": 0.642304,
+        "max": 7.3728
+      },
+      "corrected_ms": {
+        "p50": 0.566068,
+        "p99": 2.829036
+      },
+      "measured_p99_ms": 2.451126
+    },
+    {
+      "round": 1,
+      "system": "tyk",
+      "step": "transform",
+      "rate": 2000,
+      "lag_ms": {
+        "p50": 486.118144,
+        "p99": 1089.04832,
+        "max": 1121.941248
+      },
+      "corrected_ms": {
+        "p50": 516.13136,
+        "p99": 1123.362843
+      },
+      "measured_p99_ms": 80.665125
+    },
+    {
+      "round": 1,
+      "system": "kong",
+      "step": "auth",
+      "rate": 1000,
+      "lag_ms": {
+        "p50": 0.0,
+        "p99": 0.4928,
+        "max": 5.394944
+      },
+      "corrected_ms": {
+        "p50": 0.777582,
+        "p99": 2.765515
+      },
+      "measured_p99_ms": 2.561885
+    },
+    {
+      "round": 1,
+      "system": "tyk",
+      "step": "auth",
+      "rate": 1000,
+      "lag_ms": {
+        "p50": 0.0,
+        "p99": 0.585728,
+        "max": 50.689792
+      },
+      "corrected_ms": {
+        "p50": 0.968601,
+        "p99": 50.693356
+      },
+      "measured_p99_ms": 42.915389
+    },
+    {
+      "round": 1,
+      "system": "nginx",
+      "step": "tls",
+      "rate": 2000,
+      "lag_ms": {
+        "p50": 0.392448,
+        "p99": 1.031936,
+        "max": 33.630464
+      },
+      "corrected_ms": {
+        "p50": 0.822646,
+        "p99": 3.352815
+      },
+      "measured_p99_ms": 2.762092
+    },
+    {
+      "round": 1,
+      "system": "kong",
+      "step": "tls",
+      "rate": 2000,
+      "lag_ms": {
+        "p50": 0.0,
+        "p99": 0.049664,
+        "max": 22.087424
+      },
+      "corrected_ms": {
+        "p50": 0.582517,
+        "p99": 4.609794
+      },
+      "measured_p99_ms": 4.34423
+    },
+    {
+      "round": 1,
+      "system": "nginx",
+      "step": "plain",
+      "rate": 2000,
+      "lag_ms": {
+        "p50": 0.428032,
+        "p99": 1.034752,
+        "max": 2.637056
+      },
+      "corrected_ms": {
+        "p50": 0.803035,
+        "p99": 2.058017
+      },
+      "measured_p99_ms": 1.466752
+    },
+    {
+      "round": 1,
+      "system": "kong",
+      "step": "auth",
+      "rate": 2000,
+      "lag_ms": {
+        "p50": 0.0,
+        "p99": 0.132864,
+        "max": 9.72544
+      },
+      "corrected_ms": {
+        "p50": 0.612625,
+        "p99": 3.476871
+      },
+      "measured_p99_ms": 3.44322
+    },
+    {
+      "round": 1,
+      "system": "nginx",
+      "step": "ratelimit",
+      "rate": 1000,
+      "lag_ms": {
+        "p50": 0.0,
+        "p99": 0.3712,
+        "max": 0.502016
+      },
+      "corrected_ms": {
+        "p50": 0.428503,
+        "p99": 1.110786
+      },
+      "measured_p99_ms": 0.988291
+    },
+    {
+      "round": 1,
+      "system": "tyk",
+      "step": "transform",
+      "rate": 1000,
+      "lag_ms": {
+        "p50": 0.0,
+        "p99": 0.488448,
+        "max": 41.1072
+      },
+      "corrected_ms": {
+        "p50": 0.896161,
+        "p99": 51.146986
+      },
+      "measured_p99_ms": 40.692896
+    },
+    {
+      "round": 1,
+      "system": "kong",
+      "step": "tls",
+      "rate": 1000,
+      "lag_ms": {
+        "p50": 0.0,
+        "p99": 0.759552,
+        "max": 30.652416
+      },
+      "corrected_ms": {
+        "p50": 0.805814,
+        "p99": 8.270426
+      },
+      "measured_p99_ms": 7.843504
+    },
+    {
+      "round": 1,
+      "system": "tyk",
+      "step": "tls",
+      "rate": 2000,
+      "lag_ms": {
+        "p50": 0.0,
+        "p99": 66.22976,
+        "max": 143.211264
+      },
+      "corrected_ms": {
+        "p50": 0.783301,
+        "p99": 98.641467
+      },
+      "measured_p99_ms": 47.36804
+    },
+    {
+      "round": 1,
+      "system": "nginx",
+      "step": "auth",
+      "rate": 2000,
+      "lag_ms": {
+        "p50": 0.0,
+        "p99": 0.061952,
+        "max": 31.976192
+      },
+      "corrected_ms": {
+        "p50": 0.424137,
+        "p99": 14.649193
+      },
+      "measured_p99_ms": 9.912804
+    },
+    {
+      "round": 1,
+      "system": "kong",
+      "step": "plain",
+      "rate": 2000,
+      "lag_ms": {
+        "p50": 0.0,
+        "p99": 0.142592,
+        "max": 2.916864
+      },
+      "corrected_ms": {
+        "p50": 0.464681,
+        "p99": 1.995555
+      },
+      "measured_p99_ms": 1.942789
+    },
+    {
+      "round": 1,
+      "system": "nginx",
+      "step": "ratelimit",
+      "rate": 2000,
+      "lag_ms": {
+        "p50": 0.362752,
+        "p99": 1.001472,
+        "max": 33.717248
+      },
+      "corrected_ms": {
+        "p50": 0.830172,
+        "p99": 2.886025
+      },
+      "measured_p99_ms": 2.412952
+    },
+    {
+      "round": 1,
+      "system": "nginx",
+      "step": "tls",
+      "rate": 1000,
+      "lag_ms": {
+        "p50": 0.02816,
+        "p99": 15.110656,
+        "max": 25.605632
+      },
+      "corrected_ms": {
+        "p50": 0.67275,
+        "p99": 77.880864
+      },
+      "measured_p99_ms": 61.554262
+    },
+    {
+      "round": 2,
+      "system": "nginx",
+      "step": "auth",
+      "rate": 2000,
+      "lag_ms": {
+        "p50": 0.0,
+        "p99": 120.65536,
+        "max": 181.317632
+      },
+      "corrected_ms": {
+        "p50": 0.429247,
+        "p99": 152.351121
+      },
+      "measured_p99_ms": 44.113777
+    },
+    {
+      "round": 2,
+      "system": "nginx",
+      "step": "ratelimit",
+      "rate": 1000,
+      "lag_ms": {
+        "p50": 0.0,
+        "p99": 1.767424,
+        "max": 15.217152
+      },
+      "corrected_ms": {
+        "p50": 0.647465,
+        "p99": 14.878826
+      },
+      "measured_p99_ms": 13.382267
+    },
+    {
+      "round": 2,
+      "system": "tyk",
+      "step": "tls",
+      "rate": 1000,
+      "lag_ms": {
+        "p50": 0.0,
+        "p99": 0.41472,
+        "max": 27.480832
+      },
+      "corrected_ms": {
+        "p50": 0.692736,
+        "p99": 3.752207
+      },
+      "measured_p99_ms": 3.610422
+    },
+    {
+      "round": 2,
+      "system": "kong",
+      "step": "transform",
+      "rate": 1000,
+      "lag_ms": {
+        "p50": 0.0,
+        "p99": 0.82432,
+        "max": 76.121856
+      },
+      "corrected_ms": {
+        "p50": 1.427139,
+        "p99": 36.513944
+      },
+      "measured_p99_ms": 34.686955
+    },
+    {
+      "round": 2,
+      "system": "kong",
+      "step": "auth",
+      "rate": 1000,
+      "lag_ms": {
+        "p50": 0.0,
+        "p99": 0.986624,
+        "max": 117.793536
+      },
+      "corrected_ms": {
+        "p50": 0.647794,
+        "p99": 56.976652
+      },
+      "measured_p99_ms": 20.762303
+    },
+    {
+      "round": 2,
+      "system": "kong",
+      "step": "auth",
+      "rate": 2000,
+      "lag_ms": {
+        "p50": 0.0,
+        "p99": 0.023808,
+        "max": 21.679872
+      },
+      "corrected_ms": {
+        "p50": 0.591709,
+        "p99": 8.484037
+      },
+      "measured_p99_ms": 8.434902
+    },
+    {
+      "round": 2,
+      "system": "nginx",
+      "step": "plain",
+      "rate": 2000,
+      "lag_ms": {
+        "p50": 0.0,
+        "p99": 0.151552,
+        "max": 5.888768
+      },
+      "corrected_ms": {
+        "p50": 0.438555,
+        "p99": 3.694453
+      },
+      "measured_p99_ms": 3.449235
+    },
+    {
+      "round": 2,
+      "system": "nginx",
+      "step": "tls",
+      "rate": 2000,
+      "lag_ms": {
+        "p50": 0.0,
+        "p99": 1.821952,
+        "max": 28.77952
+      },
+      "corrected_ms": {
+        "p50": 0.483327,
+        "p99": 11.31971
+      },
+      "measured_p99_ms": 9.261572
+    },
+    {
+      "round": 2,
+      "system": "tyk",
+      "step": "plain",
+      "rate": 2000,
+      "lag_ms": {
+        "p50": 0.192,
+        "p99": 84.959232,
+        "max": 101.360896
+      },
+      "corrected_ms": {
+        "p50": 0.866759,
+        "p99": 112.734332
+      },
+      "measured_p99_ms": 43.636778
+    },
+    {
+      "round": 2,
+      "system": "kong",
+      "step": "ratelimit",
+      "rate": 1000,
+      "lag_ms": {
+        "p50": 0.0,
+        "p99": 0.479232,
+        "max": 8.111104
+      },
+      "corrected_ms": {
+        "p50": 1.261649,
+        "p99": 15.176928
+      },
+      "measured_p99_ms": 14.990255
+    },
+    {
+      "round": 2,
+      "system": "direct",
+      "step": "plain",
+      "rate": 2000,
+      "lag_ms": {
+        "p50": 0.390912,
+        "p99": 1.006592,
+        "max": 3.090688
+      },
+      "corrected_ms": {
+        "p50": 0.652402,
+        "p99": 1.617956
+      },
+      "measured_p99_ms": 0.944054
+    },
+    {
+      "round": 2,
+      "system": "nginx",
+      "step": "transform",
+      "rate": 2000,
+      "lag_ms": {
+        "p50": 0.295168,
+        "p99": 0.918784,
+        "max": 29.580544
+      },
+      "corrected_ms": {
+        "p50": 0.723563,
+        "p99": 3.561015
+      },
+      "measured_p99_ms": 3.025941
+    },
+    {
+      "round": 2,
+      "system": "tyk",
+      "step": "tls",
+      "rate": 2000,
+      "lag_ms": {
+        "p50": 0.19456,
+        "p99": 10.292736,
+        "max": 69.615104
+      },
+      "corrected_ms": {
+        "p50": 0.863703,
+        "p99": 47.001128
+      },
+      "measured_p99_ms": 33.76902
+    },
+    {
+      "round": 2,
+      "system": "nginx",
+      "step": "plain",
+      "rate": 1000,
+      "lag_ms": {
+        "p50": 0.0,
+        "p99": 0.997888,
+        "max": 7.624192
+      },
+      "corrected_ms": {
+        "p50": 0.681837,
+        "p99": 5.232088
+      },
+      "measured_p99_ms": 4.491027
+    },
+    {
+      "round": 2,
+      "system": "nginx",
+      "step": "ratelimit",
+      "rate": 2000,
+      "lag_ms": {
+        "p50": 0.391936,
+        "p99": 1.004032,
+        "max": 47.52512
+      },
+      "corrected_ms": {
+        "p50": 0.80071,
+        "p99": 3.175556
+      },
+      "measured_p99_ms": 2.601419
+    },
+    {
+      "round": 2,
+      "system": "kong",
+      "step": "tls",
+      "rate": 2000,
+      "lag_ms": {
+        "p50": 0.0,
+        "p99": 0.03712,
+        "max": 22.255872
+      },
+      "corrected_ms": {
+        "p50": 0.559797,
+        "p99": 2.908801
+      },
+      "measured_p99_ms": 2.869932
+    },
+    {
+      "round": 2,
+      "system": "tyk",
+      "step": "ratelimit",
+      "rate": 1000,
+      "lag_ms": {
+        "p50": 0.0,
+        "p99": 13.414656,
+        "max": 64.458496
+      },
+      "corrected_ms": {
+        "p50": 0.838045,
+        "p99": 74.470479
+      },
+      "measured_p99_ms": 50.24531
+    },
+    {
+      "round": 2,
+      "system": "nginx",
+      "step": "transform",
+      "rate": 1000,
+      "lag_ms": {
+        "p50": 0.0,
+        "p99": 0.308224,
+        "max": 1.12128
+      },
+      "corrected_ms": {
+        "p50": 0.434295,
+        "p99": 1.756435
+      },
+      "measured_p99_ms": 1.673957
+    },
+    {
+      "round": 2,
+      "system": "kong",
+      "step": "transform",
+      "rate": 2000,
+      "lag_ms": {
+        "p50": 0.289024,
+        "p99": 55.030528,
+        "max": 89.39776
+      },
+      "corrected_ms": {
+        "p50": 2.011279,
+        "p99": 87.029543
+      },
+      "measured_p99_ms": 48.9873
+    },
+    {
+      "round": 2,
+      "system": "nginx",
+      "step": "auth",
+      "rate": 1000,
+      "lag_ms": {
+        "p50": 0.0,
+        "p99": 0.440832,
+        "max": 6.535168
+      },
+      "corrected_ms": {
+        "p50": 0.542748,
+        "p99": 3.854143
+      },
+      "measured_p99_ms": 3.384206
+    },
+    {
+      "round": 2,
+      "system": "kong",
+      "step": "tls",
+      "rate": 1000,
+      "lag_ms": {
+        "p50": 0.0,
+        "p99": 2.428416,
+        "max": 62.394624
+      },
+      "corrected_ms": {
+        "p50": 0.808475,
+        "p99": 13.238118
+      },
+      "measured_p99_ms": 11.789899
+    },
+    {
+      "round": 2,
+      "system": "tyk",
+      "step": "plain",
+      "rate": 1000,
+      "lag_ms": {
+        "p50": 0.0,
+        "p99": 0.34816,
+        "max": 2.222336
+      },
+      "corrected_ms": {
+        "p50": 0.64251,
+        "p99": 2.781798
+      },
+      "measured_p99_ms": 2.620981
+    },
+    {
+      "round": 2,
+      "system": "kong",
+      "step": "plain",
+      "rate": 2000,
+      "lag_ms": {
+        "p50": 0.0,
+        "p99": 0.062208,
+        "max": 5.354496
+      },
+      "corrected_ms": {
+        "p50": 0.493346,
+        "p99": 2.211672
+      },
+      "measured_p99_ms": 2.208228
+    },
+    {
+      "round": 3,
+      "system": "nginx",
+      "step": "tls",
+      "rate": 1000,
+      "lag_ms": {
+        "p50": 0.0,
+        "p99": 0.54784,
+        "max": 1.960704
+      },
+      "corrected_ms": {
+        "p50": 0.491889,
+        "p99": 1.763298
+      },
+      "measured_p99_ms": 1.598961
+    },
+    {
+      "round": 3,
+      "system": "nginx",
+      "step": "plain",
+      "rate": 2000,
+      "lag_ms": {
+        "p50": 0.0,
+        "p99": 0.052224,
+        "max": 3.821056
+      },
+      "corrected_ms": {
+        "p50": 0.372344,
+        "p99": 2.10084
+      },
+      "measured_p99_ms": 2.069992
+    },
+    {
+      "round": 3,
+      "system": "direct",
+      "step": "plain",
+      "rate": 2000,
+      "lag_ms": {
+        "p50": 0.38528,
+        "p99": 0.988672,
+        "max": 5.33248
+      },
+      "corrected_ms": {
+        "p50": 0.664391,
+        "p99": 1.540528
+      },
+      "measured_p99_ms": 0.863303
+    },
+    {
+      "round": 3,
+      "system": "nginx",
+      "step": "ratelimit",
+      "rate": 1000,
+      "lag_ms": {
+        "p50": 0.038144,
+        "p99": 1.47072,
+        "max": 18.12224
+      },
+      "corrected_ms": {
+        "p50": 0.663512,
+        "p99": 9.31847
+      },
+      "measured_p99_ms": 7.409947
+    },
+    {
+      "round": 3,
+      "system": "tyk",
+      "step": "plain",
+      "rate": 1000,
+      "lag_ms": {
+        "p50": 0.0,
+        "p99": 0.527104,
+        "max": 2.541568
+      },
+      "corrected_ms": {
+        "p50": 0.593721,
+        "p99": 2.665051
+      },
+      "measured_p99_ms": 2.413758
+    },
+    {
+      "round": 3,
+      "system": "tyk",
+      "step": "ratelimit",
+      "rate": 1000,
+      "lag_ms": {
+        "p50": 0.0,
+        "p99": 0.377088,
+        "max": 39.062016
+      },
+      "corrected_ms": {
+        "p50": 0.788414,
+        "p99": 25.468628
+      },
+      "measured_p99_ms": 23.869791
+    },
+    {
+      "round": 3,
+      "system": "kong",
+      "step": "plain",
+      "rate": 1000,
+      "lag_ms": {
+        "p50": 0.0,
+        "p99": 0.593408,
+        "max": 1.723392
+      },
+      "corrected_ms": {
+        "p50": 0.500612,
+        "p99": 1.471506
+      },
+      "measured_p99_ms": 1.256654
+    },
+    {
+      "round": 3,
+      "system": "nginx",
+      "step": "plain",
+      "rate": 1000,
+      "lag_ms": {
+        "p50": 0.05248,
+        "p99": 0.627712,
+        "max": 1.31328
+      },
+      "corrected_ms": {
+        "p50": 0.455977,
+        "p99": 1.407006
+      },
+      "measured_p99_ms": 1.183442
+    },
+    {
+      "round": 3,
+      "system": "kong",
+      "step": "auth",
+      "rate": 2000,
+      "lag_ms": {
+        "p50": 0.0,
+        "p99": 10.233856,
+        "max": 88.592128
+      },
+      "corrected_ms": {
+        "p50": 0.572089,
+        "p99": 42.544307
+      },
+      "measured_p99_ms": 22.948486
+    },
+    {
+      "round": 3,
+      "system": "tyk",
+      "step": "ratelimit",
+      "rate": 2000,
+      "lag_ms": {
+        "p50": 0.406272,
+        "p99": 155.56224,
+        "max": 278.92992
+      },
+      "corrected_ms": {
+        "p50": 16.87235,
+        "p99": 193.020081
+      },
+      "measured_p99_ms": 71.179579
+    },
+    {
+      "round": 3,
+      "system": "nginx",
+      "step": "auth",
+      "rate": 2000,
+      "lag_ms": {
+        "p50": 0.0,
+        "p99": 0.0,
+        "max": 6.282752
+      },
+      "corrected_ms": {
+        "p50": 0.446404,
+        "p99": 3.371821
+      },
+      "measured_p99_ms": 3.368716
+    },
+    {
+      "round": 3,
+      "system": "tyk",
+      "step": "transform",
+      "rate": 1000,
+      "lag_ms": {
+        "p50": 0.03968,
+        "p99": 136.891904,
+        "max": 171.461376
+      },
+      "corrected_ms": {
+        "p50": 1.09065,
+        "p99": 200.914775
+      },
+      "measured_p99_ms": 79.985069
+    },
+    {
+      "round": 3,
+      "system": "kong",
+      "step": "auth",
+      "rate": 1000,
+      "lag_ms": {
+        "p50": 0.0,
+        "p99": 0.423168,
+        "max": 6.33216
+      },
+      "corrected_ms": {
+        "p50": 0.678673,
+        "p99": 3.100414
+      },
+      "measured_p99_ms": 2.832714
+    },
+    {
+      "round": 3,
+      "system": "kong",
+      "step": "transform",
+      "rate": 2000,
+      "lag_ms": {
+        "p50": 0.32256,
+        "p99": 60.352256,
+        "max": 103.008768
+      },
+      "corrected_ms": {
+        "p50": 2.179802,
+        "p99": 92.347903
+      },
+      "measured_p99_ms": 53.024092
+    },
+    {
+      "round": 3,
+      "system": "kong",
+      "step": "tls",
+      "rate": 1000,
+      "lag_ms": {
+        "p50": 0.0,
+        "p99": 0.477696,
+        "max": 11.008768
+      },
+      "corrected_ms": {
+        "p50": 0.803994,
+        "p99": 6.540749
+      },
+      "measured_p99_ms": 6.165292
+    },
+    {
+      "round": 3,
+      "system": "tyk",
+      "step": "tls",
+      "rate": 2000,
+      "lag_ms": {
+        "p50": 0.085248,
+        "p99": 50.740224,
+        "max": 75.368448
+      },
+      "corrected_ms": {
+        "p50": 0.813492,
+        "p99": 77.658614
+      },
+      "measured_p99_ms": 45.972153
+    },
+    {
+      "round": 3,
+      "system": "kong",
+      "step": "ratelimit",
+      "rate": 1000,
+      "lag_ms": {
+        "p50": 0.0,
+        "p99": 0.603392,
+        "max": 73.082112
+      },
+      "corrected_ms": {
+        "p50": 1.234499,
+        "p99": 21.485031
+      },
+      "measured_p99_ms": 21.438588
+    },
+    {
+      "round": 3,
+      "system": "kong",
+      "step": "transform",
+      "rate": 1000,
+      "lag_ms": {
+        "p50": 0.0,
+        "p99": 0.722944,
+        "max": 69.769984
+      },
+      "corrected_ms": {
+        "p50": 1.280384,
+        "p99": 59.803308
+      },
+      "measured_p99_ms": 47.655883
+    },
+    {
+      "round": 3,
+      "system": "nginx",
+      "step": "ratelimit",
+      "rate": 2000,
+      "lag_ms": {
+        "p50": 0.314112,
+        "p99": 0.948224,
+        "max": 59.276288
+      },
+      "corrected_ms": {
+        "p50": 0.769962,
+        "p99": 3.362615
+      },
+      "measured_p99_ms": 2.929738
+    },
+    {
+      "round": 3,
+      "system": "tyk",
+      "step": "auth",
+      "rate": 1000,
+      "lag_ms": {
+        "p50": 0.0,
+        "p99": 0.566272,
+        "max": 8.00128
+      },
+      "corrected_ms": {
+        "p50": 0.908556,
+        "p99": 11.651046
+      },
+      "measured_p99_ms": 11.47244
+    },
+    {
+      "round": 3,
+      "system": "direct",
+      "step": "plain",
+      "rate": 1000,
+      "lag_ms": {
+        "p50": 0.0,
+        "p99": 0.435968,
+        "max": 13.470976
+      },
+      "corrected_ms": {
+        "p50": 0.277949,
+        "p99": 2.9904
+      },
+      "measured_p99_ms": 2.232433
+    },
+    {
+      "round": 3,
+      "system": "nginx",
+      "step": "tls",
+      "rate": 2000,
+      "lag_ms": {
+        "p50": 0.352,
+        "p99": 13.399808,
+        "max": 40.881152
+      },
+      "corrected_ms": {
+        "p50": 0.769901,
+        "p99": 44.732692
+      },
+      "measured_p99_ms": 30.796739
+    },
+    {
+      "round": 3,
+      "system": "tyk",
+      "step": "transform",
+      "rate": 2000,
+      "lag_ms": {
+        "p50": 0.0,
+        "p99": 235.775744,
+        "max": 261.00224
+      },
+      "corrected_ms": {
+        "p50": 9.641259,
+        "p99": 265.284175
+      },
+      "measured_p99_ms": 65.345785
+    },
+    {
+      "round": 3,
+      "system": "kong",
+      "step": "tls",
+      "rate": 2000,
+      "lag_ms": {
+        "p50": 0.141056,
+        "p99": 0.920064,
+        "max": 36.413184
+      },
+      "corrected_ms": {
+        "p50": 0.746776,
+        "p99": 3.726662
+      },
+      "measured_p99_ms": 3.392597
+    },
+    {
+      "round": 3,
+      "system": "nginx",
+      "step": "transform",
+      "rate": 1000,
+      "lag_ms": {
+        "p50": 0.0,
+        "p99": 0.347392,
+        "max": 8.253184
+      },
+      "corrected_ms": {
+        "p50": 0.503333,
+        "p99": 3.815983
+      },
+      "measured_p99_ms": 3.487701
+    },
+    {
+      "round": 3,
+      "system": "kong",
+      "step": "ratelimit",
+      "rate": 2000,
+      "lag_ms": {
+        "p50": 0.241664,
+        "p99": 106.870528,
+        "max": 183.182848
+      },
+      "corrected_ms": {
+        "p50": 2.286345,
+        "p99": 137.909724
+      },
+      "measured_p99_ms": 51.186855
+    },
+    {
+      "round": 3,
+      "system": "tyk",
+      "step": "auth",
+      "rate": 2000,
+      "lag_ms": {
+        "p50": 0.0,
+        "p99": 206.706176,
+        "max": 307.7568
+      },
+      "corrected_ms": {
+        "p50": 1.129955,
+        "p99": 240.431498
+      },
+      "measured_p99_ms": 63.829608
+    },
+    {
+      "round": 3,
+      "system": "tyk",
+      "step": "plain",
+      "rate": 2000,
+      "lag_ms": {
+        "p50": 0.0,
+        "p99": 64.110848,
+        "max": 118.371072
+      },
+      "corrected_ms": {
+        "p50": 0.618103,
+        "p99": 96.823535
+      },
+      "measured_p99_ms": 41.802128
+    },
+    {
+      "round": 3,
+      "system": "nginx",
+      "step": "auth",
+      "rate": 1000,
+      "lag_ms": {
+        "p50": 0.0,
+        "p99": 0.57728,
+        "max": 2.633728
+      },
+      "corrected_ms": {
+        "p50": 0.491316,
+        "p99": 1.823126
+      },
+      "measured_p99_ms": 1.537353
+    },
+    {
+      "round": 4,
+      "system": "kong",
+      "step": "plain",
+      "rate": 1000,
+      "lag_ms": {
+        "p50": 0.0,
+        "p99": 0.587264,
+        "max": 3.211264
+      },
+      "corrected_ms": {
+        "p50": 0.550922,
+        "p99": 1.863839
+      },
+      "measured_p99_ms": 1.562464
+    },
+    {
+      "round": 4,
+      "system": "tyk",
+      "step": "auth",
+      "rate": 1000,
+      "lag_ms": {
+        "p50": 0.041216,
+        "p99": 17.833984,
+        "max": 63.65952
+      },
+      "corrected_ms": {
+        "p50": 0.854878,
+        "p99": 86.97182
+      },
+      "measured_p99_ms": 48.310714
+    },
+    {
+      "round": 4,
+      "system": "nginx",
+      "step": "transform",
+      "rate": 2000,
+      "lag_ms": {
+        "p50": 0.418048,
+        "p99": 1.025536,
+        "max": 31.47264
+      },
+      "corrected_ms": {
+        "p50": 0.797247,
+        "p99": 2.141254
+      },
+      "measured_p99_ms": 1.576713
+    },
+    {
+      "round": 4,
+      "system": "tyk",
+      "step": "transform",
+      "rate": 2000,
+      "lag_ms": {
+        "p50": 1125.812992,
+        "p99": 1747.252224,
+        "max": 1767.666688
+      },
+      "corrected_ms": {
+        "p50": 1158.37047,
+        "p99": 1781.629435
+      },
+      "measured_p99_ms": 87.666917
+    },
+    {
+      "round": 4,
+      "system": "kong",
+      "step": "plain",
+      "rate": 2000,
+      "lag_ms": {
+        "p50": 0.0,
+        "p99": 0.114432,
+        "max": 2.425344
+      },
+      "corrected_ms": {
+        "p50": 0.459214,
+        "p99": 2.074369
+      },
+      "measured_p99_ms": 2.049909
+    },
+    {
+      "round": 4,
+      "system": "tyk",
+      "step": "auth",
+      "rate": 2000,
+      "lag_ms": {
+        "p50": 0.0,
+        "p99": 297.739008,
+        "max": 320.62464
+      },
+      "corrected_ms": {
+        "p50": 7.506173,
+        "p99": 330.363819
+      },
+      "measured_p99_ms": 70.282427
+    },
+    {
+      "round": 4,
+      "system": "tyk",
+      "step": "transform",
+      "rate": 1000,
+      "lag_ms": {
+        "p50": 0.059904,
+        "p99": 130.886912,
+        "max": 187.917568
+      },
+      "corrected_ms": {
+        "p50": 1.012744,
+        "p99": 196.657507
+      },
+      "measured_p99_ms": 74.413958
+    },
+    {
+      "round": 4,
+      "system": "tyk",
+      "step": "ratelimit",
+      "rate": 2000,
+      "lag_ms": {
+        "p50": 0.0,
+        "p99": 244.017664,
+        "max": 267.1936
+      },
+      "corrected_ms": {
+        "p50": 27.50332,
+        "p99": 275.858611
+      },
+      "measured_p99_ms": 71.660353
+    },
+    {
+      "round": 4,
+      "system": "tyk",
+      "step": "tls",
+      "rate": 1000,
+      "lag_ms": {
+        "p50": 0.0,
+        "p99": 0.498688,
+        "max": 13.829632
+      },
+      "corrected_ms": {
+        "p50": 0.688063,
+        "p99": 5.944667
+      },
+      "measured_p99_ms": 5.723075
+    },
+    {
+      "round": 4,
+      "system": "direct",
+      "step": "plain",
+      "rate": 1000,
+      "lag_ms": {
+        "p50": 0.0,
+        "p99": 0.34944,
+        "max": 9.60256
+      },
+      "corrected_ms": {
+        "p50": 0.27207,
+        "p99": 2.896595
+      },
+      "measured_p99_ms": 2.246054
+    },
+    {
+      "round": 4,
+      "system": "nginx",
+      "step": "tls",
+      "rate": 1000,
+      "lag_ms": {
+        "p50": 0.05248,
+        "p99": 0.663808,
+        "max": 7.30112
+      },
+      "corrected_ms": {
+        "p50": 0.546888,
+        "p99": 3.224312
+      },
+      "measured_p99_ms": 2.770476
+    },
+    {
+      "round": 6,
+      "system": "kong",
+      "step": "ratelimit",
+      "rate": 2000,
+      "lag_ms": {
+        "p50": 0.193024,
+        "p99": 99.493888,
+        "max": 167.25376
+      },
+      "corrected_ms": {
+        "p50": 1.963008,
+        "p99": 131.491894
+      },
+      "measured_p99_ms": 47.320508
+    },
+    {
+      "round": 6,
+      "system": "nginx",
+      "step": "transform",
+      "rate": 2000,
+      "lag_ms": {
+        "p50": 0.351744,
+        "p99": 2.0992,
+        "max": 25.65504
+      },
+      "corrected_ms": {
+        "p50": 0.932495,
+        "p99": 9.903365
+      },
+      "measured_p99_ms": 7.92784
+    }
+  ],
+  "cells": [
+    {
+      "system": "direct",
+      "step": "plain",
+      "rate": 1000,
+      "n": 3,
+      "lag_p99_ms": 0.435968,
+      "lag_max_ms": 13.470976,
+      "p99_ms": 2.232433,
+      "corrected_p50_ms": 0.27207,
+      "corrected_p99_ms": 2.896595
+    },
+    {
+      "system": "direct",
+      "step": "plain",
+      "rate": 2000,
+      "n": 3,
+      "lag_p99_ms": 0.988672,
+      "lag_max_ms": 5.33248,
+      "p99_ms": 0.863303,
+      "corrected_p50_ms": 0.652402,
+      "corrected_p99_ms": 1.540528
+    },
+    {
+      "system": "kong",
+      "step": "auth",
+      "rate": 1000,
+      "n": 3,
+      "lag_p99_ms": 0.4928,
+      "lag_max_ms": 117.793536,
+      "p99_ms": 2.832714,
+      "corrected_p50_ms": 0.678673,
+      "corrected_p99_ms": 3.100414
+    },
+    {
+      "system": "kong",
+      "step": "auth",
+      "rate": 2000,
+      "n": 3,
+      "lag_p99_ms": 0.132864,
+      "lag_max_ms": 88.592128,
+      "p99_ms": 8.434902,
+      "corrected_p50_ms": 0.591709,
+      "corrected_p99_ms": 8.484037
+    },
+    {
+      "system": "kong",
+      "step": "plain",
+      "rate": 1000,
+      "n": 3,
+      "lag_p99_ms": 0.593408,
+      "lag_max_ms": 3.211264,
+      "p99_ms": 1.256654,
+      "corrected_p50_ms": 0.522342,
+      "corrected_p99_ms": 1.471506
+    },
+    {
+      "system": "kong",
+      "step": "plain",
+      "rate": 2000,
+      "n": 3,
+      "lag_p99_ms": 0.114432,
+      "lag_max_ms": 5.354496,
+      "p99_ms": 2.049909,
+      "corrected_p50_ms": 0.464681,
+      "corrected_p99_ms": 2.074369
+    },
+    {
+      "system": "kong",
+      "step": "ratelimit",
+      "rate": 1000,
+      "n": 3,
+      "lag_p99_ms": 0.603392,
+      "lag_max_ms": 159.895552,
+      "p99_ms": 21.438588,
+      "corrected_p50_ms": 1.234499,
+      "corrected_p99_ms": 21.485031
+    },
+    {
+      "system": "kong",
+      "step": "ratelimit",
+      "rate": 2000,
+      "n": 3,
+      "lag_p99_ms": 99.493888,
+      "lag_max_ms": 183.182848,
+      "p99_ms": 47.320508,
+      "corrected_p50_ms": 1.963008,
+      "corrected_p99_ms": 131.491894
+    },
+    {
+      "system": "kong",
+      "step": "tls",
+      "rate": 1000,
+      "n": 3,
+      "lag_p99_ms": 0.759552,
+      "lag_max_ms": 62.394624,
+      "p99_ms": 7.843504,
+      "corrected_p50_ms": 0.805814,
+      "corrected_p99_ms": 8.270426
+    },
+    {
+      "system": "kong",
+      "step": "tls",
+      "rate": 2000,
+      "n": 3,
+      "lag_p99_ms": 0.049664,
+      "lag_max_ms": 36.413184,
+      "p99_ms": 3.392597,
+      "corrected_p50_ms": 0.582517,
+      "corrected_p99_ms": 3.726662
+    },
+    {
+      "system": "kong",
+      "step": "transform",
+      "rate": 1000,
+      "n": 3,
+      "lag_p99_ms": 0.82432,
+      "lag_max_ms": 76.121856,
+      "p99_ms": 47.655883,
+      "corrected_p50_ms": 1.280384,
+      "corrected_p99_ms": 59.803308
+    },
+    {
+      "system": "kong",
+      "step": "transform",
+      "rate": 2000,
+      "n": 3,
+      "lag_p99_ms": 60.352256,
+      "lag_max_ms": 137.99808,
+      "p99_ms": 52.792811,
+      "corrected_p50_ms": 2.011279,
+      "corrected_p99_ms": 92.347903
+    },
+    {
+      "system": "nginx",
+      "step": "auth",
+      "rate": 1000,
+      "n": 3,
+      "lag_p99_ms": 0.57728,
+      "lag_max_ms": 6.535168,
+      "p99_ms": 1.537353,
+      "corrected_p50_ms": 0.491316,
+      "corrected_p99_ms": 1.823126
+    },
+    {
+      "system": "nginx",
+      "step": "auth",
+      "rate": 2000,
+      "n": 3,
+      "lag_p99_ms": 0.061952,
+      "lag_max_ms": 181.317632,
+      "p99_ms": 9.912804,
+      "corrected_p50_ms": 0.429247,
+      "corrected_p99_ms": 14.649193
+    },
+    {
+      "system": "nginx",
+      "step": "plain",
+      "rate": 1000,
+      "n": 3,
+      "lag_p99_ms": 0.642304,
+      "lag_max_ms": 7.624192,
+      "p99_ms": 2.451126,
+      "corrected_p50_ms": 0.566068,
+      "corrected_p99_ms": 2.829036
+    },
+    {
+      "system": "nginx",
+      "step": "plain",
+      "rate": 2000,
+      "n": 3,
+      "lag_p99_ms": 0.151552,
+      "lag_max_ms": 5.888768,
+      "p99_ms": 2.069992,
+      "corrected_p50_ms": 0.438555,
+      "corrected_p99_ms": 2.10084
+    },
+    {
+      "system": "nginx",
+      "step": "ratelimit",
+      "rate": 1000,
+      "n": 3,
+      "lag_p99_ms": 1.47072,
+      "lag_max_ms": 18.12224,
+      "p99_ms": 7.409947,
+      "corrected_p50_ms": 0.647465,
+      "corrected_p99_ms": 9.31847
+    },
+    {
+      "system": "nginx",
+      "step": "ratelimit",
+      "rate": 2000,
+      "n": 3,
+      "lag_p99_ms": 1.001472,
+      "lag_max_ms": 59.276288,
+      "p99_ms": 2.601419,
+      "corrected_p50_ms": 0.80071,
+      "corrected_p99_ms": 3.175556
+    },
+    {
+      "system": "nginx",
+      "step": "tls",
+      "rate": 1000,
+      "n": 3,
+      "lag_p99_ms": 0.663808,
+      "lag_max_ms": 25.605632,
+      "p99_ms": 2.770476,
+      "corrected_p50_ms": 0.546888,
+      "corrected_p99_ms": 3.224312
+    },
+    {
+      "system": "nginx",
+      "step": "tls",
+      "rate": 2000,
+      "n": 3,
+      "lag_p99_ms": 1.821952,
+      "lag_max_ms": 40.881152,
+      "p99_ms": 9.261572,
+      "corrected_p50_ms": 0.769901,
+      "corrected_p99_ms": 11.31971
+    },
+    {
+      "system": "nginx",
+      "step": "transform",
+      "rate": 1000,
+      "n": 3,
+      "lag_p99_ms": 0.347392,
+      "lag_max_ms": 8.253184,
+      "p99_ms": 2.081342,
+      "corrected_p50_ms": 0.503333,
+      "corrected_p99_ms": 2.45313
+    },
+    {
+      "system": "nginx",
+      "step": "transform",
+      "rate": 2000,
+      "n": 3,
+      "lag_p99_ms": 1.025536,
+      "lag_max_ms": 31.47264,
+      "p99_ms": 3.025941,
+      "corrected_p50_ms": 0.797247,
+      "corrected_p99_ms": 3.561015
+    },
+    {
+      "system": "tyk",
+      "step": "auth",
+      "rate": 1000,
+      "n": 3,
+      "lag_p99_ms": 0.585728,
+      "lag_max_ms": 63.65952,
+      "p99_ms": 42.915389,
+      "corrected_p50_ms": 0.908556,
+      "corrected_p99_ms": 50.693356
+    },
+    {
+      "system": "tyk",
+      "step": "auth",
+      "rate": 2000,
+      "n": 3,
+      "lag_p99_ms": 297.739008,
+      "lag_max_ms": 479.737344,
+      "p99_ms": 70.282427,
+      "corrected_p50_ms": 7.506173,
+      "corrected_p99_ms": 330.363819
+    },
+    {
+      "system": "tyk",
+      "step": "plain",
+      "rate": 1000,
+      "n": 3,
+      "lag_p99_ms": 0.527104,
+      "lag_max_ms": 14.04288,
+      "p99_ms": 2.620981,
+      "corrected_p50_ms": 0.64251,
+      "corrected_p99_ms": 2.781798
+    },
+    {
+      "system": "tyk",
+      "step": "plain",
+      "rate": 2000,
+      "n": 3,
+      "lag_p99_ms": 64.110848,
+      "lag_max_ms": 118.371072,
+      "p99_ms": 41.802128,
+      "corrected_p50_ms": 0.618103,
+      "corrected_p99_ms": 96.823535
+    },
+    {
+      "system": "tyk",
+      "step": "ratelimit",
+      "rate": 1000,
+      "n": 3,
+      "lag_p99_ms": 0.506624,
+      "lag_max_ms": 64.458496,
+      "p99_ms": 33.53498,
+      "corrected_p50_ms": 0.800115,
+      "corrected_p99_ms": 36.924486
+    },
+    {
+      "system": "tyk",
+      "step": "ratelimit",
+      "rate": 2000,
+      "n": 2,
+      "lag_p99_ms": 199.789952,
+      "lag_max_ms": 278.92992,
+      "p99_ms": 71.419966,
+      "corrected_p50_ms": 22.187835,
+      "corrected_p99_ms": 234.439346
+    },
+    {
+      "system": "tyk",
+      "step": "tls",
+      "rate": 1000,
+      "n": 3,
+      "lag_p99_ms": 0.498688,
+      "lag_max_ms": 27.480832,
+      "p99_ms": 5.723075,
+      "corrected_p50_ms": 0.692736,
+      "corrected_p99_ms": 5.944667
+    },
+    {
+      "system": "tyk",
+      "step": "tls",
+      "rate": 2000,
+      "n": 3,
+      "lag_p99_ms": 50.740224,
+      "lag_max_ms": 143.211264,
+      "p99_ms": 45.972153,
+      "corrected_p50_ms": 0.813492,
+      "corrected_p99_ms": 77.658614
+    },
+    {
+      "system": "tyk",
+      "step": "transform",
+      "rate": 1000,
+      "n": 3,
+      "lag_p99_ms": 130.886912,
+      "lag_max_ms": 187.917568,
+      "p99_ms": 74.413958,
+      "corrected_p50_ms": 1.012744,
+      "corrected_p99_ms": 196.657507
+    },
+    {
+      "system": "tyk",
+      "step": "transform",
+      "rate": 2000,
+      "n": 3,
+      "lag_p99_ms": 1089.04832,
+      "lag_max_ms": 1767.666688,
+      "p99_ms": 80.665125,
+      "corrected_p50_ms": 516.13136,
+      "corrected_p99_ms": 1123.362843
+    }
+  ]
+}

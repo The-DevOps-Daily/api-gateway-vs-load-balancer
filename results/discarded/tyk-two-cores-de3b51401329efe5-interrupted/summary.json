@@ -1,0 +1,133 @@
+{
+  "stamp": "de3b51401329efe5",
+  "meta": {
+    "stamp": "de3b51401329efe5",
+    "images": {
+      "gwbench-backend:local": "sha256:a7efa528ff644c4099daa3aac283eac8a7dc8dfe85a0570b5916afa5218d2cff",
+      "nginx:1.30.7-alpine": "sha256:caf4e1e032a20f9c3c5e28fc7f25ffd768ad8677b4975c54193075997b3a97e3",
+      "kong:3.9.5": "sha256:e9b87ddd0e6087792586e2cbba5ce91eadcbdd3d3673249aa4606f7207408c0d",
+      "tykio/tyk-gateway:v5.16.0": "sha256:7af43f37fcae9bccf050c934e51a2ba710c48b5916290da13ef36fcdee3c60c1",
+      "redis:8.8.4-alpine": "sha256:1273af45b299d2b8b60d0e400d90aa6c2c5b1794f01d6a7ca60ff3ba6e65efb5"
+    },
+    "args": {
+      "rates": "1000,2000",
+      "rounds": 3,
+      "max_rounds": 6,
+      "quiet": 0.15,
+      "max_foreign": 0.3,
+      "max_wait": 3600,
+      "duration": 30,
+      "warmup": 10,
+      "systems": "tyk",
+      "steps": "plain,transform",
+      "seed": 66,
+      "name": "tyk-two-cores"
+    },
+    "host": {
+      "nproc": 4,
+      "kernel": "6.8.0-147-generic",
+      "cpu": "DO-Premium-Intel"
+    },
+    "started": "2026-11-23T22:08:03Z"
+  },
+  "rows": [
+    {
+      "system": "tyk",
+      "step": "plain",
+      "rate": 1000,
+      "n": 2,
+      "p50_ms": 0.80793,
+      "p99_ms": 3.7549755,
+      "p99_ms_range": [
+        3.104672,
+        4.405279
+      ],
+      "cpu_ms_per_1k": 557.3892000000001,
+      "cpu_ms_per_1k_range": [
+        541.3736666666666,
+        573.4047333333334
+      ],
+      "cpu_by_container": {
+        "tyk": 554.4571500000001,
+        "redis": 2.9320500000000003
+      },
+      "anon_mem_mb": 80.90625,
+      "foreign_cpu_max": 0.118,
+      "backend_new_conns_max": 1
+    },
+    {
+      "system": "tyk",
+      "step": "transform",
+      "rate": 1000,
+      "n": 2,
+      "p50_ms": 0.924796,
+      "p99_ms": 6.505795,
+      "p99_ms_range": [
+        4.25577,
+        8.75582
+      ],
+      "cpu_ms_per_1k": 709.0069279737103,
+      "cpu_ms_per_1k_range": [
+        637.6784226140871,
+        780.3354333333334
+      ],
+      "cpu_by_container": {
+        "tyk": 706.1683172705757,
+        "redis": 2.838610703134549
+      },
+      "anon_mem_mb": 83.919921875,
+      "foreign_cpu_max": 0.05,
+      "backend_new_conns_max": 1
+    },
+    {
+      "system": "tyk",
+      "step": "plain",
+      "rate": 2000,
+      "n": 1,
+      "p50_ms": 0.787432,
+      "p99_ms": 31.351479,
+      "p99_ms_range": [
+        31.351479,
+        31.351479
+      ],
+      "cpu_ms_per_1k": 470.65594999999996,
+      "cpu_ms_per_1k_range": [
+        470.65594999999996,
+        470.65594999999996
+      ],
+      "cpu_by_container": {
+        "tyk": 469.0695833333333,
+        "redis": 1.5863666666666667
+      },
+      "anon_mem_mb": 86.9453125,
+      "foreign_cpu_max": 0.135,
+      "backend_new_conns_max": 55
+    },
+    {
+      "system": "tyk",
+      "step": "transform",
+      "rate": 2000,
+      "n": 1,
+      "p50_ms": 0.685483,
+      "p99_ms": 15.223789,
+      "p99_ms_range": [
+        15.223789,
+        15.223789
+      ],
+      "cpu_ms_per_1k": 512.67485,
+      "cpu_ms_per_1k_range": [
+        512.67485,
+        512.67485
+      ],
+      "cpu_by_container": {
+        "tyk": 511.40749999999997,
+        "redis": 1.26735
+      },
+      "anon_mem_mb": 89.9453125,
+      "foreign_cpu_max": 0.003,
+      "backend_new_conns_max": 1
+    }
+  ],
+  "feature_deltas": [],
+  "failed": []
+}

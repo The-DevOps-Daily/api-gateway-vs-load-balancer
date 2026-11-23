@@ -1,0 +1,16 @@
+ Container gwbench-tyk-1 Healthy 
+all checks passed
+r1  1/4    tyk transform  2000/s    2000 done p50 0.941 p99 36.953 ms cpu/1k tyk 598ms, redis 1ms foreign 0.09 (waited 0s) ok
+r1  2/4    tyk transform  1000/s    1000 done p50 0.904 p99 6.828 ms cpu/1k tyk 700ms, redis 3ms foreign 0.04 (waited 0s) ok
+r1  3/4    tyk plain      2000/s    2000 done p50 0.576 p99 2.323 ms cpu/1k tyk 355ms, redis 1ms foreign -0.05 (waited 0s) ok
+r1  4/4    tyk plain      1000/s    1000 done p50 0.857 p99 5.472 ms cpu/1k tyk 592ms, redis 3ms foreign 0.06 (waited 0s) ok
+r2  1/4    tyk plain      1000/s    1000 done p50 0.720 p99 2.724 ms cpu/1k tyk 511ms, redis 3ms foreign 0.06 (waited 0s) ok
+r2  2/4    tyk transform  1000/s    1000 done p50 0.780 p99 4.893 ms cpu/1k tyk 631ms, redis 3ms foreign -0.00 (waited 0s) ok
+r2  3/4    tyk transform  2000/s    2000 done p50 0.705 p99 22.038 ms cpu/1k tyk 522ms, redis 1ms foreign 0.00 (waited 0s) ok
+r2  4/4    tyk plain      2000/s    2000 done p50 0.578 p99 2.692 ms cpu/1k tyk 346ms, redis 1ms foreign -0.10 (waited 0s) ok
+r3  1/4    tyk plain      2000/s    2000 done p50 0.586 p99 2.129 ms cpu/1k tyk 355ms, redis 1ms foreign -0.09 (waited 0s) ok
+r3  2/4    tyk plain      1000/s    1000 done p50 0.815 p99 2.724 ms cpu/1k tyk 554ms, redis 3ms foreign 0.06 (waited 0s) ok
+r3  3/4    tyk transform  2000/s    2000 done p50 1.045 p99 43.987 ms cpu/1k tyk 620ms, redis 1ms foreign 0.07 (waited 0s) ok
+r3  4/4    tyk transform  1000/s    1000 done p50 0.937 p99 6.414 ms cpu/1k tyk 717ms, redis 3ms foreign 0.05 (waited 0s) ok
+ Container gwbench-tyk-1 Healthy 
+TYK2-DONE

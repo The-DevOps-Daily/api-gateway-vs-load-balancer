@@ -1,0 +1,141 @@
+ Container gwbench-kong-1 Healthy 
+all checks passed
+ Container gwbench-kong-inline-1 Started 
+kong bursts passed: [20, 11, 10, 10, 10] | steady: {'200': 210, '429': 290} = 10.50/s passed
+kong-inline bursts passed: [10, 10, 10, 10, 10] | steady: {'200': 203, '429': 297} = 10.15/s passed
+r1  1/8   kong auth       1000/s    1000 done p50 0.593 p99 2.495 ms cpu/1k kong 310ms foreign -0.05 (waited 0s) ok
+r1  2/8 kong-inline ratelimit  1000/s    1000 done p50 0.594 p99 18.604 ms cpu/1k kong-inline 326ms foreign -0.08 (waited 0s) ok
+r1  3/8 kong-inline auth       1000/s    1000 done p50 0.590 p99 2.655 ms cpu/1k kong-inline 308ms foreign 0.03 (waited 0s) ok
+r1  4/8 kong-inline auth       2000/s    2000 done p50 0.588 p99 3.133 ms cpu/1k kong-inline 216ms foreign -0.11 (waited 0s) ok
+r1  5/8 kong-inline ratelimit  2000/s    2000 done p50 0.641 p99 38.856 ms cpu/1k kong-inline 275ms foreign 0.01 (waited 0s) ok
+r1  6/8   kong ratelimit  2000/s    1999 done p50 1.594 p99 66.546 ms cpu/1k kong 480ms foreign -0.04 (waited 0s) ok
+r1  7/8   kong ratelimit  1000/s    1000 done p50 1.081 p99 19.283 ms cpu/1k kong 739ms foreign 0.12 (waited 0s) ok
+r1  8/8   kong auth       2000/s    2000 done p50 0.541 p99 3.070 ms cpu/1k kong 210ms foreign -0.00 (waited 0s) ok
+r2  1/8 kong-inline auth       1000/s    1000 done p50 0.544 p99 2.132 ms cpu/1k kong-inline 287ms foreign -0.00 (waited 0s) ok
+r2  2/8   kong auth       1000/s    1000 done p50 0.591 p99 2.534 ms cpu/1k kong 306ms foreign 0.07 (waited 0s) ok
+r2  3/8   kong ratelimit  1000/s    1000 done p50 1.074 p99 28.754 ms cpu/1k kong 741ms foreign -0.03 (waited 0s) ok
+r2  4/8 kong-inline ratelimit  1000/s    1000 done p50 0.711 p99 3.661 ms cpu/1k kong-inline 376ms foreign -0.09 (waited 0s) ok
+r2  5/8 kong-inline ratelimit  2000/s    2000 done p50 0.679 p99 43.059 ms cpu/1k kong-inline 288ms foreign 0.00 (waited 5s) ok
+r2  6/8   kong ratelimit  2000/s    2000 done p50 1.583 p99 46.785 ms cpu/1k kong 479ms foreign 0.08 (waited 0s) ok
+r2  7/8 kong-inline auth       2000/s    2000 done p50 0.629 p99 4.256 ms cpu/1k kong-inline 237ms foreign 0.04 (waited 0s) ok
+r2  8/8   kong auth       2000/s    2000 done p50 0.610 p99 11.273 ms cpu/1k kong 234ms foreign 0.02 (waited 0s) ok
+r3  1/8   kong auth       1000/s    1000 done p50 0.656 p99 3.483 ms cpu/1k kong 340ms foreign 0.11 (waited 0s) ok
+r3  2/8 kong-inline auth       1000/s    1000 done p50 0.664 p99 4.185 ms cpu/1k kong-inline 339ms foreign 0.12 (waited 0s) ok
+r3  3/8 kong-inline ratelimit  1000/s    1000 done p50 0.582 p99 2.753 ms cpu/1k kong-inline 317ms foreign -0.08 (waited 0s) ok
+r3  4/8   kong ratelimit  2000/s    1989 done p50 1.222 p99 43.920 ms cpu/1k kong 482ms foreign 0.00 (waited 0s) ok
+r3  5/8 kong-inline ratelimit  2000/s    2000 done p50 0.599 p99 15.619 ms cpu/1k kong-inline 243ms foreign -0.07 (waited 0s) ok
+r3  6/8   kong ratelimit  1000/s    1000 done p50 0.992 p99 9.263 ms cpu/1k kong 712ms foreign 0.05 (waited 0s) ok
+r3  7/8 kong-inline auth       2000/s    2000 done p50 0.519 p99 13.332 ms cpu/1k kong-inline 201ms foreign -0.07 (waited 0s) ok
+r3  8/8   kong auth       2000/s    2000 done p50 0.543 p99 3.071 ms cpu/1k kong 210ms foreign -0.10 (waited 0s) ok
+ Container gwbench-kong-inline-1 Stopped 
+ Container gwbench-kong-1 Healthy 
+all checks passed
+ Container gwbench-nginx-broken-1 Started 
+r1  1/8  nginx tls        1000/s    1000 done p50 0.397 p99 1.210 ms cpu/1k nginx 146ms foreign -0.09 (waited 0s) ok
+r1  2/8 nginx-broken auth       1000/s    1000 done p50 0.411 p99 1.958 ms cpu/1k nginx-broken 153ms foreign -0.01 (waited 0s) ok
+r1  3/8 nginx-broken tls        1000/s    1000 done p50 0.420 p99 3.753 ms cpu/1k nginx-broken 162ms foreign -0.02 (waited 0s) ok
+r1  4/8 nginx-broken tls        2000/s    2000 done p50 0.357 p99 2.398 ms cpu/1k nginx-broken 108ms foreign -0.15 (waited 0s) ok
+r1  5/8 nginx-broken auth       2000/s    2000 done p50 0.359 p99 1.824 ms cpu/1k nginx-broken 107ms foreign 0.01 (waited 5s) ok
+r1  6/8  nginx auth       2000/s    2000 done p50 0.444 p99 30.535 ms cpu/1k nginx 140ms foreign 0.04 (waited 0s) ok
+r1  7/8  nginx auth       1000/s    1000 done p50 0.448 p99 1.651 ms cpu/1k nginx 164ms foreign 0.11 (waited 0s) ok
+r1  8/8  nginx tls        2000/s    2000 done p50 0.431 p99 3.782 ms cpu/1k nginx 129ms foreign 0.01 (waited 0s) ok
+r2  1/8 nginx-broken tls        1000/s    1000 done p50 0.522 p99 63.092 ms cpu/1k nginx-broken 250ms foreign 0.05 (waited 0s) ok
+r2  2/8  nginx tls        1000/s    1000 done p50 0.448 p99 2.121 ms cpu/1k nginx 165ms foreign 0.11 (waited 5s) ok
+r2  3/8  nginx auth       1000/s    1000 done p50 0.432 p99 1.507 ms cpu/1k nginx 157ms foreign -0.01 (waited 0s) ok
+r2  4/8 nginx-broken auth       1000/s    1000 done p50 0.399 p99 1.099 ms cpu/1k nginx-broken 145ms foreign -0.05 (waited 0s) ok
+r2  5/8 nginx-broken auth       2000/s    2000 done p50 0.347 p99 1.834 ms cpu/1k nginx-broken 106ms foreign 0.01 (waited 0s) ok
+r2  6/8  nginx auth       2000/s    2000 done p50 0.354 p99 3.131 ms cpu/1k nginx 110ms foreign 0.01 (waited 0s) ok
+r2  7/8 nginx-broken tls        2000/s    2000 done p50 0.392 p99 4.122 ms cpu/1k nginx-broken 125ms foreign 0.06 (waited 5s) ok
+r2  8/8  nginx tls        2000/s    2000 done p50 0.355 p99 1.443 ms cpu/1k nginx 107ms foreign -0.11 (waited 0s) ok
+r3  1/8  nginx tls        1000/s    1000 done p50 0.378 p99 1.076 ms cpu/1k nginx 137ms foreign 0.05 (waited 0s) ok
+r3  2/8 nginx-broken tls        1000/s    1000 done p50 0.386 p99 1.142 ms cpu/1k nginx-broken 138ms foreign -0.01 (waited 0s) ok
+r3  3/8 nginx-broken auth       1000/s    1000 done p50 0.375 p99 1.070 ms cpu/1k nginx-broken 141ms foreign 0.06 (waited 0s) ok
+r3  4/8  nginx auth       2000/s    2000 done p50 0.351 p99 2.140 ms cpu/1k nginx 110ms foreign 0.03 (waited 0s) ok
+r3  5/8 nginx-broken auth       2000/s    2000 done p50 0.398 p99 42.239 ms cpu/1k nginx-broken 201ms foreign 0.04 (waited 0s) ok
+r3  6/8  nginx auth       1000/s    1000 done p50 0.471 p99 3.812 ms cpu/1k nginx 169ms foreign 0.04 (waited 0s) ok
+r3  7/8 nginx-broken tls        2000/s    2000 done p50 0.436 p99 3.098 ms cpu/1k nginx-broken 126ms foreign 0.07 (waited 0s) ok
+r3  8/8  nginx tls        2000/s    2000 done p50 0.456 p99 4.671 ms cpu/1k nginx 136ms foreign 0.07 (waited 0s) ok
+ Container gwbench-nginx-broken-1 Stopped 
+ Container gwbench-kong-1 Healthy 
+all checks passed
+r1  1/16   kong ratelimit     0/s    2936 done p50 18.888 p99 74.219 ms cpu/1k kong 340ms foreign 0.03 (waited 0s) ok
+r1  2/16 direct plain         0/s   18824 done p50 2.104 p99 6.440 ms cpu/1k backend 43ms foreign 0.05 (waited 0s) ok bound: load generator used 0.99 of its core
+r1  3/16    tyk transform     0/s    2252 done p50 21.220 p99 76.554 ms cpu/1k tyk 429ms, redis 1ms foreign 0.05 (waited 0s) ok
+r1  4/16    tyk auth          0/s    2918 done p50 20.148 p99 55.769 ms cpu/1k tyk 337ms, redis 1ms foreign 0.06 (waited 0s) ok
+r1  5/16    tyk plain         0/s    3355 done p50 19.003 p99 54.018 ms cpu/1k tyk 291ms, redis 1ms foreign 0.09 (waited 0s) ok
+r1  6/16    tyk tls           0/s    3976 done p50 12.007 p99 48.378 ms cpu/1k tyk 247ms, redis 1ms foreign 0.01 (waited 0s) ok
+r1  7/16  nginx transform     0/s    6019 done p50 4.749 p99 29.270 ms cpu/1k nginx 159ms foreign 0.06 (waited 0s) ok
+r1  8/16  nginx plain         0/s   18258 done p50 2.481 p99 7.795 ms cpu/1k nginx 45ms foreign 0.09 (waited 0s) ok bound: load generator used 0.96 of its core
+r1  9/16   kong auth          0/s    8428 done p50 6.778 p99 20.153 ms cpu/1k kong 118ms foreign -0.01 (waited 0s) ok
+r1 10/16   kong transform     0/s    3070 done p50 17.357 p99 72.894 ms cpu/1k kong 324ms foreign -0.00 (waited 0s) ok
+r1 11/16    tyk ratelimit     0/s    2915 done p50 20.133 p99 56.900 ms cpu/1k tyk 337ms, redis 1ms foreign 0.01 (waited 0s) ok
+r1 12/16   kong tls           0/s    9707 done p50 5.851 p99 17.378 ms cpu/1k kong 101ms foreign 0.00 (waited 0s) ok
+r1 13/16  nginx auth          0/s    6772 done p50 4.191 p99 27.088 ms cpu/1k nginx 142ms foreign 0.04 (waited 0s) ok bound: load generator used 0.85 of its core
+r1 14/16   kong plain         0/s   11938 done p50 4.506 p99 11.960 ms cpu/1k kong 81ms foreign 0.01 (waited 0s) ok bound: load generator used 0.86 of its core
+r1 15/16  nginx ratelimit     0/s    6138 done p50 4.987 p99 29.664 ms cpu/1k nginx 164ms foreign 0.07 (waited 0s) ok
+r1 16/16  nginx tls           0/s    5324 done p50 4.618 p99 47.876 ms cpu/1k nginx 173ms foreign 0.10 (waited 0s) ok
+r2  1/16    tyk tls           0/s    3702 done p50 16.528 p99 53.153 ms cpu/1k tyk 263ms, redis 1ms foreign 0.04 (waited 0s) ok
+r2  2/16    tyk auth          0/s    2678 done p50 20.480 p99 63.014 ms cpu/1k tyk 366ms, redis 1ms foreign 0.03 (waited 0s) ok
+r2  3/16   kong transform     0/s    3453 done p50 15.562 p99 69.733 ms cpu/1k kong 289ms foreign 0.01 (waited 0s) ok
+r2  4/16  nginx plain         0/s   19008 done p50 2.411 p99 7.365 ms cpu/1k nginx 45ms foreign 0.06 (waited 0s) ok bound: load generator used 0.97 of its core
+r2  5/16  nginx auth          0/s   10405 done p50 2.846 p99 22.214 ms cpu/1k nginx 90ms foreign 0.05 (waited 0s) ok
+r2  6/16   kong ratelimit     0/s    4029 done p50 13.473 p99 60.239 ms cpu/1k kong 247ms foreign 0.02 (waited 0s) ok
+r2  7/16  nginx ratelimit     0/s    7566 done p50 4.395 p99 21.391 ms cpu/1k nginx 127ms foreign 0.07 (waited 0s) ok bound: load generator used 0.86 of its core
+r2  8/16 direct plain         0/s   15722 done p50 2.456 p99 7.502 ms cpu/1k backend 50ms foreign 0.05 (waited 0s) ok bound: load generator used 0.99 of its core
+r2  9/16   kong auth          0/s    6189 done p50 9.243 p99 29.748 ms cpu/1k kong 160ms foreign 0.03 (waited 0s) ok
+r2 10/16   kong tls           0/s    7726 done p50 7.513 p99 22.004 ms cpu/1k kong 127ms foreign 0.03 (waited 0s) ok
+r2 11/16   kong plain         0/s   10736 done p50 4.879 p99 15.404 ms cpu/1k kong 89ms foreign 0.04 (waited 0s) ok
+r2 12/16    tyk transform     0/s    2392 done p50 20.718 p99 72.130 ms cpu/1k tyk 405ms, redis 1ms foreign 0.00 (waited 0s) ok
+r2 13/16    tyk ratelimit     0/s    2986 done p50 20.047 p99 55.838 ms cpu/1k tyk 326ms, redis 1ms foreign -0.01 (waited 0s) ok
+r2 14/16  nginx transform     0/s   10463 done p50 2.699 p99 20.333 ms cpu/1k nginx 90ms foreign 0.04 (waited 0s) ok bound: load generator used 0.85 of its core
+r2 15/16    tyk plain         0/s    5085 done p50 10.256 p99 36.635 ms cpu/1k tyk 192ms, redis 1ms foreign 0.02 (waited 0s) ok
+r2 16/16  nginx tls           0/s    6338 done p50 3.524 p99 27.191 ms cpu/1k nginx 152ms foreign 0.04 (waited 0s) ok
+r3  1/16  nginx ratelimit     0/s    6201 done p50 3.061 p99 25.149 ms cpu/1k nginx 155ms foreign 0.03 (waited 0s) ok
+r3  2/16   kong auth          0/s    5714 done p50 10.118 p99 29.119 ms cpu/1k kong 174ms foreign 0.03 (waited 0s) ok
+r3  3/16   kong transform     0/s    2620 done p50 20.849 p99 83.602 ms cpu/1k kong 380ms foreign 0.03 (waited 0s) ok
+r3  4/16    tyk transform     0/s    2177 done p50 21.456 p99 79.558 ms cpu/1k tyk 449ms, redis 2ms foreign 0.02 (waited 0s) ok
+r3  5/16   kong plain         0/s   10556 done p50 5.323 p99 13.889 ms cpu/1k kong 92ms foreign 0.00 (waited 0s) ok
+r3  6/16  nginx plain         0/s   18267 done p50 2.597 p99 7.528 ms cpu/1k nginx 47ms foreign 0.05 (waited 0s) ok bound: load generator used 0.96 of its core
+r3  7/16  nginx tls           0/s    9882 done p50 4.086 p99 23.324 ms cpu/1k nginx 92ms foreign 0.06 (waited 5s) ok bound: load generator used 0.97 of its core
+r3  8/16    tyk tls           0/s    4809 done p50 10.357 p99 40.534 ms cpu/1k tyk 204ms, redis 1ms foreign -0.01 (waited 0s) ok
+r3  9/16  nginx transform     0/s    5604 done p50 3.818 p99 29.437 ms cpu/1k nginx 171ms foreign 0.04 (waited 0s) ok
+r3 10/16    tyk auth          0/s    3076 done p50 19.798 p99 57.834 ms cpu/1k tyk 320ms, redis 1ms foreign -0.01 (waited 0s) ok
+r3 11/16   kong ratelimit     0/s    2673 done p50 20.483 p99 87.122 ms cpu/1k kong 373ms foreign 0.07 (waited 0s) ok
+r3 12/16   kong tls           0/s    7785 done p50 7.338 p99 22.870 ms cpu/1k kong 126ms foreign 0.01 (waited 0s) ok
+r3 13/16    tyk ratelimit     0/s    2213 done p50 21.372 p99 81.617 ms cpu/1k tyk 434ms, redis 2ms foreign 0.06 (waited 0s) ok
+r3 14/16  nginx auth          0/s    5738 done p50 4.672 p99 34.290 ms cpu/1k nginx 186ms foreign 0.06 (waited 0s) ok
+r3 15/16    tyk plain         0/s    3961 done p50 11.927 p99 47.788 ms cpu/1k tyk 244ms, redis 1ms foreign 0.04 (waited 0s) ok
+r3 16/16 direct plain         0/s   21216 done p50 1.925 p99 6.385 ms cpu/1k backend 39ms foreign 0.03 (waited 0s) ok bound: load generator used 0.98 of its core
+ Container gwbench-redis-1 Healthy 
+all checks passed
+r1  1/4    tyk transform  2000/s    2000 done p50 0.685 p99 15.224 ms cpu/1k tyk 511ms, redis 1ms foreign 0.00 (waited 0s) ok
+r1  2/4    tyk transform  1000/s    1000 done p50 0.791 p99 4.256 ms cpu/1k tyk 635ms, redis 3ms foreign -0.04 (waited 0s) ok
+r1  3/4    tyk plain      2000/s    2000 done p50 0.787 p99 31.351 ms cpu/1k tyk 469ms, redis 2ms foreign 0.14 (waited 0s) ok
+r1  4/4    tyk plain      1000/s    1000 done p50 0.841 p99 4.405 ms cpu/1k tyk 570ms, redis 3ms foreign 0.07 (waited 0s) ok
+r2  1/4    tyk plain      1000/s    1000 done p50 0.775 p99 3.105 ms cpu/1k tyk 538ms, redis 3ms foreign 0.12 (waited 0s) ok
+r2  2/4    tyk transform  1000/s    1000 done p50 1.058 p99 8.756 ms cpu/1k tyk 777ms, redis 3ms foreign 0.05 (waited 0s) ok
+Traceback (most recent call last):
+  File "/srv/work-post-66/scripts/bench.py", line 348, in <module>
+    
+  File "/srv/work-post-66/scripts/bench.py", line 330, in main
+    break
+          
+  File "/srv/work-post-66/scripts/bench.py", line 185, in one_run
+    route = route_of(url)
+                          
+  File "/srv/work-post-66/scripts/bench.py", line 176, in wait_for_quiet
+    time.sleep(5)
+                  
+  File "/srv/work-post-66/scripts/bench.py", line 161, in ours_usec
+    def ours_usec(ids):
+               ^^^^^^^^^
+  File "/srv/work-post-66/scripts/bench.py", line 161, in <genexpr>
+    def ours_usec(ids):
+                   ^^^^^
+  File "/srv/work-post-66/scripts/bench.py", line 84, in cpu_usec
+    def cpu_usec(cid):
+                    ^^^
+  File "/srv/work-post-66/scripts/bench.py", line 79, in cg
+    def cg(cid, f):
+             ^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/sys/fs/cgroup/system.slice/docker-14b76fc828759fdbfa0b7af67f2f71ba879af93d75b5fca12da014aa4ea91218.scope/cpu.stat'

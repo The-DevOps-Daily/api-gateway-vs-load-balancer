@@ -1,0 +1,14 @@
+ Container gwbench-nginx128-broken-1 Started 
+r1  1/4 nginx128-broken auth       2000/s    1996 done p50 0.608 p99 20.677 ms cpu/1k nginx128-broken 213ms foreign 0.03 (waited 0s) ok
+r1  2/4 nginx128-broken auth       1000/s    1000 done p50 0.642 p99 2.114 ms cpu/1k nginx128-broken 262ms foreign -0.10 (waited 0s) ok
+r1  3/4 nginx128-broken tls        2000/s    2000 done p50 0.455 p99 3.143 ms cpu/1k nginx128-broken 131ms foreign 0.01 (waited 0s) ok
+r1  4/4 nginx128-broken tls        1000/s    1000 done p50 0.471 p99 2.383 ms cpu/1k nginx128-broken 167ms foreign -0.06 (waited 0s) ok
+r2  1/4 nginx128-broken tls        1000/s    1000 done p50 0.490 p99 2.549 ms cpu/1k nginx128-broken 169ms foreign -0.01 (waited 0s) ok
+r2  2/4 nginx128-broken auth       1000/s    1000 done p50 0.567 p99 1.876 ms cpu/1k nginx128-broken 244ms foreign -0.09 (waited 0s) ok
+r2  3/4 nginx128-broken auth       2000/s    2000 done p50 0.587 p99 3.107 ms cpu/1k nginx128-broken 205ms foreign 0.06 (waited 0s) ok
+r2  4/4 nginx128-broken tls        2000/s    2000 done p50 0.344 p99 1.449 ms cpu/1k nginx128-broken 103ms foreign 0.01 (waited 0s) ok
+r3  1/4 nginx128-broken tls        2000/s    2000 done p50 0.430 p99 4.243 ms cpu/1k nginx128-broken 127ms foreign 0.07 (waited 0s) ok
+r3  2/4 nginx128-broken tls        1000/s    1000 done p50 0.442 p99 1.333 ms cpu/1k nginx128-broken 156ms foreign -0.08 (waited 0s) ok
+r3  3/4 nginx128-broken auth       2000/s    2000 done p50 0.582 p99 34.590 ms cpu/1k nginx128-broken 223ms foreign -0.09 (waited 0s) ok
+r3  4/4 nginx128-broken auth       1000/s    1000 done p50 0.482 p99 1.592 ms cpu/1k nginx128-broken 220ms foreign 0.06 (waited 0s) ok
+ Container gwbench-nginx128-broken-1 Stopped 

@@ -1,0 +1,603 @@
+{
+  "stamp": "de3b51401329efe5",
+  "meta": {
+    "stamp": "de3b51401329efe5",
+    "images": {
+      "gwbench-backend:local": "sha256:a7efa528ff644c4099daa3aac283eac8a7dc8dfe85a0570b5916afa5218d2cff",
+      "nginx:1.30.7-alpine": "sha256:caf4e1e032a20f9c3c5e28fc7f25ffd768ad8677b4975c54193075997b3a97e3",
+      "kong:3.9.5": "sha256:e9b87ddd0e6087792586e2cbba5ce91eadcbdd3d3673249aa4606f7207408c0d",
+      "tykio/tyk-gateway:v5.16.0": "sha256:7af43f37fcae9bccf050c934e51a2ba710c48b5916290da13ef36fcdee3c60c1",
+      "redis:8.8.4-alpine": "sha256:1273af45b299d2b8b60d0e400d90aa6c2c5b1794f01d6a7ca60ff3ba6e65efb5"
+    },
+    "args": {
+      "rates": "0",
+      "rounds": 3,
+      "max_rounds": 6,
+      "quiet": 0.15,
+      "max_foreign": 0.3,
+      "max_wait": 3600,
+      "duration": 15,
+      "warmup": 5,
+      "systems": "direct,nginx,kong,tyk",
+      "steps": "",
+      "seed": 66,
+      "name": "max"
+    },
+    "host": {
+      "nproc": 4,
+      "kernel": "6.8.0-147-generic",
+      "cpu": "DO-Premium-Intel"
+    },
+    "started": "2026-11-23T21:42:54Z"
+  },
+  "rows": [
+    {
+      "system": "direct",
+      "step": "plain",
+      "rate": 0,
+      "n": 3,
+      "p50_ms": 2.103904,
+      "p99_ms": 6.440352,
+      "p99_ms_range": [
+        6.385145,
+        7.502133
+      ],
+      "cpu_ms_per_1k": 42.97805953498256,
+      "cpu_ms_per_1k_range": [
+        39.20447346589909,
+        50.373484626833395
+      ],
+      "cpu_by_container": {
+        "backend": 42.97805953498256
+      },
+      "anon_mem_mb": 7.62890625,
+      "foreign_cpu_max": 0.05,
+      "backend_new_conns_max": 65
+    },
+    {
+      "system": "kong",
+      "step": "plain",
+      "rate": 0,
+      "n": 3,
+      "p50_ms": 4.878895,
+      "p99_ms": 13.888864,
+      "p99_ms_range": [
+        11.960015,
+        15.404479
+      ],
+      "cpu_ms_per_1k": 89.31398287456457,
+      "cpu_ms_per_1k_range": [
+        80.71042462418193,
+        92.1504623196827
+      ],
+      "cpu_by_container": {
+        "kong": 89.31398287456457
+      },
+      "anon_mem_mb": 174.86328125,
+      "foreign_cpu_max": 0.038,
+      "backend_new_conns_max": 41
+    },
+    {
+      "system": "kong",
+      "step": "tls",
+      "rate": 0,
+      "n": 3,
+      "p50_ms": 7.337607,
+      "p99_ms": 22.004472,
+      "p99_ms_range": [
+        17.37795,
+        22.870148
+      ],
+      "cpu_ms_per_1k": 126.4761986316033,
+      "cpu_ms_per_1k_range": [
+        101.2874527848362,
+        127.30221501238232
+      ],
+      "cpu_by_container": {
+        "kong": 126.4761986316033
+      },
+      "anon_mem_mb": 175.6796875,
+      "foreign_cpu_max": 0.027,
+      "backend_new_conns_max": 6
+    },
+    {
+      "system": "kong",
+      "step": "auth",
+      "rate": 0,
+      "n": 3,
+      "p50_ms": 9.243305,
+      "p99_ms": 29.118856,
+      "p99_ms_range": [
+        20.153342,
+        29.74794
+      ],
+      "cpu_ms_per_1k": 160.42158499671453,
+      "cpu_ms_per_1k_range": [
+        117.59492038884098,
+        173.77781278075304
+      ],
+      "cpu_by_container": {
+        "kong": 160.42158499671453
+      },
+      "anon_mem_mb": 175.1875,
+      "foreign_cpu_max": 0.029,
+      "backend_new_conns_max": 2
+    },
+    {
+      "system": "kong",
+      "step": "ratelimit",
+      "rate": 0,
+      "n": 3,
+      "p50_ms": 18.888167,
+      "p99_ms": 74.219,
+      "p99_ms_range": [
+        60.238524,
+        87.122179
+      ],
+      "cpu_ms_per_1k": 339.6957667151163,
+      "cpu_ms_per_1k_range": [
+        247.23581096733628,
+        373.0180566640064
+      ],
+      "cpu_by_container": {
+        "kong": 339.6957667151163
+      },
+      "anon_mem_mb": 175.109375,
+      "foreign_cpu_max": 0.072,
+      "backend_new_conns_max": 1
+    },
+    {
+      "system": "kong",
+      "step": "transform",
+      "rate": 0,
+      "n": 3,
+      "p50_ms": 17.357269,
+      "p99_ms": 72.893688,
+      "p99_ms_range": [
+        69.732611,
+        83.602086
+      ],
+      "cpu_ms_per_1k": 324.1177850162867,
+      "cpu_ms_per_1k_range": [
+        289.2766976232309,
+        380.328939667676
+      ],
+      "cpu_by_container": {
+        "kong": 324.1177850162867
+      },
+      "anon_mem_mb": 175.22265625,
+      "foreign_cpu_max": 0.033,
+      "backend_new_conns_max": 1
+    },
+    {
+      "system": "nginx",
+      "step": "plain",
+      "rate": 0,
+      "n": 3,
+      "p50_ms": 2.481485,
+      "p99_ms": 7.528376,
+      "p99_ms_range": [
+        7.364982,
+        7.795001
+      ],
+      "cpu_ms_per_1k": 45.36027137656419,
+      "cpu_ms_per_1k_range": [
+        45.16899605436212,
+        46.676548625734945
+      ],
+      "cpu_by_container": {
+        "nginx": 45.36027137656419
+      },
+      "anon_mem_mb": 5.7109375,
+      "foreign_cpu_max": 0.088,
+      "backend_new_conns_max": 286
+    },
+    {
+      "system": "nginx",
+      "step": "tls",
+      "rate": 0,
+      "n": 3,
+      "p50_ms": 4.085815,
+      "p99_ms": 27.190736,
+      "p99_ms_range": [
+        23.323645,
+        47.876244
+      ],
+      "cpu_ms_per_1k": 151.75674538473675,
+      "cpu_ms_per_1k_range": [
+        92.46007096695855,
+        172.50624209564117
+      ],
+      "cpu_by_container": {
+        "nginx": 151.75674538473675
+      },
+      "anon_mem_mb": 5.7265625,
+      "foreign_cpu_max": 0.1,
+      "backend_new_conns_max": 124
+    },
+    {
+      "system": "nginx",
+      "step": "auth",
+      "rate": 0,
+      "n": 3,
+      "p50_ms": 4.190847,
+      "p99_ms": 27.088056,
+      "p99_ms_range": [
+        22.213513,
+        34.289978
+      ],
+      "cpu_ms_per_1k": 142.39335256416567,
+      "cpu_ms_per_1k_range": [
+        89.9452143438343,
+        186.2093533956893
+      ],
+      "cpu_by_container": {
+        "nginx": 142.39335256416567
+      },
+      "anon_mem_mb": 5.7265625,
+      "foreign_cpu_max": 0.056,
+      "backend_new_conns_max": 147
+    },
+    {
+      "system": "nginx",
+      "step": "ratelimit",
+      "rate": 0,
+      "n": 3,
+      "p50_ms": 4.394833,
+      "p99_ms": 25.148927,
+      "p99_ms_range": [
+        21.390732,
+        29.664075
+      ],
+      "cpu_ms_per_1k": 155.19811635182936,
+      "cpu_ms_per_1k_range": [
+        127.18605819219992,
+        164.1183620268289
+      ],
+      "cpu_by_container": {
+        "nginx": 155.19811635182936
+      },
+      "anon_mem_mb": 5.72265625,
+      "foreign_cpu_max": 0.074,
+      "backend_new_conns_max": 98
+    },
+    {
+      "system": "nginx",
+      "step": "transform",
+      "rate": 0,
+      "n": 3,
+      "p50_ms": 3.817831,
+      "p99_ms": 29.269654,
+      "p99_ms_range": [
+        20.332927,
+        29.437041
+      ],
+      "cpu_ms_per_1k": 159.13358660257404,
+      "cpu_ms_per_1k_range": [
+        90.29128675650706,
+        170.5490870159995
+      ],
+      "cpu_by_container": {
+        "nginx": 159.13358660257404
+      },
+      "anon_mem_mb": 5.71875,
+      "foreign_cpu_max": 0.058,
+      "backend_new_conns_max": 157
+    },
+    {
+      "system": "tyk",
+      "step": "plain",
+      "rate": 0,
+      "n": 3,
+      "p50_ms": 11.926687,
+      "p99_ms": 47.788418,
+      "p99_ms_range": [
+        36.634698,
+        54.018051
+      ],
+      "cpu_ms_per_1k": 244.95110497702524,
+      "cpu_ms_per_1k_range": [
+        192.1404486280268,
+        292.1483814557955
+      ],
+      "cpu_by_container": {
+        "tyk": 244.1828556039924,
+        "redis": 0.7682493730328379
+      },
+      "anon_mem_mb": 102.8828125,
+      "foreign_cpu_max": 0.088,
+      "backend_new_conns_max": 1
+    },
+    {
+      "system": "tyk",
+      "step": "tls",
+      "rate": 0,
+      "n": 3,
+      "p50_ms": 12.00748,
+      "p99_ms": 48.378117,
+      "p99_ms_range": [
+        40.534431,
+        53.153158
+      ],
+      "cpu_ms_per_1k": 247.57407034838883,
+      "cpu_ms_per_1k_range": [
+        204.4540161366346,
+        264.1464025213868
+      ],
+      "cpu_by_container": {
+        "tyk": 246.80028836803808,
+        "redis": 0.773781980350736
+      },
+      "anon_mem_mb": 99.8125,
+      "foreign_cpu_max": 0.039,
+      "backend_new_conns_max": 1
+    },
+    {
+      "system": "tyk",
+      "step": "auth",
+      "rate": 0,
+      "n": 3,
+      "p50_ms": 20.147686,
+      "p99_ms": 57.834071,
+      "p99_ms_range": [
+        55.769302,
+        63.013685
+      ],
+      "cpu_ms_per_1k": 338.28816231407217,
+      "cpu_ms_per_1k_range": [
+        320.7975418897536,
+        367.5770647682581
+      ],
+      "cpu_by_container": {
+        "tyk": 337.1948271528777,
+        "redis": 1.093335161194507
+      },
+      "anon_mem_mb": 116.875,
+      "foreign_cpu_max": 0.062,
+      "backend_new_conns_max": 4
+    },
+    {
+      "system": "tyk",
+      "step": "ratelimit",
+      "rate": 0,
+      "n": 3,
+      "p50_ms": 20.133066,
+      "p99_ms": 56.900183,
+      "p99_ms_range": [
+        55.838451,
+        81.616682
+      ],
+      "cpu_ms_per_1k": 338.5168762863023,
+      "cpu_ms_per_1k_range": [
+        326.8076141565257,
+        435.8487212699942
+      ],
+      "cpu_by_container": {
+        "tyk": 337.4989938257489,
+        "redis": 1.0178824605533958
+      },
+      "anon_mem_mb": 115.28125,
+      "foreign_cpu_max": 0.058,
+      "backend_new_conns_max": 1
+    },
+    {
+      "system": "tyk",
+      "step": "transform",
+      "rate": 0,
+      "n": 3,
+      "p50_ms": 21.220075,
+      "p99_ms": 76.554488,
+      "p99_ms_range": [
+        72.129528,
+        79.55774
+      ],
+      "cpu_ms_per_1k": 430.2036998668048,
+      "cpu_ms_per_1k_range": [
+        406.5401526972804,
+        450.28840912570814
+      ],
+      "cpu_by_container": {
+        "tyk": 428.7128015391446,
+        "redis": 1.4908983276602044
+      },
+      "anon_mem_mb": 117.96484375,
+      "foreign_cpu_max": 0.047,
+      "backend_new_conns_max": 1
+    }
+  ],
+  "feature_deltas": [
+    {
+      "system": "kong",
+      "rate": 0,
+      "feature": "tls",
+      "runs": [
+        3,
+        3
+      ],
+      "cpu_ms_per_1k": 37.16221575703872,
+      "cpu_range": [
+        9.136990465153502,
+        46.591790388200394
+      ],
+      "p50_ms": 2.4587120000000002,
+      "p99_ms": 8.115608
+    },
+    {
+      "system": "kong",
+      "rate": 0,
+      "feature": "auth",
+      "runs": [
+        3,
+        3
+      ],
+      "cpu_ms_per_1k": 33.94538636511123,
+      "cpu_range": [
+        -9.707294623541344,
+        72.49035999591683
+      ],
+      "p50_ms": 1.9056979999999992,
+      "p99_ms": 7.114384000000001
+    },
+    {
+      "system": "kong",
+      "rate": 0,
+      "feature": "ratelimit",
+      "runs": [
+        3,
+        3
+      ],
+      "cpu_ms_per_1k": 179.27418171840176,
+      "cpu_range": [
+        73.45799818658324,
+        255.4231362751654
+      ],
+      "p50_ms": 9.644862,
+      "p99_ms": 45.10014399999999
+    },
+    {
+      "system": "kong",
+      "rate": 0,
+      "feature": "transform",
+      "runs": [
+        3,
+        3
+      ],
+      "cpu_ms_per_1k": -15.577981698829603,
+      "cpu_range": [
+        -83.74135904077548,
+        133.09312870033975
+      ],
+      "p50_ms": -1.5308980000000005,
+      "p99_ms": -1.3253119999999967
+    },
+    {
+      "system": "nginx",
+      "rate": 0,
+      "feature": "tls",
+      "runs": [
+        3,
+        3
+      ],
+      "cpu_ms_per_1k": 106.39647400817256,
+      "cpu_range": [
+        45.78352234122361,
+        127.33724604127906
+      ],
+      "p50_ms": 1.60433,
+      "p99_ms": 19.66236
+    },
+    {
+      "system": "nginx",
+      "rate": 0,
+      "feature": "auth",
+      "runs": [
+        3,
+        3
+      ],
+      "cpu_ms_per_1k": -9.363392820571079,
+      "cpu_range": [
+        -82.56102775180688,
+        93.74928242873075
+      ],
+      "p50_ms": 0.10503199999999957,
+      "p99_ms": -0.10267999999999944
+    },
+    {
+      "system": "nginx",
+      "rate": 0,
+      "feature": "ratelimit",
+      "runs": [
+        3,
+        3
+      ],
+      "cpu_ms_per_1k": 12.804763787663688,
+      "cpu_range": [
+        -59.02329520348938,
+        74.1731476829946
+      ],
+      "p50_ms": 0.20398600000000044,
+      "p99_ms": -1.9391290000000012
+    },
+    {
+      "system": "nginx",
+      "rate": 0,
+      "feature": "transform",
+      "runs": [
+        3,
+        3
+      ],
+      "cpu_ms_per_1k": 3.935470250744686,
+      "cpu_range": [
+        -73.82707527032183,
+        43.36302882379958
+      ],
+      "p50_ms": -0.5770020000000002,
+      "p99_ms": 4.120726999999999
+    },
+    {
+      "system": "tyk",
+      "rate": 0,
+      "feature": "tls",
+      "runs": [
+        3,
+        3
+      ],
+      "cpu_ms_per_1k": 2.622965371363591,
+      "cpu_range": [
+        -87.69436531916091,
+        72.00595389335999
+      ],
+      "p50_ms": 0.08079299999999989,
+      "p99_ms": 0.5896990000000031
+    },
+    {
+      "system": "tyk",
+      "rate": 0,
+      "feature": "auth",
+      "runs": [
+        3,
+        3
+      ],
+      "cpu_ms_per_1k": 90.71409196568334,
+      "cpu_range": [
+        56.651139368366785,
+        163.12304863162348
+      ],
+      "p50_ms": 8.140206000000001,
+      "p99_ms": 9.455953999999998
+    },
+    {
+      "system": "tyk",
+      "rate": 0,
+      "feature": "ratelimit",
+      "runs": [
+        3,
+        3
+      ],
+      "cpu_ms_per_1k": 0.228713972230139,
+      "cpu_range": [
+        -40.769450611732395,
+        115.05117938024063
+      ],
+      "p50_ms": -0.014620000000000744,
+      "p99_ms": -0.9338880000000032
+    },
+    {
+      "system": "tyk",
+      "rate": 0,
+      "feature": "transform",
+      "runs": [
+        3,
+        3
+      ],
+      "cpu_ms_per_1k": 91.6868235805025,
+      "cpu_range": [
+        -29.308568572713796,
+        123.48079496918245
+      ],
+      "p50_ms": 1.087009000000002,
+      "p99_ms": 19.654305000000008
+    }
+  ],
+  "failed": []
+}

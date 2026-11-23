@@ -1,0 +1,165 @@
+{
+  "stamp": "2b5a36dd71a1ba6c",
+  "meta": {
+    "stamp": "2b5a36dd71a1ba6c",
+    "images": {
+      "gwbench-backend:local": "sha256:a7efa528ff644c4099daa3aac283eac8a7dc8dfe85a0570b5916afa5218d2cff",
+      "nginx:1.30.7-alpine": "sha256:caf4e1e032a20f9c3c5e28fc7f25ffd768ad8677b4975c54193075997b3a97e3",
+      "kong:3.9.5": "sha256:e9b87ddd0e6087792586e2cbba5ce91eadcbdd3d3673249aa4606f7207408c0d",
+      "tykio/tyk-gateway:v5.16.0": "sha256:7af43f37fcae9bccf050c934e51a2ba710c48b5916290da13ef36fcdee3c60c1",
+      "redis:8.8.4-alpine": "sha256:1273af45b299d2b8b60d0e400d90aa6c2c5b1794f01d6a7ca60ff3ba6e65efb5"
+    },
+    "args": {
+      "rates": "1000,2000",
+      "rounds": 3,
+      "max_rounds": 6,
+      "quiet": 0.15,
+      "max_foreign": 0.3,
+      "max_wait": 3600,
+      "duration": 30,
+      "warmup": 10,
+      "systems": "direct,nginx,kong,tyk",
+      "steps": "",
+      "seed": 66,
+      "name": "main"
+    },
+    "host": {
+      "nproc": 4,
+      "kernel": "6.8.0-147-generic",
+      "cpu": "DO-Premium-Intel"
+    },
+    "started": "2026-11-23T18:13:47Z"
+  },
+  "rows": [
+    {
+      "system": "kong",
+      "step": "transform",
+      "rate": 1000,
+      "n": 1,
+      "p50_ms": 1.099675,
+      "p99_ms": 62.457321,
+      "p99_ms_range": [
+        62.457321,
+        62.457321
+      ],
+      "cpu_ms_per_1k": 800.7453666666667,
+      "cpu_ms_per_1k_range": [
+        800.7453666666667,
+        800.7453666666667
+      ],
+      "cpu_by_container": {
+        "kong": 800.7453666666667
+      },
+      "anon_mem_mb": 169.6796875,
+      "foreign_cpu_max": 0.007,
+      "backend_new_conns_max": 1
+    },
+    {
+      "system": "nginx",
+      "step": "transform",
+      "rate": 1000,
+      "n": 1,
+      "p50_ms": 0.392654,
+      "p99_ms": 1.331116,
+      "p99_ms_range": [
+        1.331116,
+        1.331116
+      ],
+      "cpu_ms_per_1k": 142.31843333333333,
+      "cpu_ms_per_1k_range": [
+        142.31843333333333,
+        142.31843333333333
+      ],
+      "cpu_by_container": {
+        "nginx": 142.31843333333333
+      },
+      "anon_mem_mb": 5.78515625,
+      "foreign_cpu_max": -0.039,
+      "backend_new_conns_max": 37
+    },
+    {
+      "system": "tyk",
+      "step": "plain",
+      "rate": 1000,
+      "n": 1,
+      "p50_ms": 0.609701,
+      "p99_ms": 7.278012,
+      "p99_ms_range": [
+        7.278012,
+        7.278012
+      ],
+      "cpu_ms_per_1k": 373.1944,
+      "cpu_ms_per_1k_range": [
+        373.1944,
+        373.1944
+      ],
+      "cpu_by_container": {
+        "tyk": 370.42446666666666,
+        "redis": 2.7699333333333334
+      },
+      "anon_mem_mb": 81.60546875,
+      "foreign_cpu_max": 0.052,
+      "backend_new_conns_max": 56
+    },
+    {
+      "system": "tyk",
+      "step": "plain",
+      "rate": 2000,
+      "n": 1,
+      "p50_ms": 0.602549,
+      "p99_ms": 24.141104,
+      "p99_ms_range": [
+        24.141104,
+        24.141104
+      ],
+      "cpu_ms_per_1k": 275.86471441190685,
+      "cpu_ms_per_1k_range": [
+        275.86471441190685,
+        275.86471441190685
+      ],
+      "cpu_by_container": {
+        "tyk": 274.55540925682095,
+        "redis": 1.309305155085918
+      },
+      "anon_mem_mb": 89.59765625,
+      "foreign_cpu_max": -0.021,
+      "backend_new_conns_max": 1
+    },
+    {
+      "system": "tyk",
+      "step": "auth",
+      "rate": 2000,
+      "n": 1,
+      "p50_ms": 1.089121,
+      "p99_ms": 65.635721,
+      "p99_ms_range": [
+        65.635721,
+        65.635721
+      ],
+      "cpu_ms_per_1k": 391.5586778513417,
+      "cpu_ms_per_1k_range": [
+        391.5586778513417,
+        391.5586778513417
+      ],
+      "cpu_by_container": {
+        "tyk": 390.2101962877108,
+        "redis": 1.3484815636309055
+      },
+      "anon_mem_mb": 113.9453125,
+      "foreign_cpu_max": -0.005,
+      "backend_new_conns_max": 1
+    }
+  ],
+  "feature_deltas": [],
+  "failed": [
+    {
+      "round": 1,
+      "system": "tyk",
+      "step": "ratelimit",
+      "rate": 2000,
+      "fail_reasons": [
+        "9 error log lines, first: 2026/11/23 18:34:21 http: TLS handshake error from 127.0.0.1:54235: read tcp 127.0.0.1:28443->127.0.0.1:54235: read: connection reset by peer"
+      ]
+    }
+  ]
+}
