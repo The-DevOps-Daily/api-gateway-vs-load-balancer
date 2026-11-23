@@ -1,0 +1,50 @@
+# Kong Gateway OSS 3.9, DB-less. Same ladder as nginx: each route adds one
+# feature on top of the one before it.
+_format_version: "3.0"
+
+consumers:
+  - username: bench
+    keyauth_credentials:
+      - key: bench-key-1
+
+services:
+  - name: backend
+    url: http://127.0.0.1:9000
+    routes:
+      - name: plain
+        paths: ["/plain"]
+        strip_path: false
+      - name: auth
+        paths: ["/auth"]
+        strip_path: false
+        plugins:
+          - name: key-auth
+            config: { key_names: [apikey], hide_credentials: true }
+      - name: ratelimit
+        paths: ["/ratelimit"]
+        strip_path: false
+        plugins:
+          - name: key-auth
+            config: { key_names: [apikey], hide_credentials: true }
+          - name: rate-limiting
+            config: { second: 100000, policy: local, limit_by: consumer }
+      - name: transform
+        paths: ["/transform"]
+        strip_path: false
+        plugins:
+          - name: key-auth
+            config: { key_names: [apikey], hide_credentials: true }
+          - name: rate-limiting
+            config: { second: 100000, policy: local, limit_by: consumer }
+          - name: request-transformer
+            config: { add: { headers: ["X-Request-Tag:gw-bench"] } }
+          - name: response-transformer
+            config: { remove: { headers: [X-Internal-Debug] }, add: { headers: ["X-Gateway:kong"] } }
+      - name: rlcheck
+        paths: ["/rlcheck"]
+        strip_path: false
+        plugins:
+          - name: key-auth
+            config: { key_names: [apikey], hide_credentials: true }
+          - name: rate-limiting
+            config: { second: 10, policy: local, limit_by: consumer }

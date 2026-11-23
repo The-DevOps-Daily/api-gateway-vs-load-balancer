@@ -1,0 +1,26 @@
+{
+  "name": "plain",
+  "api_id": "plain",
+  "org_id": "bench",
+  "active": true,
+  "use_keyless": true,
+  "proxy": {
+    "listen_path": "/plain",
+    "target_url": "http://127.0.0.1:9000",
+    "strip_listen_path": false
+  },
+  "version_data": {
+    "not_versioned": true,
+    "default_version": "Default",
+    "versions": {
+      "Default": {
+        "name": "Default",
+        "use_extended_paths": true
+      }
+    }
+  },
+  "disable_rate_limit": true,
+  "disable_quota": true,
+  "enable_context_vars": false,
+  "protocol": "http"
+}

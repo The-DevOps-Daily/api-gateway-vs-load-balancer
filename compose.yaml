@@ -1,0 +1,85 @@
+# Everything on the host network: Docker's port publishing would add its own
+# proxy hop and NAT to every request. CPU pinning:
+#   core 0: load generator (scripts pin it with taskset)
+#   core 1: the proxy under test (each one gets the same single core)
+#   core 2: backend
+#   core 3: Redis (Tyk only)
+name: gwbench
+
+services:
+  backend:
+    ulimits: { nofile: 65536 }
+    build: ./backend
+    image: gwbench-backend:local
+    network_mode: host
+    cpuset: "2"
+    environment:
+      LISTEN: 127.0.0.1:9000
+      GOMAXPROCS: "1"
+
+  nginx:
+    ulimits: { nofile: 65536 }
+    image: nginx:1.30.7-alpine
+    network_mode: host
+    cpuset: "1"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./certs:/certs:ro
+
+  kong:
+    ulimits: { nofile: 65536 }
+    image: kong:3.9.5
+    network_mode: host
+    cpuset: "1"
+    environment:
+      KONG_DATABASE: "off"
+      KONG_DECLARATIVE_CONFIG: /kong/kong.yml
+      KONG_NGINX_WORKER_PROCESSES: "1"
+      KONG_NGINX_EVENTS_WORKER_CONNECTIONS: "8192"
+      KONG_PROXY_LISTEN: "127.0.0.1:18000 reuseport backlog=16384, 127.0.0.1:18443 ssl reuseport backlog=16384"
+      KONG_ADMIN_LISTEN: "127.0.0.1:18001"
+      KONG_STATUS_LISTEN: "off"
+      KONG_PROXY_ACCESS_LOG: "off"
+      KONG_ADMIN_ACCESS_LOG: "off"
+      KONG_PROXY_ERROR_LOG: /dev/stderr
+      KONG_SSL_CERT: /certs/server.crt
+      KONG_SSL_CERT_KEY: /certs/server.key
+      KONG_SSL_CIPHER_SUITE: modern
+      KONG_ANONYMOUS_REPORTS: "off"
+      KONG_LOG_LEVEL: warn
+    volumes:
+      - ./kong/kong.yml:/kong/kong.yml:ro
+      - ./certs:/certs:ro
+
+  redis:
+    ulimits: { nofile: 65536 }
+    image: redis:8.8.4-alpine
+    network_mode: host
+    cpuset: "3"
+    command: ["redis-server", "--bind", "127.0.0.1", "--port", "6379", "--save", "", "--appendonly", "no"]
+
+  tyk:
+    ulimits: { nofile: 65536 }
+    image: tykio/tyk-gateway:v5.16.0
+    network_mode: host
+    cpuset: "1"
+    depends_on: [redis]
+    env_file: .env
+    environment:
+      GOMAXPROCS: "1"
+    volumes:
+      - ./tyk/tyk.conf:/opt/tyk-gateway/tyk.conf:ro
+      - ./tyk/apps:/opt/tyk-gateway/apps:ro
+      - ./tyk/policies:/opt/tyk-gateway/policies:ro
+      - ./certs:/certs:ro
+
+  # Only for scripts/break-keepalive.sh.
+  nginx-broken:
+    profiles: [break]
+    ulimits: { nofile: 65536 }
+    image: nginx:1.30.7-alpine
+    network_mode: host
+    cpuset: "1"
+    volumes:
+      - ./nginx/nginx-broken-keepalive.conf:/etc/nginx/nginx.conf:ro
+      - ./certs:/certs:ro

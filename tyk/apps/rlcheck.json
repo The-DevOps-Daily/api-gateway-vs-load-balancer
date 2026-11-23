@@ -1,0 +1,40 @@
+{
+  "name": "rlcheck",
+  "api_id": "rlcheck",
+  "org_id": "bench",
+  "active": true,
+  "use_keyless": false,
+  "proxy": {
+    "listen_path": "/rlcheck",
+    "target_url": "http://127.0.0.1:9000",
+    "strip_listen_path": false
+  },
+  "version_data": {
+    "not_versioned": true,
+    "default_version": "Default",
+    "versions": {
+      "Default": {
+        "name": "Default",
+        "use_extended_paths": true
+      }
+    }
+  },
+  "disable_rate_limit": false,
+  "disable_quota": true,
+  "enable_context_vars": false,
+  "protocol": "https",
+  "listen_port": 28443,
+  "auth": {
+    "auth_header_name": "apikey"
+  },
+  "auth_configs": {
+    "authToken": {
+      "auth_header_name": "apikey"
+    }
+  },
+  "strip_auth_data": true,
+  "global_rate_limit": {
+    "rate": 10,
+    "per": 1
+  }
+}
