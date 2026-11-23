@@ -51,14 +51,24 @@ SYSTEMS = {
     },
 }
 
-# Started only by scripts/break-keepalive.sh (compose profile "break").
+# Variants started only by the break and explain scripts.
 BREAK_SYSTEMS = {
+    # scripts/break-keepalive.sh (compose profile "break")
     "nginx-broken": {
         "containers": ["nginx-broken"],
         "steps": {
             "tls": "https://127.0.0.1:8453/plain",
             "auth": "https://127.0.0.1:8453/auth",
         },
+    },
+    # Started only by scripts/explain-kong-timer.sh (compose.explain.yaml).
+    "kong-inline": {
+        "containers": ["kong-inline"],
+        "steps": {
+            "auth": "https://127.0.0.1:18543/auth",
+            "ratelimit": "https://127.0.0.1:18543/ratelimit",
+        },
+        "rlcheck": "https://127.0.0.1:18543/rlcheck",
     },
 }
 

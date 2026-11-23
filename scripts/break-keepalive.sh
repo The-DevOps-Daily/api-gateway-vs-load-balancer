@@ -6,7 +6,7 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 docker compose --profile break up -d nginx-broken 2>&1 | tail -1
-until curl -sk -o /dev/null https://127.0.0.1:8453/plain; do sleep 1; done
+for i in $(seq 1 60); do curl -sk -o /dev/null https://127.0.0.1:8453/plain && break; sleep 1; done
 python3 scripts/bench.py --systems nginx,nginx-broken --steps tls,auth --rates 1000,2000 --rounds 3 \
   --duration 30 --warmup 10 --name break-keepalive
 docker compose --profile break stop nginx-broken 2>&1 | tail -1

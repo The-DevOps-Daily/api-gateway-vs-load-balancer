@@ -44,6 +44,9 @@ STAMPED = [
     "compose.yaml", "backend/main.go", "backend/Dockerfile", "nginx/nginx.conf",
     "nginx/nginx-broken-keepalive.conf", "kong/kong.yml", "tyk/tyk.conf",
     "scripts/targets.py", "scripts/bench.py", "scripts/verify.py", "scripts/01-tyk-key.sh",
+    "compose.explain.yaml", "scripts/explain-kong-timer.sh", "scripts/break-keepalive.sh",
+    "compose.tyk2.yaml", "scripts/tyk-two-cores.sh",
+    "scripts/limit_semantics.py",
 ] + sorted("tyk/apps/" + f for f in os.listdir(os.path.join(ROOT, "tyk/apps")))
 IMAGES = ["gwbench-backend:local", "nginx:1.30.7-alpine", "kong:3.9.5",
           "tykio/tyk-gateway:v5.16.0", "redis:8.8.4-alpine"]
@@ -67,8 +70,8 @@ def stamp():
 
 def container_ids():
     out = {}
-    for svc in ["backend", "nginx", "kong", "redis", "tyk", "nginx-broken"]:
-        out[svc] = sh("docker", "compose", "-f", os.path.join(ROOT, "compose.yaml"), "ps", "-q", svc)
+    for svc in ["backend", "nginx", "kong", "redis", "tyk", "nginx-broken", "kong-inline"]:
+        out[svc] = sh("docker", "ps", "-q", "--no-trunc", "-f", f"name=^gwbench-{svc}-1$")
     return out
 
 

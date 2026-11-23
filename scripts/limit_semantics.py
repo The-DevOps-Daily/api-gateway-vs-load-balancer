@@ -4,8 +4,9 @@
 The /rlcheck route has a limit of 10 per second on all three. Two tests:
   burst:  50 requests at once, five times, 3 s apart
   steady: 25 requests per second for 20 s (vegeta)
-Writes results/limit-semantics.json.
+Writes results/limit-semantics.json (or --out).
 """
+import argparse
 import concurrent.futures as cf
 import json
 import os
@@ -14,16 +15,21 @@ import sys
 import time
 
 sys.path.insert(0, os.path.dirname(__file__))
-from targets import KEY, SYSTEMS  # noqa: E402
+from targets import BREAK_SYSTEMS, KEY, SYSTEMS  # noqa: E402
 from verify import backend, get  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 VEGETA = os.path.join(ROOT, "tools", "vegeta")
 
+ap = argparse.ArgumentParser()
+ap.add_argument("--systems", default="nginx,kong,tyk")
+ap.add_argument("--out", default=os.path.join(ROOT, "results", "limit-semantics.json"))
+args = ap.parse_args()
+ALL = {**SYSTEMS, **BREAK_SYSTEMS}
+
 out = {}
-for name, sysdef in SYSTEMS.items():
-    if "rlcheck" not in sysdef:
-        continue
+for name in args.systems.split(","):
+    sysdef = ALL[name]
     url = sysdef["rlcheck"]
     time.sleep(3)
     bursts = []
@@ -51,4 +57,4 @@ for name, sysdef in SYSTEMS.items():
     print(name, "bursts passed:", [b["passed"] for b in bursts],
           "| steady:", steady["status_codes"], f"= {steady['passed_per_s']:.2f}/s passed")
 
-json.dump(out, open(os.path.join(ROOT, "results", "limit-semantics.json"), "w"), indent=2)
+json.dump(out, open(args.out, "w"), indent=2)
