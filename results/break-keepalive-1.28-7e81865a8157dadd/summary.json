@@ -1,0 +1,163 @@
+{
+  "stamp": "7e81865a8157dadd",
+  "meta": {
+    "stamp": "7e81865a8157dadd",
+    "images": {
+      "gwbench-backend:local": "sha256:a7efa528ff644c4099daa3aac283eac8a7dc8dfe85a0570b5916afa5218d2cff",
+      "nginx:1.30.7-alpine": "sha256:caf4e1e032a20f9c3c5e28fc7f25ffd768ad8677b4975c54193075997b3a97e3",
+      "kong:3.9.5": "sha256:e9b87ddd0e6087792586e2cbba5ce91eadcbdd3d3673249aa4606f7207408c0d",
+      "tykio/tyk-gateway:v5.16.0": "sha256:7af43f37fcae9bccf050c934e51a2ba710c48b5916290da13ef36fcdee3c60c1",
+      "redis:8.8.4-alpine": "sha256:1273af45b299d2b8b60d0e400d90aa6c2c5b1794f01d6a7ca60ff3ba6e65efb5",
+      "nginx:1.28.3-alpine": "sha256:a8b39bd9cf0f83869a2162827a0caf6137ddf759d50a171451b335cecc87d236"
+    },
+    "args": {
+      "rates": "1000,2000",
+      "rounds": 3,
+      "max_rounds": 6,
+      "quiet": 0.15,
+      "max_foreign": 0.3,
+      "max_wait": 3600,
+      "duration": 30,
+      "warmup": 10,
+      "systems": "nginx128-broken",
+      "steps": "tls,auth",
+      "seed": 66,
+      "name": "break-keepalive-1.28"
+    },
+    "host": {
+      "nproc": 4,
+      "kernel": "6.8.0-147-generic",
+      "cpu": "DO-Premium-Intel"
+    },
+    "started": "2026-11-23T22:13:19Z"
+  },
+  "rows": [
+    {
+      "system": "nginx128-broken",
+      "step": "tls",
+      "rate": 1000,
+      "n": 3,
+      "p50_ms": 0.47149,
+      "p99_ms": 2.383194,
+      "p99_ms_range": [
+        1.333121,
+        2.549395
+      ],
+      "cpu_ms_per_1k": 167.4207,
+      "cpu_ms_per_1k_range": [
+        155.78703333333334,
+        168.7884
+      ],
+      "cpu_by_container": {
+        "nginx128-broken": 167.4207
+      },
+      "anon_mem_mb": 5.7734375,
+      "foreign_cpu_max": -0.011,
+      "backend_new_conns_max": 32
+    },
+    {
+      "system": "nginx128-broken",
+      "step": "auth",
+      "rate": 1000,
+      "n": 3,
+      "p50_ms": 0.566799,
+      "p99_ms": 1.875622,
+      "p99_ms_range": [
+        1.591898,
+        2.113581
+      ],
+      "cpu_ms_per_1k": 243.61853333333335,
+      "cpu_ms_per_1k_range": [
+        219.62863333333334,
+        261.53886666666665
+      ],
+      "cpu_by_container": {
+        "nginx128-broken": 243.61853333333335
+      },
+      "anon_mem_mb": 5.72265625,
+      "foreign_cpu_max": 0.056,
+      "backend_new_conns_max": 30001
+    },
+    {
+      "system": "nginx128-broken",
+      "step": "tls",
+      "rate": 2000,
+      "n": 3,
+      "p50_ms": 0.429535,
+      "p99_ms": 3.143263,
+      "p99_ms_range": [
+        1.448517,
+        4.242809
+      ],
+      "cpu_ms_per_1k": 127.01495,
+      "cpu_ms_per_1k_range": [
+        102.61291666666666,
+        130.54955915931933
+      ],
+      "cpu_by_container": {
+        "nginx128-broken": 127.01495
+      },
+      "anon_mem_mb": 5.73828125,
+      "foreign_cpu_max": 0.065,
+      "backend_new_conns_max": 54
+    },
+    {
+      "system": "nginx128-broken",
+      "step": "auth",
+      "rate": 2000,
+      "n": 3,
+      "p50_ms": 0.587425,
+      "p99_ms": 20.677281,
+      "p99_ms_range": [
+        3.107125,
+        34.589749
+      ],
+      "cpu_ms_per_1k": 213.36881837160752,
+      "cpu_ms_per_1k_range": [
+        205.03376666666665,
+        223.16331666666667
+      ],
+      "cpu_by_container": {
+        "nginx128-broken": 213.36881837160752
+      },
+      "anon_mem_mb": 5.65234375,
+      "foreign_cpu_max": 0.063,
+      "backend_new_conns_max": 60001
+    }
+  ],
+  "feature_deltas": [
+    {
+      "system": "nginx128-broken",
+      "rate": 1000,
+      "feature": "auth",
+      "runs": [
+        3,
+        3
+      ],
+      "cpu_ms_per_1k": 76.19783333333334,
+      "cpu_range": [
+        50.840233333333344,
+        105.75183333333331
+      ],
+      "p50_ms": 0.09530900000000003,
+      "p99_ms": -0.5075720000000001
+    },
+    {
+      "system": "nginx128-broken",
+      "rate": 2000,
+      "feature": "auth",
+      "runs": [
+        3,
+        3
+      ],
+      "cpu_ms_per_1k": 86.35386837160752,
+      "cpu_range": [
+        74.48420750734732,
+        120.55040000000001
+      ],
+      "p50_ms": 0.15788999999999997,
+      "p99_ms": 17.534018
+    }
+  ],
+  "failed": []
+}

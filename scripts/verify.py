@@ -11,6 +11,7 @@ import json
 import os
 import ssl
 import sys
+import time
 import urllib.parse
 
 sys.path.insert(0, os.path.dirname(__file__))
@@ -82,6 +83,7 @@ def main():
 
         if "rlcheck" in sysdef:
             url = sysdef["rlcheck"]
+            time.sleep(2)  # let a previous run's burst drain from the limiter
             backend("/__reset")
             with cf.ThreadPoolExecutor(50) as ex:
                 codes = list(ex.map(lambda _: get(url)[0], range(50)))
