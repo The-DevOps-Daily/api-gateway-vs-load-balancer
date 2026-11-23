@@ -115,27 +115,27 @@ r1  4/4    tyk plain      1000/s    1000 done p50 0.841 p99 4.405 ms cpu/1k tyk 
 r2  1/4    tyk plain      1000/s    1000 done p50 0.775 p99 3.105 ms cpu/1k tyk 538ms, redis 3ms foreign 0.12 (waited 0s) ok
 r2  2/4    tyk transform  1000/s    1000 done p50 1.058 p99 8.756 ms cpu/1k tyk 777ms, redis 3ms foreign 0.05 (waited 0s) ok
 Traceback (most recent call last):
-  File "/srv/work-post-66/scripts/bench.py", line 348, in <module>
+  File "<repo>/scripts/bench.py", line 348, in <module>
     
-  File "/srv/work-post-66/scripts/bench.py", line 330, in main
+  File "<repo>/scripts/bench.py", line 330, in main
     break
           
-  File "/srv/work-post-66/scripts/bench.py", line 185, in one_run
+  File "<repo>/scripts/bench.py", line 185, in one_run
     route = route_of(url)
                           
-  File "/srv/work-post-66/scripts/bench.py", line 176, in wait_for_quiet
+  File "<repo>/scripts/bench.py", line 176, in wait_for_quiet
     time.sleep(5)
                   
-  File "/srv/work-post-66/scripts/bench.py", line 161, in ours_usec
+  File "<repo>/scripts/bench.py", line 161, in ours_usec
     def ours_usec(ids):
                ^^^^^^^^^
-  File "/srv/work-post-66/scripts/bench.py", line 161, in <genexpr>
+  File "<repo>/scripts/bench.py", line 161, in <genexpr>
     def ours_usec(ids):
                    ^^^^^
-  File "/srv/work-post-66/scripts/bench.py", line 84, in cpu_usec
+  File "<repo>/scripts/bench.py", line 84, in cpu_usec
     def cpu_usec(cid):
                     ^^^
-  File "/srv/work-post-66/scripts/bench.py", line 79, in cg
+  File "<repo>/scripts/bench.py", line 79, in cg
     def cg(cid, f):
              ^^^^^^^
 FileNotFoundError: [Errno 2] No such file or directory: '/sys/fs/cgroup/system.slice/docker-14b76fc828759fdbfa0b7af67f2f71ba879af93d75b5fca12da014aa4ea91218.scope/cpu.stat'
