@@ -34,7 +34,7 @@ python3 scripts/lag.py results/main-<stamp>                           # send lag
 | `backend/main.go` | A small JSON API. Counts the requests it serves per route and the new connections it accepts, and reports which headers reached it. |
 | `nginx/nginx.conf`, `kong/kong.yml`, `tyk/` | The same ladder on each proxy: `/plain`, then TLS, then `/auth`, `/ratelimit`, `/transform`, each adding one feature to the one before. |
 | `scripts/verify.py` | Exact checks before anything is timed: 200 with the key, 401 without it (403 for a wrong key on Tyk), the key stripped before the backend, the headers added and removed, and a 10/s limit that lets some of 50 concurrent requests through and refuses most. |
-| `scripts/bench.py` | Fixed-rate runs with vegeta, at most 64 requests and connections in flight, in a shuffled order per round. Waits for the rest of the machine to be idle before each run. Fails a run on any non-200, a mismatch between the client's and the backend's counts, a proxy error log line (TLS handshake aborts by the client are counted, not failed), a starved load generator, fewer than 99% of the scheduled requests sent, or other processes using more than 0.3 cores during it. Failed cells are rerun, up to six rounds, until each has three passed runs. Every results directory is stamped with a hash of the configs, scripts and image IDs. |
+| `scripts/bench.py` | Fixed-rate runs with vegeta, at most 64 requests and connections in flight, in a shuffled order per round. Waits for the rest of the machine to be idle before each run. Fails a run on any non-200, a mismatch between the client's and the backend's counts, a proxy error log line (TLS handshake aborts by the client are counted, not failed), a starved load generator (in max mode, `--rates 0`, that is recorded as a bound instead), fewer than 99% of the scheduled requests sent (a count, not a timing check: see `lag.py`), or other processes using more than 0.3 cores during it. Failed cells are rerun, up to six rounds, aiming for three passed runs per cell. Every results directory is stamped with a hash of the configs, scripts and image IDs. |
 | `scripts/summarize.py` | Medians and ranges per cell, and the cost of each feature as the difference between cell medians, with the widest range the runs allow. Refuses mixed stamps. |
 | `scripts/lag.py` | How late vegeta sent each request against its schedule, and the latency with that lag added back. |
 | `scripts/limit_semantics.py` | What "10 requests per second" lets through on each proxy, in bursts of 50 and at a steady 25/s. |
@@ -44,14 +44,14 @@ python3 scripts/lag.py results/main-<stamp>                           # send lag
 
 ## Results
 
-Every recorded run is in [`results/`](results/), including the failed and
-discarded ones; see [`results/README.md`](results/README.md) for which commit
+Every run from the published benchmark invocations is in [`results/`](results/),
+including the failed and discarded ones; see [`results/README.md`](results/README.md) for which commit
 produced which directory. The article explains what the numbers mean.
 
 ## Limits
 
 One machine, synthetic load, one small GET response, one hot key, one core per
-proxy (two for the Tyk variant), and loopback networking, so no request crossed
+proxy (two for the Tyk variant, with Redis moved next to the backend), and loopback networking, so no request crossed
 a real network. The vCPUs are virtual, and the host may place two of them on
 one physical core. The numbers compare the proxies with each other on this
 machine; they are not capacity figures for your hardware.
